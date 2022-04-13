@@ -1,5 +1,5 @@
 import axios from "axios";
-import { server } from "../../config";
+import { server } from "../../config/server";
 import Image from 'next/image';
 import Meta from "../../components/Meta";
 import Link from "next/link";

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Hero from '../components/Hero';
+import { server } from '../config/server';
 
 const Home = ({ projects, error }) => {
   if (error) {
@@ -14,7 +15,7 @@ const Home = ({ projects, error }) => {
 
 Home.getInitialProps = async ctx => {
   try {
-    const res = await axios.get('http://localhost:1337/api/projects');
+    const res = await axios.get('/projects');
     const projects = res.data;
     return { projects };
   } catch (error) {

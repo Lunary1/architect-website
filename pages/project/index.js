@@ -17,7 +17,7 @@ const Project = ({ project }) => {
                   </svg>
                 </button>
             </Link>
-            <h1 className="font-bold text-3xl my-2 py-3 px-6 rounded text-sm mt-4 mb-5">{project.title}</h1>
+            <h1 className="font-bold text-3xl my-2 py-3 px-6 rounded mt-4 mb-5">{project.title}</h1>
           </span>
         </div>
         <Image src={`https://image.tmdb.org/t/p/original${project.backdrop_path}`} width={1200} height={700} className="rounded-md" />

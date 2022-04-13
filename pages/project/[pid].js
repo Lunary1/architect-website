@@ -1,5 +1,4 @@
 import axios from "axios";
-import { server } from "../../config/server";
 import Image from 'next/image';
 import Meta from "../../components/Meta";
 import Link from "next/link";
@@ -31,7 +30,7 @@ const Project = ({ project }) => {
 
 export async function getStaticProps(context) {
     const { id } = context.params;
-    const res = await axios(`${server}/projects/${id}`)
+    const res = await axios(`https://evening-dusk-47039.herokuapp.com/api/projects/${id}`)
     const project = res.data;
   
   
@@ -41,7 +40,7 @@ export async function getStaticProps(context) {
   }
 
 export async function getStaticPaths() {
-const res = await axios(`${server}/api/projects`)
+const res = await axios(`https://evening-dusk-47039.herokuapp.com/api/projects`)
 const projects = res.data.results;
 
 const ids = projects.map(project => project.id);

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Hero from '../components/Hero';
-import { server } from '../config/server';
 
 const Home = ({ projects, error }) => {
   if (error) {
@@ -15,7 +14,7 @@ const Home = ({ projects, error }) => {
 
 Home.getInitialProps = async ctx => {
   try {
-    const res = await axios.get(`${server}/projects`);
+    const res = await axios.get(`https://evening-dusk-47039.herokuapp.com/api/projects`);
     const projects = res.data;
     return { projects };
   } catch (error) {

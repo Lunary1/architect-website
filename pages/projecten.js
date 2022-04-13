@@ -16,7 +16,7 @@ const Projecten = ({ projects, error }) => {
 
 Projecten.getInitialProps = async ctx => {
   try {
-    const res = await axios.get('http://localhost:1337/api/projects');
+    const res = await axios.get('https://evening-dusk-47039.herokuapp.com/api/projects');
     const projects = res.data;
     return { projects };
   } catch (error) {

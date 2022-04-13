@@ -12,7 +12,7 @@ const ProjectCard = ({ project }) => {
               <div className='font-bold text-xl mb-1'>
                 {project.attributes.name}
               </div>
-              <p className='text-gray-700 text-base mb-1'>{project.id}</p>
+              <p className='text-gray-700 text-base mb-1'>{project.attributes.description}</p>
             </div>
           </div>
         </Link>

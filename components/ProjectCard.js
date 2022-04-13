@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ProjectCard = ({ project }) => {
   return (
-    <Link href={`/projects/${project.id}`}>
+    <Link href={`/projects/${project.id}`} passHref>
     <div className="bg-white shadow-sm rounded-md cursor-pointer">
 
         <div className="px-6 py-2">

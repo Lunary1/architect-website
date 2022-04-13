@@ -1,1 +1,1 @@
-server='https://evening-dusk-47039.herokuapp.com/'
+server='https://evening-dusk-47039.herokuapp.com/api'

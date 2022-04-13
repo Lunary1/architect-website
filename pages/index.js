@@ -15,7 +15,7 @@ const Home = ({ projects, error }) => {
 
 Home.getInitialProps = async ctx => {
   try {
-    const res = await axios.get('/projects');
+    const res = await axios.get(`${server}/projects`);
     const projects = res.data;
     return { projects };
   } catch (error) {

@@ -39,22 +39,22 @@ import search from "../public/search.png"
             </div>
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] font-semibold">
               <li><Image src={logo} height={30} width={70}  /></li>
-              <Link href="/">
+              <Link href="/" passHref>
                 <li className="border-b border-gray-400 my-8 uppercase" onClick={() => setIsNavOpen(false)}>
                   <a>Home</a>
                 </li>
               </Link>
-              <Link href="/projecten">
+              <Link href="/projecten" passHref>
                 <li className="border-b border-gray-400 my-8 uppercase" onClick={() => setIsNavOpen(false)}>
                   <a>Projecten</a>
                 </li>
               </Link>
-              <Link href="/about">
+              <Link href="/about" passHref>
                 <li className="border-b border-gray-400 my-8 uppercase" onClick={() => setIsNavOpen(false)}>
                   <a>Over ons</a>
                 </li>
               </Link>
-              <Link href="/contact">
+              <Link href="/contact" passHref>
                 <li className="border-b border-gray-400 my-8 uppercase" onClick={() => setIsNavOpen(false)}>
                   <a>Contact</a>
                 </li>
@@ -64,7 +64,7 @@ import search from "../public/search.png"
         </section>
         </div>
         <div className="logo flex items-center">
-          <Link href="/"><Image className="cursor-pointer" src={logo} height={30} width={70} /></Link>
+          <Link href="/" passHref><Image className="cursor-pointer" src={logo} height={30} width={70} /></Link>
         </div>
         <div className="sm:visible search flex items-center font-semibold uppercase">
             <h2 className="">ZOEKEN</h2>

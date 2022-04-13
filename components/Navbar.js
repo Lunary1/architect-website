@@ -5,7 +5,7 @@ import { useState } from "react";
 import logo from "../public/logopaul.png"
 import search from "../public/search.png"
  
- const navbar = () => {
+ const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
    return (
 
@@ -75,7 +75,7 @@ import search from "../public/search.png"
    )
  }
  
- export default navbar
+ export default Navbar
 
 
  

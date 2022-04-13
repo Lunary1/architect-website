@@ -1,4 +1,1 @@
-module.exports = ({ env }) => ({
-    host: env('APP_HOST', '0.0.0.0'),
-    port: env.int('NODE_PORT', 1337),
-  });
+server='https://evening-dusk-47039.herokuapp.com/'

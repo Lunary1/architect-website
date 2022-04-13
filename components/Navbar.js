@@ -44,7 +44,7 @@ import search from "../public/search.png"
                   <a>Home</a>
                 </li>
               </Link>
-              <Link href="/projecten" passHref>
+              <Link href="/projects" passHref>
                 <li className="border-b border-gray-400 my-8 uppercase" onClick={() => setIsNavOpen(false)}>
                   <a>Projecten</a>
                 </li>

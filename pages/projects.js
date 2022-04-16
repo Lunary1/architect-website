@@ -5,12 +5,18 @@ import { server } from "../config/server";
 function Projecten({ projects }) {
   console.log(projects);
   return (
-    <div className='container max-w-7xl mx-auto pb-10 px4'>
-    <h1 className='text-white text-2xl mt-8 mb-5'>Whats popular</h1>
-    <div className='grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
-      {projects.data.map(project => <ProjectCard project={project} key={project.id}/>)}
+    <div className='container bg min-w-full  p-1 pt-6'>
+      <div className="text-center text-white">
+        <h3 className="text-md uppercase font-semibold">Onze projecten</h3>
+        <h2 className="text-5xl mb-24 font-serif pt-5">Overzicht:</h2>
+      </div>
+      <div className='grid gap-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
+          {projects.data.map(project => <ProjectCard project={project} key={project.id}/>)}
+      </div>
+      <div className="text-center my-5">
+        <button className="btn uppercase">Load more</button>
+      </div>
     </div>
-</div>
   )
 }
 

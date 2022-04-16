@@ -27,10 +27,10 @@ import logo from "../public/logopaul.png"
               </li>
             </ul>
           </div>
-          <Link href={'/'}><a classNameName="pl-12"><Image src={logo} width={40} height={30}/></a></Link>
+          <Link href={'/'}><a className="pl-10"><Image src={logo} width={70} height={30}/></a></Link>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">
+          <ul className="menu menu-horizontal p-0 uppercase font-semibold">
             <li>
               <Link href={'/'}><a>Home</a></Link>
             </li>

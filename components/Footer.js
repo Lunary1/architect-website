@@ -7,7 +7,7 @@ function Footer() {
 <footer className="footer p-10 bg-base-200 text-base-content">
   <div>
     <Image src={logo} height={30} width={70} />
-    <p>Architectenbureau Paul Kindt<br/>Providing reliable tech since 1992</p>
+    <p className='font-semibold uppercase'>Architectenbureau Paul Kindt</p>
   </div> 
   <div>
     <span className="footer-title">Services</span> 
@@ -24,10 +24,10 @@ function Footer() {
     <a className="link link-hover">Press kit</a>
   </div> 
   <div>
-    <span className="footer-title">Legal</span> 
-    <a className="link link-hover">Terms of use</a> 
-    <a className="link link-hover">Privacy policy</a> 
-    <a className="link link-hover">Cookie policy</a>
+    <span className="footer-title">Follow us</span> 
+    <a className="link link-hover">Facebook</a> 
+    <a className="link link-hover">Instagram</a> 
+    <a className="link link-hover">Youtube</a>
   </div>
 </footer>
   )

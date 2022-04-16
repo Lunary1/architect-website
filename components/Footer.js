@@ -10,18 +10,18 @@ function Footer() {
     <p className='font-semibold uppercase'>Architectenbureau Paul Kindt</p>
   </div> 
   <div>
-    <span className="footer-title">Services</span> 
-    <a className="link link-hover">Branding</a> 
-    <a className="link link-hover">Design</a> 
-    <a className="link link-hover">Marketing</a> 
-    <a className="link link-hover">Advertisement</a>
+    <span className="footer-title">Diensten</span> 
+    <a className="">Residentieel</a> 
+    <a className="">Industriebouw</a> 
+    <a className="">KMO</a> 
+    <a className="">Kantoor</a>
   </div> 
   <div>
-    <span className="footer-title">Company</span> 
-    <a className="link link-hover">About us</a> 
-    <a className="link link-hover">Contact</a> 
-    <a className="link link-hover">Jobs</a> 
-    <a className="link link-hover">Press kit</a>
+    <span className="footer-title">Sitemap</span> 
+    <a className="link link-hover">Home</a> 
+    <a className="link link-hover">Projecten</a> 
+    <a className="link link-hover">Over ons</a> 
+    <a className="link link-hover">Contact</a>
   </div> 
   <div>
     <span className="footer-title">Follow us</span> 

@@ -23,6 +23,7 @@
 .hero {
   background-image: url('../public/house.webp');
   background-position: center;
+  max-height: calc(100vh - 70px); /* 100px is the height of the navbar */
 }
 
 .bg {

@@ -3,7 +3,6 @@ import { server } from "../config/server";
 
 // posts will be populated at build time by getStaticProps()
 function Projecten({ projects }) {
-  console.log(projects);
   return (
     <div className='container bg min-w-full  p-1 pt-6'>
       <div className="text-center text-white">
@@ -24,9 +23,13 @@ export async function getStaticProps() {
   const res = await fetch(`${server}/projects?populate=*`)
   const projects = await res.json()
 
+  
   return {
     props: { projects }
   }
 }
+
+
+
 
 export default Projecten

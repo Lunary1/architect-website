@@ -1,12 +1,10 @@
 import Link from "next/link";
 import Image from "next/image"
-import hamburger from "../public/hamburger.png"
-import { useState } from "react";
 import logo from "../public/logopaul.png"
  
  const Navbar = () => {
    return (
-      <div className="navbar bg-base-100">
+      <div className="navbar my-3 bg-base-100 max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">

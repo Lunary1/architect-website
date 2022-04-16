@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">Paul Kindt</h1>
           <p className="mb-5">Architectenkantoor actief in de Vlaamse Ardennen. </p>
-          <a href="/contact"><button className="btn glass">neem contact op</button></a>
+          <Link href={"/contact"}><a><button className="btn glass">neem contact op</button></a></Link>
         </div>
       </div>
     </div>

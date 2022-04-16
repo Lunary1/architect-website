@@ -13,7 +13,7 @@ export default function Section() {
                     <h2 className="text-white bg-black uppercase px-1">Chapter NO. 01</h2>
                 </div>
                 <div className="right font-serif italic border-t-2 pt-2">
-                    <p>In 1939, Holger Nielsen wrote the first chapter of the Vipp <br/> story when he crafted a pedal bin for his wife's hairdressing <br/> salon.</p>
+                    <p>In 1939, Holger Nielsen wrote the first chapter of the Vipp <br/> story when he crafted a pedal bin for his wife&apos;s hairdressing <br/> salon.</p>
                 </div>
             </div>
             <div className="text-center">

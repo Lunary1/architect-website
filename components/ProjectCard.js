@@ -10,13 +10,13 @@ const myLoader = ({ src }) => {
 const ProjectCard = ({ project }) => {
   return (
         <Link href={`/projects/${project.id}`} passHref>
-          <div className="cards bg-white cursor-pointer">
-            <Image loader={myLoader} src={project.attributes.featuredImage.data.attributes.url} width={700} height={450} className="perspective-left"/>
-            <div className="cards-bottom invisible sm:visible  text-black px-10 py-5">
-              <h2 className="text-2xl font-semibold">{project.attributes.name}</h2>
-              <p>{project.attributes.locatie}</p>
-            </div>
-          </div>
+          <a className="group">
+              <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-sm overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                <Image loader={myLoader} src={project.attributes.featuredImage.data.attributes.url} width={700} height={450} className="w-full h-full object-center object-cover group-hover:opacity-75"/>
+              </div>
+              <h3 className="mt-2 text-lg font-medium text-gray-900">{project.attributes.name}</h3>
+              <p className="mt-2 text-sm text-gray-700">{project.attributes.locatie}</p>
+            </a>
         </Link>
   )
 }

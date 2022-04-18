@@ -4,14 +4,14 @@ import { server } from "../config/server";
 
 
 const myLoader = ({ src }) => {
-  return `https://evening-dusk-47039.herokuapp.com${src}` 
+  return `${src}` 
 }
 
 const ProjectCard = ({ project }) => {
   return (
         <Link href={`/projects/${project.id}`} passHref>
           <a className="group">
-              <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-sm overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+              <div className="w-full aspect-w-1 aspect-h-1 rounded-sm overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                 <Image loader={myLoader} src={project.attributes.featuredImage.data.attributes.url} width={700} height={450} className="w-full h-full object-center object-cover group-hover:opacity-75"/>
               </div>
               <h3 className="mt-2 text-lg font-medium text-gray-900">{project.attributes.name}</h3>

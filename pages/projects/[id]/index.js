@@ -12,7 +12,7 @@ const Project = ( project ) => {
 
   console.log(project)
 
-  const imgArray = project.project.data.attributes.gallery.data.map(image => `${server}` + image.attributes.url)
+  const imgArray = project.project.data.attributes.gallery.data.map(image => image.attributes.url)
 
 
 

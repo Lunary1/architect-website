@@ -45,7 +45,7 @@ export default function Section() {
             <div className="grid grid-cols-1 gap-2 my-8 md:grid-cols-3">
                 <div className="carousel h-0 md:h-auto">
                     <div className="carousel-item w-full">
-                        <Image src={pic} className="w-full" alt="Tailwind CSS Carousel component" />
+
                     </div> 
                 </div>
                 <div className="col-span-2 player-wrapper">

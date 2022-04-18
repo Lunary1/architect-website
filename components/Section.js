@@ -2,6 +2,9 @@ import house from '../public/house.webp';
 import Image from 'next/image';
 
 
+const pic = "https://api.lorem.space/image/game?w=256&h=400&hash=500B67FB"
+
+
 
 
 export default function Section() {
@@ -42,23 +45,8 @@ export default function Section() {
             <div className="grid grid-cols-1 gap-2 my-8 md:grid-cols-3">
                 <div className="carousel h-0 md:h-auto">
                     <div className="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=500B67FB" className="w-full" alt="Tailwind CSS Carousel component" />
+                        <Image src={pic} className="w-full" alt="Tailwind CSS Carousel component" />
                     </div> 
-                    <div className="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=A89D0DE6" className="w-full" alt="Tailwind CSS Carousel component" />
-                    </div> 
-                    <div className="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=225E6693" className="w-full" alt="Tailwind CSS Carousel component" />
-                    </div> 
-                    <div className="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=9D9539E7" className="w-full" alt="Tailwind CSS Carousel component" />
-                    </div> 
-                    <div className="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=BDC01094" className="w-full" alt="Tailwind CSS Carousel component" />
-                    </div> 
-                    <div className="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=7F5AE56A" className="w-full" alt="Tailwind CSS Carousel component" />
-                    </div>
                 </div>
                 <div className="col-span-2 player-wrapper">
                     <iframe className="react-player" width="100%" height="100%" src="https://www.youtube.com/embed/dAc9Lej-3Nc?version=3&vq=hd720" title="Architect Paul Kindt Reportage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>

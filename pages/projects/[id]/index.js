@@ -12,7 +12,10 @@ const Project = ( project ) => {
 
   console.log(project)
 
-  const imgArray = project.project.data.attributes.gallery.data.map(image => image.attributes.url)
+  const imgArray = project.project.data.attributes.gallery.data.map(image => image.attributes.formats.large.url)
+  const categorieArray = project.project.data.attributes.categories.data.map(cat => cat.attributes.name)
+
+  const featuredImage = project.project.data.attributes.featuredImage.data.attributes.url
 
 
 
@@ -20,13 +23,16 @@ const Project = ( project ) => {
   return (
     <div className="max-w-2xl mx-auto py-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8 bg-white overflow-hidden sm:rounded-lg">
       <h1 className="text-4xl font-semibold uppercase text-center mb-12">{project.project.data.attributes.name}</h1>
-      <Image src={house} layout="responsive" onClick={() => setToggler(!toggler)} />
+      <div className={'image-container'}>
+        <Image src={featuredImage} width={1216} height={806} className={'image'}  onClick={() => setToggler(!toggler)} />
+      </div>
+
       <FsLightbox
       toggler={toggler}
       sources={imgArray}
       />
       
-      <div className="border-t border-gray-200">
+      <div className=" mt-4">
         <dl>
           <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Projectnaam</dt>
@@ -34,7 +40,7 @@ const Project = ( project ) => {
           </div>
           <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Categorie</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{project.project.data.attributes.locatie}</dd>
+            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{[categorieArray]}</dd>
           </div>
           <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Locatie</dt>

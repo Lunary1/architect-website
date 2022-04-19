@@ -6,7 +6,7 @@ function Footer() {
   return (
 <footer className="footer p-10 bg-base-200 text-base-content">
   <div>
-    <Image src={logo} height={30} width={70} />
+    <Image src={logo} height={30} width={70} alt={"Footer Logo"}/>
     <p className='font-semibold uppercase'>Architectenbureau Paul Kindt</p>
   </div> 
   <div>

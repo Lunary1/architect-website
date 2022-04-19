@@ -12,7 +12,7 @@ const Project = ( project ) => {
 
   console.log(project)
 
-  const imgArray = project.project.data.attributes.gallery.data.map(image => image.attributes.formats.large.url)
+  const imgArray = project.project.data.attributes.gallery.data.map(image => image.attributes.url)
   const categorieArray = project.project.data.attributes.categories.data.map(cat => cat.attributes.name)
 
   const featuredImage = project.project.data.attributes.featuredImage.data.attributes.url

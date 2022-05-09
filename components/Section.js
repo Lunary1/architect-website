@@ -10,7 +10,7 @@ const pic = "https://api.lorem.space/image/game?w=256&h=400&hash=500B67FB"
 export default function Section() {
     return (
 
-        <div className="container px-4 md:mx-auto mt-20">
+        <div className="container px-4 md:mx-auto mt-20 text-white">
             <div className="md:flex justify-between">
                 <div className="left">
                     <h2 className="text-white bg-black uppercase px-1 h-0 md:h-auto">Chapter NO. 01</h2>

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: rgb(14, 13, 13);
+}
+
+
+
 .hideMenuNav {
     display: none;
   }

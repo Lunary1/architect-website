@@ -21,7 +21,7 @@ const Project = ( project ) => {
 
 
   return (
-    <div className="max-w-2xl mx-auto py-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8 bg-white overflow-hidden sm:rounded-lg">
+    <div className="max-w-2xl mx-auto py-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8 overflow-hidden ">
       <h1 className="text-4xl font-semibold uppercase text-center mb-12">{project.project.data.attributes.name}</h1>
       <div className={'image-container'}>
         <Image src={featuredImage} width={1216} height={806} className={'image'}  onClick={() => setToggler(!toggler)} />

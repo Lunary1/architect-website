@@ -1,10 +1,14 @@
 import Link from "next/link";
 import Image from "next/image"
 import logo from "../public/logopaul.png"
+import logo2 from "../public/logo.jpg"
  
  const Navbar = () => {
    return (
-      <div className="navbar my-3 bg-base-100 max-w-7xl mx-auto">
+      <div className="navbar bg-black text-white mx-auto">
+        <div className="max-w-7xl">
+          
+        </div>
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -25,7 +29,7 @@ import logo from "../public/logopaul.png"
               </li>
             </ul>
           </div>
-          <Link href={'/'}><a className="pl-10"><Image src={logo} width={70} height={30}/></a></Link>
+          <Link href={'/'}><a className="pl-10"><Image src={logo2} width={100} height={50}/></a></Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0 uppercase font-semibold">

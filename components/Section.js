@@ -43,26 +43,26 @@ export default function Section() {
             </div>
 
             <div className="grid grid-cols-1 gap-2 my-8 md:grid-cols-3">
-                <div class="carousel col-span-3">
-                    <div class="carousel-item">
+                <div className="carousel col-span-3">
+                    <div className="carousel-item">
                         <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=8B7BCDC2" alt="Burger" />
                     </div> 
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                         <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=500B67FB" alt="Burger" />
                     </div> 
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                         <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=A89D0DE6" alt="Burger" />
                     </div> 
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                         <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=225E6693" alt="Burger" />
                     </div> 
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                         <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=9D9539E7" alt="Burger" />
                     </div> 
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                         <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=BDC01094" alt="Burger" />
                     </div> 
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                         <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=7F5AE56A" alt="Burger" />
                     </div>
                 </div>

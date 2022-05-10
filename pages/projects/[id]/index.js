@@ -21,8 +21,8 @@ const Project = ( project ) => {
 
 
   return (
-    <div className="max-w-2xl mx-auto py-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8 overflow-hidden ">
-      <h1 className="text-4xl font-semibold uppercase text-center mb-12">{project.project.data.attributes.name}</h1>
+    <div className="max-w-2xl mx-auto px-4 sm:py-12 sm:px-6 lg:max-w-7xl lg:px-8">
+      <h1 className="text-4xl font-semibold text-white uppercase text-center mb-12">{project.project.data.attributes.name}</h1>
       <div className={'image-container'}>
         <Image src={featuredImage} width={1216} height={806} className={'image'}  onClick={() => setToggler(!toggler)} />
       </div>
@@ -32,17 +32,17 @@ const Project = ( project ) => {
       sources={imgArray}
       />
       
-      <div className=" mt-4">
+      <div className="invisible mt-4">
         <dl>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <div className=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Projectnaam</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{project.project.data.attributes.name}</dd>
           </div>
-          <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <div className=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Categorie</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{[categorieArray]}</dd>
           </div>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <div className=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Locatie</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{project.project.data.attributes.locatie}</dd>
           </div>

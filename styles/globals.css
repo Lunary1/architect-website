@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
-  background-color: rgb(14, 13, 13);
+  background-color: rgb(10, 10, 10);
 }
-
-
 
 .hideMenuNav {
     display: none;
   }
+
 .showMenuNav {
   display: block;
   position: absolute;
@@ -29,14 +29,9 @@ body {
 .hero {
   background-image: url('../public/house.webp');
   background-position: center;
-  max-height: calc(100vh - 70px); /* 100px is the height of the navbar */
+  opacity: 0.9;
 }
 
-.bg {
-  background-image: url('../public/bg.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 .player-wrapper {
   position: relative;

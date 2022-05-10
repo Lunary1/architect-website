@@ -1,12 +1,13 @@
 import React from 'react'
 import logo from '../public/logopaul.png'
+import logo2 from '../public/logo.jpg'
 import Image from 'next/image'
 
 function Footer() {
   return (
-<footer className="footer p-10 bg-base-200 text-base-content">
+<footer className="footer p-10 bg-black text-white">
   <div>
-    <Image src={logo} height={30} width={70} alt={"Footer Logo"}/>
+    <Image src={logo2} width={100} height={50} alt={"Footer Logo"}/>
     <p className='font-semibold uppercase'>Architectenbureau Paul Kindt</p>
   </div> 
   <div>

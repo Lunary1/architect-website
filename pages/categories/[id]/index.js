@@ -5,7 +5,7 @@ import { server } from "../../../config/server";
 function Projecten({ data }) {
   console.log(data)
   return (
-    <div className='max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'>
+    <div className='max-w-2xl mx-auto px-4 sm:py-12 sm:px-6 lg:max-w-7xl lg:px-8'>
       <div className="text-center text-white">
         <h3 className="text-md uppercase font-semibold">Onze projecten</h3>
         <h2 className="text-5xl mb-24 font-serif pt-5">Overzicht:</h2>
@@ -23,7 +23,7 @@ function Projecten({ data }) {
 
 export async function getServerSideProps(context) {
     const { catId } = context.params;
-    const res = await fetch(`${server}/categories/1?populate=*`)
+    const res = await fetch(`${server}/categories`)
     const data = await res.json()
 
   if (!data) {

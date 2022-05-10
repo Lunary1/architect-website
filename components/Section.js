@@ -43,12 +43,8 @@ export default function Section() {
             </div>
 
             <div className="grid grid-cols-1 gap-2 my-8 md:grid-cols-3">
-                <div className="carousel h-0 md:h-auto">
-                    <div className="carousel-item w-full">
 
-                    </div> 
-                </div>
-                <div className="col-span-2 player-wrapper">
+                <div className="col-span-3 player-wrapper">
                     <iframe className="react-player" width="100%" height="100%" src="https://www.youtube.com/embed/dAc9Lej-3Nc?version=3&vq=hd720" title="Architect Paul Kindt Reportage" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </div>
             </div>

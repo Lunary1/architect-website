@@ -10,7 +10,7 @@ module.exports = {
   [require("daisyui",'@tailwindcss/forms')],
   daisyui: {
     styled: true,
-    themes: [],
+    themes: false,
     base: true,
     utils: true,
     logs: true,

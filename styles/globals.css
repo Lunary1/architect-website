@@ -4,7 +4,7 @@
 
 
 body {
-  background-color: rgb(10, 10, 10);
+  background-color: #0E0E10;
 }
 
 .hideMenuNav {
@@ -49,4 +49,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.active {
+  border-bottom: 1px solid white;
 }

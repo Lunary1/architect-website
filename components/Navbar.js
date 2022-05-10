@@ -2,8 +2,12 @@ import Link from "next/link";
 import Image from "next/image"
 import logo from "../public/logopaul.png"
 import logo2 from "../public/logo.jpg"
+import { useRouter } from "next/router";
  
  const Navbar = () => {
+
+  const router = useRouter();
+
    return (
       <div className="navbar bg-black text-white mx-auto">
         <div className="max-w-7xl">
@@ -33,16 +37,16 @@ import logo2 from "../public/logo.jpg"
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0 uppercase font-semibold">
-            <li>
+          <li className={router.asPath == "/" ? "active" : ""}>
               <Link href={'/'}><a>Home</a></Link>
             </li>
-            <li>
+            <li className={router.asPath == "/projects" ? "active" : ""}>
               <Link href={'/projects'}><a>Projecten</a></Link>
             </li>
-            <li>
+            <li className={router.asPath == "/about" ? "active" : ""}>
               <Link href={'/about'}><a>Over ons</a></Link>
             </li>
-            <li>
+            <li className={router.asPath == "/contact" ? "active" : ""}>
               <Link href={'/contact'}><a>Contact</a></Link>
             </li>
           </ul>

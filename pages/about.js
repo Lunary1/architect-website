@@ -20,10 +20,10 @@ function About() {
 
   return (
     <div className="container mx-auto">
-      <div class="grid py-36 gap-4 md:grid-cols-2 sm:grid-cols-1">
+      <div className="grid py-36 gap-4 md:grid-cols-2 sm:grid-cols-1">
         <div className="left py-20 text-white">
           <div className="header-title mb-24">
-            <progress class="progress progress-info w-56" value={scrollPosition} max="1000"></progress>
+            <progress className="progress progress-info w-56" value={scrollPosition} max="1000"></progress>
             <h1 className="text-5xl">Over Architect Kindt</h1>
             <h2 className="text-l mt-4">The story behind</h2>
           </div>

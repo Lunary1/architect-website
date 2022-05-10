@@ -12,7 +12,10 @@ import { MailIcon } from '@heroicons/react/solid'
       <div className="md:container md:mx-auto py-2">
         <div className="flex justify-between items-center">
           <div className="left">
-            <Image src={logo2} height={60} width={80}/>
+            <Link href={"/"}>
+              <a href=""><Image src={logo2} height={60} width={80}/></a>
+            </Link>
+
           </div>
           <div className="right flex flex-wrap items-center">
 
@@ -25,7 +28,7 @@ import { MailIcon } from '@heroicons/react/solid'
         </div>
       </div>
 
-      <nav className="main-menu-con">
+     {/* <nav className="main-menu-con">
           <div className="flex flex-col content-center">
             <div className="container-fluid mt-8 md:mt-12">
               <div className="row mb-4 md:mb-6">
@@ -54,7 +57,7 @@ import { MailIcon } from '@heroicons/react/solid'
             </div>
 
           </div>
-      </nav>
+   </nav> */}
      </div>   
    
    

@@ -6,7 +6,7 @@ import gif from "../public/bouw_gif.gif"
 export default function Hero() {
   return (
     <div className="hero h-screen text-white">
-      <div className="hero-overlay bg-opacity-90"></div>
+      <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">Paul Kindt</h1>

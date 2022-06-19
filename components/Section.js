@@ -37,36 +37,6 @@ export default function Section() {
                     <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla a ante quis purus ultricies gravida ac sit amet nisl. Pellentesque tempus nunc eu quam sagittis pulvinar. Donec vitae nibh purus. Sed pretium augue nec scelerisque ultrices. Phasellus in dapibus justo. Etiam gravida vel lorem eget placerat.</p>
                 </div>
             </div>
-
-            <div className="text-center">
-                <h1 className="font-serif text-5xl my-8 md:my-16">Recente projecten</h1>
-            </div>
-
-            <div className="grid grid-cols-1 gap-2 my-8 md:grid-cols-3">
-                <div className="carousel col-span-3">
-                    <div className="carousel-item">
-                        <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=8B7BCDC2" alt="Burger" />
-                    </div> 
-                    <div className="carousel-item">
-                        <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=500B67FB" alt="Burger" />
-                    </div> 
-                    <div className="carousel-item">
-                        <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=A89D0DE6" alt="Burger" />
-                    </div> 
-                    <div className="carousel-item">
-                        <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=225E6693" alt="Burger" />
-                    </div> 
-                    <div className="carousel-item">
-                        <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=9D9539E7" alt="Burger" />
-                    </div> 
-                    <div className="carousel-item">
-                        <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=BDC01094" alt="Burger" />
-                    </div> 
-                    <div className="carousel-item">
-                        <img src="https://api.lorem.space/image/burger?w=400&h=300&hash=7F5AE56A" alt="Burger" />
-                    </div>
-                </div>
-            </div>
         </div>
 
 

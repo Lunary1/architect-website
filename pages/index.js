@@ -1,12 +1,14 @@
+import Featured from '../components/Featured';
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import Section from '../components/Section';
-import bg from '../public/house.webp'
+import Videoplayer from '../components/Videoplayer';
 
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <Featured />
+      <Videoplayer/>
       <Section />
     </div>
   );

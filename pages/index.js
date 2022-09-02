@@ -8,7 +8,6 @@ import Videoplayer from '../components/Videoplayer';
 const Home = () => {
   return (
     <div>
-      <Featured />
       <Videoplayer />
       <Summary />
      

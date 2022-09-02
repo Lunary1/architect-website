@@ -7,7 +7,6 @@ module.exports = {
   nextConfig,
   images: {
     domains: ["res.cloudinary.com", "https://api.lorem.space"],
-
   },
 
 }

@@ -18,12 +18,12 @@ import { useState } from 'react';
    return (
  <>
       <div className="c-nav ">
-      <nav className='flex items-center flex-wrap py-16 container mx-auto mb-12 '>
+      <nav className='flex items-center flex-wrap py-12 container mx-auto '>
         <Link href='/'>
           <a className='inline-flex items-center p-2 mr-4 '>
             
             <span className='text-2xl text-white font-bold uppercase tracking-wide'>
-              Architect Paul Kindt
+              <Image src={logo2} width={100} height={75}/>
             </span>
           </a>
         </Link>
@@ -50,11 +50,11 @@ import { useState } from 'react';
         <div
           className={`${
             active ? '' : 'hidden'
-          }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
+          }   w-full lg:inline-flex lg:flex-grow lg:w-auto absolute`}
         >
-          <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
+          <div className='lg:inline-flex lg:flex-row lg:w-auto lg:mx-5 w-full lg:items-center items-start  flex flex-col lg:h-auto font-semibold'>
             <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-xl text-white  items-center justify-center hover:text-white '>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-xl text-white  items-center justify-center hover:text-red-400 transition ease-in delay-100'>
                 Home
               </a>
             </Link>
@@ -63,12 +63,12 @@ import { useState } from 'react';
                 Projecten
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/about'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-xl text-white items-center justify-center hover:text-white'>
                 Over ons
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/contact'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-xl text-white items-center justify-center hover:text-white'>
                 Contact
               </a>

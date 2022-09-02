@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.header {
+  background: linear-gradient(90deg, #343535 65%, #F8F8F9 35%);
+  min-height: 100vh;
+}
+
 
 body {
   background-color: #0E0E10;
@@ -67,4 +72,56 @@ button:hover::before {
 
 button:hover {
     background: lightskyblue;
+}
+
+
+.hover-rotate {
+  overflow: hidden;
+  width: 100%;
+}
+
+.hover-rotate img {
+  transition: all 0.5s;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.hover-rotate:hover img {
+  transform: scale(1.1);
+}
+
+.footer-wrapper {
+  
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.footer-wrapper__socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 80%;
+  }
+
+  .footer-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  }
+
+  .footer-wrapper__col {
+    flex: 1;
+    flex-basis: 50%;
+    margin-top: 2.75rem;
+  }
+
+
 }

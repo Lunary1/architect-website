@@ -1,12 +1,14 @@
 import ReactPlayer from "react-player"
 import dynamic from 'next/dynamic'
+import house from '../public/house.webp'
+import Image from "next/image"
 
 
 export default function Videoplayer() {
     return (
 
             <div className="c-video my-32">
-              <ReactPlayer url="https://vimeo.com/721970052" width={1920} />
+              <Image src={house} width={1920} height={1080} />
             </div>
 
 

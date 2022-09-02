@@ -7,9 +7,9 @@ import ReactPlayer from "react-player"
 export default function Featured() {
     return (
 
-        <div className="container mx-auto">
-            <div className="c-header flex justify-between px-16">
-                <p className="text-5xl font-semibold  leading-normal text-white">Architect Paul Kindt makes a <br/> difference by engineering <br/> smooth experiences.</p>
+        <div className="container mx-auto py-28 px-16">
+            <div className="c-header flex justify-between">
+                <p className="text-6xl leading-snug text-white">Architect Paul Kindt makes a <br/> difference by engineering <br/> smooth experiences.</p>
                 <div className="c-btn-container self-end">
                     <button><span>Contact</span></button>
                 </div>

@@ -9,7 +9,7 @@ function Footer() {
     <footer className='bg-black'>
       <div className="container footer-wrapper text-white mx-auto">
         <div className='footer-wrapper__col'>
-          <img src={logo2} alt="" srcset="" />
+          <Image src={logo2} alt="Logo Medium"/>
           <p className="text-lg uppercase font-semibold">Architectenbureau Paul Kindt</p>
           <div className="footer-wrapper__socials">
             <ul>
@@ -29,7 +29,7 @@ function Footer() {
           </div>
         </div>
         <div className='footer-wrapper__col'>
-          <h4 className='text-lg uppercase font-semibold'>Pagina's</h4>
+          <h4 className='text-lg uppercase font-semibold'>Pagina&apos;s</h4>
         </div>
         <div className='footer-wrapper__col'>
           <h4 className='text-lg uppercase font-semibold'>Privacy</h4>
@@ -41,10 +41,10 @@ function Footer() {
         </div>
         <div className='footer-wrapper__col'>
           <h4 className='text-lg uppercase font-semibold'>Contact info</h4>
-          <ul class="footer-wrapper__contact">
-            <li class="footer-wrapper__contact-item"><img src="img/mail.svg" alt=""/><a href="">paul@architect-kindt.be</a></li>
-            <li class="footer-wrapper__contact-item"><img src="img/phone.svg" alt=""/><a href="">+0 320 422 4254</a></li>
-            <li class="footer-wrapper__contact-item"><img src="img/map-pin.svg" alt=""/><a href="">Fremisstraat, 9680 Maarkedal</a></li>
+          <ul className="footer-wrapper__contact">
+            <li className="footer-wrapper__contact-item"><Image src="/public/mail.svg" width={50} height={50} alt=""/><a href="">paul@architect-kindt.be</a></li>
+            <li className="footer-wrapper__contact-item"><Image src="/public/phone.svg" width={50} height={50}  alt=""/><a href="">+0 320 422 4254</a></li>
+            <li className="footer-wrapper__contact-item"><Image src="/public/map-pin.svg" width={50} height={50}  alt=""/><a href="">Fremisstraat, 9680 Maarkedal</a></li>
           </ul>
         </div>
       </div>

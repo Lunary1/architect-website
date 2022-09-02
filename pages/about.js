@@ -33,7 +33,7 @@ function About() {
 
         </div>
         <div className="right">
-          <Image src={paul} width={800} height={800} />
+          <Image src={paul} width={800} height={800} alt="Foto Paul" />
         </div>
       </div>
     </div>

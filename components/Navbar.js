@@ -50,7 +50,7 @@ import { useState } from 'react';
         <div
           className={`${
             active ? '' : 'hidden'
-          }   w-full lg:inline-flex lg:flex-grow lg:w-auto absolute`}
+          }   w-full lg:inline-flex lg:flex-grow lg:w-auto absolute px-28`}
         >
           <div className='lg:inline-flex lg:flex-row lg:w-auto lg:mx-5 w-full lg:items-center items-start  flex flex-col lg:h-auto font-semibold'>
             <Link href='/'>

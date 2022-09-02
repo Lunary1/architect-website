@@ -8,7 +8,7 @@ export default function Summary() {
 
         <>
         <div className="container mx-auto">
-            <div className="c-summary__title py-28">
+            <div className="c-summary__title py-10">
                 <span className="text-5xl text-white leading-snug font-medium">Enjoy some of <br/> my projects</span>
             </div>
 

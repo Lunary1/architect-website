@@ -9,8 +9,8 @@ const Layout = ({ children }) => {
         <Meta />
         <main>
             {children}
+            <Footer />
         </main>
-
     </>
   );
 };

@@ -17,11 +17,9 @@ function MyApp({ Component, pageProps }) {
     <>
       <header className="header">
         <Navbar />
-        <Featured />
       </header>
       <Layout>
         <Component {...pageProps} />
-        <Footer />
       </Layout>
 
 

@@ -24,6 +24,11 @@ body {
   transform: scale(1.05);
 }
 
+.arrow {
+  position: absolute;
+  bottom: 3rem;
+}
+
 
 
 button {
@@ -67,20 +72,24 @@ button:hover {
     background: darkgray;
 }
 
-
 .hover-rotate {
   overflow: hidden;
   width: 100%;
+
 }
 
 .hover-rotate img {
   transition: all 0.5s;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 .hover-rotate:hover img {
   transform: scale(1.1);
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
 }
 
 .footer-wrapper {

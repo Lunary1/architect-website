@@ -7,17 +7,22 @@ export default function Summary() {
     return (
 
         <>
-        <div className="container mx-auto my-10">
-            <div className="c-summary__title py-10">
-                <span className="text-5xl text-white leading-snug font-medium">Enjoy some of <br/> my projects</span>
+        <div className="mx-auto py-20">
+            <div className="c-summary__title text-center mb-12">
+                <span className="text-3xl text-white uppercase">Projects</span>
             </div>
-            <div className="c-summary__grid grid grid-cols-2 text-white">
-                <div className="c-summary__grid-item pr-14">
+            <div className="c-summary__grid grid lg:grid-cols-3 sm:grid-cols-2 text-white">
+                <div className="c-summary__grid-item">
                     <figure className="hover-rotate">
                         <Image src={house}/>
                     </figure>
                 </div>
-                <div className="c-summary__grid-item pl-14 mt-28">
+                <div className="c-summary__grid-item">
+                    <figure className="hover-rotate">
+                        <Image src={house}/>
+                    </figure>
+                </div>
+                <div className="c-summary__grid-item">
                     <figure className="hover-rotate">
                         <Image src={house}/>
                     </figure>

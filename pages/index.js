@@ -8,8 +8,8 @@ import Videoplayer from '../components/Videoplayer';
 const Home = () => {
   return (
     <div>
+      <Hero />
       <Featured />
-      <Videoplayer />
       <Summary />
      
     </div>

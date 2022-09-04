@@ -2,22 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.header {
-  background: linear-gradient(90deg, #101010 65%, #F8F8F9 35%);
-  min-height: 100vh;
-}
-
-
 body {
   background-color: #0E0E10;
 }
 
 .hero {
-  background-image: url('../public/house.webp');
+  background-image: url('../public/bouw_gif.gif');
   background-position: center;
+  height: 100vh;
 }
-
-
 
 .active{
   border-bottom: 1px solid white;
@@ -41,7 +34,7 @@ button {
     cursor: pointer;
     box-sizing: border-box;
     overflow: hidden;
-    background: #3b3b3b;
+    background: black;
     border-radius: 5px;
     min-width: 200px;
     color: #fff;
@@ -60,7 +53,7 @@ button::before {
     left: -50px;
     width: 70%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, #ffffff71, transparent);
+    background: linear-gradient(90deg, transparent, white, transparent);
     transition: all 1s;
     z-index: -1;
     transform: translateX(-120px) skew(-20deg);
@@ -71,7 +64,7 @@ button:hover::before {
 }
 
 button:hover {
-    background: lightskyblue;
+    background: darkgray;
 }
 
 
@@ -124,4 +117,8 @@ button:hover {
   }
 
 
+}
+
+.c-nav {
+  position: absolute;
 }

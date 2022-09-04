@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import gif from "../public/bouw_gif.gif"
+import logo2 from "../public/logo.png"
 
 
 export default function Hero() {
@@ -9,9 +9,8 @@ export default function Hero() {
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Paul Kindt</h1>
-          <p className="mb-5">Architectenkantoor actief in de Vlaamse Ardennen. </p>
-          <Link href={"/contact"}><a><button className="btn btn-outline text-white">neem contact op</button></a></Link>
+          <Image src={logo2} />
+          <Link href={"/contact"}><a><button className="btn btn-outline text-white mt-4">neem contact op</button></a></Link>
         </div>
       </div>
     </div>

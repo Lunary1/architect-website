@@ -25,7 +25,7 @@ function Projecten({ data,data1 }) {
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${server}/projects?populate=*`)
   const data = await res.json()
 

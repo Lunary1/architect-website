@@ -131,3 +131,39 @@ button:hover {
 .c-nav {
   position: absolute;
 }
+
+.c-summary__grid-item {
+  position: relative;
+}
+
+.c-summary__grid-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.c-summary__grid-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+
+}
+
+.c-summary__grid-item:hover .c-summary__grid-overlay {
+  opacity: 1;  
+}
+
+.c-summary__grid-text {
+  color: white;
+  position: absolute;
+  bottom: 12%;
+  left: 5%;
+  transition: all 700ms ease;
+  font-weight: 400;
+}

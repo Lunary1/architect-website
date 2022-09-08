@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 function Footer() {
   return (
-    <footer className='bg-black'>
+    <footer className="black">
       <div className="container footer-wrapper text-white mx-auto">
         <div className='footer-wrapper__col'>
           <Image src={logo2} alt="Logo Medium"/>

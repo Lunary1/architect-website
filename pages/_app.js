@@ -15,14 +15,10 @@ Router.events.on('routeChangeError', () => NProgress.done());
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <header className="header">
-        <Navbar />
-      </header>
+      
       <Layout>
         <Component {...pageProps} />
       </Layout>
-
-
     </>
 
   )

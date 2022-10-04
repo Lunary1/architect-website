@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-neutral-content">
         <div className="max-w-md">
-          <Image src={logo2} />
+          
         </div>
         <div className="arrow">
           <figure>

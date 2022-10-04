@@ -129,7 +129,7 @@ button:hover {
 }
 
 .c-nav {
-  position: absolute;
+  position: fixed;
 }
 
 .c-summary__grid-item {

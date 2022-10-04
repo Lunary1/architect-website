@@ -8,9 +8,9 @@ import Videoplayer from '../components/Videoplayer';
 const Home = () => {
   return (
     <div>
+      <Navbar />
       <Hero />
       <Summary />
-     
     </div>
   );
 };

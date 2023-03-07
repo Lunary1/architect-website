@@ -1,9 +1,14 @@
+import React from 'react'
+import Hero from '../components/Hero'
 import ContactForm from '../components/ContactForm'
 
-function Contact() {
+const contact = () => {
   return (
-    <ContactForm />
+    <div>
+      <Hero heading='Contact' message='Submit the form below for more work and quotes.'/>
+      <ContactForm />
+    </div>
   )
 }
 
-export default Contact
+export default contact

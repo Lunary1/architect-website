@@ -1,12 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-}
-
-module.exports = {
-  nextConfig,
   images: {
-    domains: ["res.cloudinary.com", "https://api.lorem.space"],
-  },
-
+    loader: 'cloudinary',
+    path: 'https://res.cloudinary.com/dhcbvhzfh/image/upload'
+  }
 }

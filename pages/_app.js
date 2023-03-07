@@ -1,10 +1,8 @@
-import Layout from '../components/Layout'
 import '../styles/globals.css'
 import Router from 'next/router';
 import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
 import Navbar from '../components/Navbar'
-import Featured from '../components/Featured'
 import Footer from '../components/Footer'
 
 //Binding events. 
@@ -15,10 +13,9 @@ Router.events.on('routeChangeError', () => NProgress.done());
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+    <Navbar/>
+    <Component {...pageProps} />
+    <Footer/>
     </>
 
   )

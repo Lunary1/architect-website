@@ -1,52 +1,46 @@
 import React from 'react'
-import logo from '../public/logopaul.png'
-import logo2 from '../public/logo.jpg'
+import Link from 'next/link'
 import Image from 'next/image'
+
+import {logo} from '../public/logo.jpg';
 
 
 function Footer() {
   return (
-    <footer className="black">
-      <div className="container footer-wrapper text-white mx-auto">
-        <div className='footer-wrapper__col'>
-          <Image src={logo2} alt="Logo Medium"/>
-          <p className="text-lg uppercase font-semibold">Architectenbureau Paul Kindt</p>
-          <div className="footer-wrapper__socials">
-            <ul>
-              <li>
-                <a href=""><facebook /></a>
-              </li>
-              <li>
-                <a href=""></a>
-              </li>
-              <li>
-                <a href=""></a>
-              </li>
-              <p className="footer-wrapper__text">
-                Copyright ©2020 All rights reserved
-              </p>
-            </ul>
-          </div>
-        </div>
-        <div className='footer-wrapper__col'>
-          <h4 className='text-lg uppercase font-semibold'>Pagina&apos;s</h4>
-        </div>
-        <div className='footer-wrapper__col'>
-          <h4 className='text-lg uppercase font-semibold'>Privacy</h4>
+    <footer className='bg-gray-300'>
+      <div className='max-w-[1240px] m-auto py-8'>
+      <div className='flex justify-between '>
+        <div className=''>
+          <h1 className='font-bold border-yellow-300 border-b-2 my-2'>Partners</h1>
           <ul>
-            <li><a href="">Over ons</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">Contacteer ons</a></li>
+            <li>Home</li>
+            <li>Projecten</li>
+            <li>Nieuws</li>
+            <li>Contacteer ons</li>
           </ul>
         </div>
-        <div className='footer-wrapper__col'>
-          <h4 className='text-lg uppercase font-semibold'>Contact info</h4>
-          <ul className="footer-wrapper__contact">
-            <li className="footer-wrapper__contact-item"><Image src="/public/mail.svg" width={50} height={50} alt=""/><a href="">paul@architect-kindt.be</a></li>
-            <li className="footer-wrapper__contact-item"><Image src="/public/phone.svg" width={50} height={50}  alt=""/><a href="">+0 320 422 4254</a></li>
-            <li className="footer-wrapper__contact-item"><Image src="/public/map-pin.svg" width={50} height={50}  alt=""/><a href="">Fremisstraat, 9680 Maarkedal</a></li>
-          </ul>
+
+        <div className=''>
+        <h1 className='font-bold border-yellow-300 border-b-2 my-2'>Sitemap</h1>
+        <ul>
+          <li>Home</li>
+          <li>Projecten</li>
+          <li>Nieuws</li>
+          <li>Contacteer ons</li>
+        </ul>
         </div>
+        <div className=''>
+        <h1 className='font-bold border-yellow-300 border-b-2 my-2'>Follow us</h1>
+        <ul>
+          <li><Link href="">Facebook</Link></li>
+          <li><Link href="">Instagram</Link></li>
+          <li><Link href="">Youtube</Link></li>
+          <li><Link href="">Mail</Link></li>
+        </ul>
+        </div>
+      
+        <div><Link href="/"><Image className='hover:cursor-pointer' src="/logo.jpg" width={120} height={80} alt="logo"/></Link></div>
+      </div>
       </div>
     </footer>
   )

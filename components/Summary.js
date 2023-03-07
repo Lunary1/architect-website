@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import house from '../public/house.webp';
 import Link from 'next/link';
+import { motion } from "framer-motion"
 
 
 
@@ -8,55 +9,47 @@ export default function Summary() {
     return (
 
         <>
-        <div className="projects bg-white">
-            <div className="mx-auto">
-                <div className="c-summary__title text-center py-8">
-                    <span className="text-3xl text-black uppercase">Stijlen</span>
-                </div>
-                <div className="c-summary__grid grid lg:grid-cols-3 sm:grid-cols-2 gap-1 text-white">
-                    <Link href={`/contact`} passHref>
-                        <div className="c-summary__grid-item">
-                            <figure className="hover-rotate">
-                                <Image className='c-summary__grid-image' src={house}/>
-                                <div className="c-summary__grid-overlay">
-                                    <div className="c-summary__grid-text">Residentieel modern</div>
-                                </div>
-                            </figure>
-                        </div>
+        <section className=''>
+            <div className="max-w-[1240px] m-auto">
+            <div className='m-auto text-center'>
+                <h1 className='text-3xl font-bold p-4'>BOUWSTIJLEN</h1>
+            </div>
+                <div className="grid lg:grid-cols-2 sm:grid-cols-2 sm:mx-4 gap-5 text-white">
+                <Link href="/" passHref>
+                    <motion.div className='z-1'
+                                whileHover={{ zoom: 1.1 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <Image src={house} alt="projectImg"/>
+                    </motion.div>
                     </Link>
-                    <Link href={`/contact`} passHref>
-                        <div className="c-summary__grid-item">
-                            <figure className="hover-rotate">
-                                <Image className='c-summary__grid-image' src={house}/>
-                                <div className="c-summary__grid-overlay">
-                                    <div className="c-summary__grid-text">Residentieel klassiek</div>
-                                </div>
-                            </figure>
-                        </div>
+                    <Link href="/" passHref>
+                    <motion.div
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <Image src={house} alt="projectImg"/>
+                    </motion.div>
                     </Link>
-                    <Link href={`/contact`} passHref>
-                        <div className="c-summary__grid-item">
-                            <figure className="hover-rotate">
-                                <Image className='c-summary__grid-image' src={house}/>
-                                <div className="c-summary__grid-overlay">
-                                    <div className="c-summary__grid-text">Kantoor- en industriebouw</div>
-                                </div>
-                            </figure>
-                        </div>
+                    <Link href="/" passHref>
+                    <motion.div
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <Image src={house} alt="projectImg"/>
+                    </motion.div>
                     </Link>
-                    <Link href={`/contact`} passHref>
-                        <div className="c-summary__grid-item">
-                            <figure className="hover-rotate">
-                                <Image className='c-summary__grid-image' src={house}/>
-                                <div className="c-summary__grid-overlay">
-                                    <div className="c-summary__grid-text">Interieur</div>
-                                </div>
-                            </figure>
-                        </div>
+                    <Link href="/" passHref>
+                    <motion.div
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <Image src={house} alt="projectImg"/>
+                    </motion.div>
                     </Link>
                 </div>
             </div>    
-        </div>
+        </section>
         </>
 
 

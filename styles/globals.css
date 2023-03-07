@@ -2,168 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #0E0E10;
+*{
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
-.hero {
-  background-image: url('../public/bouw_gif.gif');
-  background-position: center;
-  height: 100vh;
-}
-
-.active{
-  border-bottom: 1px solid white;
-}
-
-.carousel-item {
-  transition: transform 250ms;
-}
-
-.carousel-item:hover{
-  transform: scale(1.05);
-}
-
-.arrow {
-  position: absolute;
-  bottom: 3rem;
+html {
+  scroll-behavior: smooth;
+  font-family: 'Raleway', sans-serif;
 }
 
 
 
-button {
-    padding: 18px 30px;
-    font-size: 16px;
-    border: none;
-    position: relative;
-    cursor: pointer;
-    box-sizing: border-box;
-    overflow: hidden;
-    background: black;
-    border-radius: 5px;
-    min-width: 200px;
-    color: #fff;
-    z-index: 0;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-    transition: all 0.3s;
-}
 
-button::before {
-    content: "";
-    position: absolute;
-    display: block;
-    top: 0;
-    left: -50px;
-    width: 70%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, white, transparent);
-    transition: all 1s;
-    z-index: -1;
-    transform: translateX(-120px) skew(-20deg);
-}
-
-button:hover::before {
-    transform: translateX(300px) skew(-20deg);
-}
-
-button:hover {
-    background: darkgray;
-}
-
-.hover-rotate {
-  overflow: hidden;
-  width: 100%;
-
-}
-
-.hover-rotate img {
-  transition: all 0.5s;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
-}
-
-.hover-rotate:hover img {
-  transform: scale(1.1);
-  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(0%);
-}
-
-.footer-wrapper {
-  
-    padding-top: 6rem;
-    padding-bottom: 3rem;
-
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.footer-wrapper__socials {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.25rem;
-}
-
-@media screen and (max-width: 1024px) {
-  .container {
-    max-width: 80%;
-  }
-
-  .footer-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-
-  }
-
-  .footer-wrapper__col {
-    flex: 1;
-    flex-basis: 50%;
-    margin-top: 2.75rem;
-  }
-
-
-}
-
-.c-nav {
-  position: fixed;
-}
-
-.c-summary__grid-item {
-  position: relative;
-}
-
-.c-summary__grid-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.c-summary__grid-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-
-}
-
-.c-summary__grid-item:hover .c-summary__grid-overlay {
-  opacity: 1;  
-}
-
-.c-summary__grid-text {
-  color: white;
-  position: absolute;
-  bottom: 12%;
-  left: 5%;
-  transition: all 700ms ease;
-  font-weight: 400;
+.custom-img {
+  background-image: url('../public/bouw_gif.gif')
 }

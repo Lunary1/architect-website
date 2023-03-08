@@ -27,21 +27,21 @@ const Navbar = () => {
 
   return (
     <div style={{ backgroundColor: `${color}` }} className='fixed left-0 top-0 w-full z-10 ease-in duration-200'>
-      <div className='max-w-[1240px] m-auto flex justify-between items-center py-4 text-white'>
+      <div className='max-w-[1240px] m-auto flex justify-between items-center py-4 px-4 text-white'>
         <Link href='/'>
           <Image className='hover:cursor-pointer' src="/logo.jpg" width={120} height={80}/>        
         </Link>
         <ul style={{color: `${textColor}`}} className='hidden sm:flex'>
-          <li className='p-4'>
+          <li className='px-4 border-transparent border-b-2 hover:border-black hover:border-b-2 ease-out transition-[0.1s]'>
             <Link href='/'>Home</Link>
           </li>
-          <li className='p-4'>
+          <li className='px-4 border-transparent border-b-2 hover:border-black hover:border-b-2 ease-out transition-[0.1s]'>
             <Link href='/projecten'>Projecten</Link>
           </li>
-          <li className='p-4'>
+          <li className='px-4 border-transparent border-b-2 hover:border-black hover:border-b-2 ease-out transition-[0.1s]'>
             <Link href='/nieuws'>Nieuws</Link>
           </li>
-          <li className='p-4'>
+          <li className='px-4 border-transparent border-b-2 hover:border-black hover:border-b-2 ease-out transition-[0.1s]'>
             <Link href='/contact'>Contacteer ons</Link>
           </li>
         </ul>

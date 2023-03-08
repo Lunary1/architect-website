@@ -1,49 +1,68 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from 'react';
+import {
+  FaDribbbleSquare,
+  FaFacebookSquare,
+  FaGithubSquare,
+  FaInstagram,
+  FaTwitterSquare,
+} from 'react-icons/fa';
 
-import {logo} from '../public/logo.jpg';
+import Image from 'next/image';
 
-
-function Footer() {
+const Footer = () => {
   return (
-    <footer className='bg-gray-300'>
-      <div className='max-w-[1240px] m-auto py-8'>
-      <div className='flex justify-between '>
-        <div className=''>
-          <h1 className='font-bold border-yellow-300 border-b-2 my-2'>Partners</h1>
-          <ul>
-            <li>Home</li>
-            <li>Projecten</li>
-            <li>Nieuws</li>
-            <li>Contacteer ons</li>
-          </ul>
+    <div className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-700'>
+      <div>
+      <Image className='hover:cursor-pointer' src="/logo.jpg" width={120} height={80}/>   
+        <p className='py-4'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit ullam iste repellat consequatur libero reiciendis, blanditiis accusantium.</p>
+        <div className='flex justify-between md:w-[75%] my-6'>
+            <FaFacebookSquare size={30} />
+            <FaInstagram size={30} />
+            <FaTwitterSquare size={30} />
+            <FaGithubSquare size={30} />
+            <FaDribbbleSquare size={30} />
         </div>
-
-        <div className=''>
-        <h1 className='font-bold border-yellow-300 border-b-2 my-2'>Sitemap</h1>
-        <ul>
-          <li>Home</li>
-          <li>Projecten</li>
-          <li>Nieuws</li>
-          <li>Contacteer ons</li>
-        </ul>
-        </div>
-        <div className=''>
-        <h1 className='font-bold border-yellow-300 border-b-2 my-2'>Follow us</h1>
-        <ul>
-          <li><Link href="">Facebook</Link></li>
-          <li><Link href="">Instagram</Link></li>
-          <li><Link href="">Youtube</Link></li>
-          <li><Link href="">Mail</Link></li>
-        </ul>
-        </div>
-      
-        <div><Link href="/"><Image className='hover:cursor-pointer' src="/logo.jpg" width={120} height={80} alt="logo"/></Link></div>
       </div>
+      <div className='lg:col-span-2 flex justify-between mt-6'>
+    <div>
+        <h6 className='font-medium text-black'>Solutions</h6>
+        <ul>
+            <li className='py-2 text-sm'>Analytics</li>
+            <li className='py-2 text-sm'>Marketing</li>
+            <li className='py-2 text-sm'>Commerce</li>
+            <li className='py-2 text-sm'>Insights</li>
+        </ul>
+    </div>
+    <div>
+        <h6 className='font-medium text-black'>Support</h6>
+        <ul>
+            <li className='py-2 text-sm'>Pricing</li>
+            <li className='py-2 text-sm'>Documentation</li>
+            <li className='py-2 text-sm'>Guides</li>
+            <li className='py-2 text-sm'>API Status</li>
+        </ul>
+    </div>
+    <div>
+        <h6 className='font-medium text-black'>Company</h6>
+        <ul>
+            <li className='py-2 text-sm'>About</li>
+            <li className='py-2 text-sm'>Blog</li>
+            <li className='py-2 text-sm'>Jobs</li>
+            <li className='py-2 text-sm'>Press</li>
+            <li className='py-2 text-sm'>Careers</li>
+        </ul>
+    </div>
+    <div>
+        <h6 className='font-medium text-black'>Legal</h6>
+        <ul>
+            <li className='py-2 text-sm'>Claim</li>
+            <li className='py-2 text-sm'>Policy</li>
+            <li className='py-2 text-sm'>Terms</li>
+        </ul>
+    </div>
       </div>
-    </footer>
-  )
-}
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;

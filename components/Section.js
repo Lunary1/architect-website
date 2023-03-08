@@ -73,7 +73,7 @@ export default function Section() {
           </div>
         </div>
         <div>
-          <div class="grid grid-rows-2 grid-cols-5 grid-flow-col gap-4">
+          <div className="grid grid-rows-2 grid-cols-5 grid-flow-col gap-4">
           </div>
         </div>
       </div>

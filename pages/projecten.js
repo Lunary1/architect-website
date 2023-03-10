@@ -17,8 +17,8 @@ const projects = () => {
     <>
     <Hero heading="Projecten" message="Bekijk hier mijn projecten"/>
     <section className='max-w-[99%]  m-auto'>
-      <h1 className='font-bold text-center mb-4 text-2xl'>Projecten</h1>
-      <div className='flex justify-between gap-1'>
+      <h1 className='font-bold text-center py-8 text-4xl uppercase'>Projecten</h1>
+      <div className='md:flex justify-between gap-1'>
         <Link href="/projects/1">
         <a>
           <Image src={house1} alt="house"/>

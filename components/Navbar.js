@@ -32,19 +32,19 @@ const Navbar = () => {
           <Image className='hover:cursor-pointer' src="/logo.jpg" width={120} height={80}/>        
         </Link>
         <ul style={{color: `${textColor}`}} className='hidden sm:flex uppercase text-sm'>
-          <li className='px-4 border-transparent border-b-2 hover:border-black hover:border-b-2 ease-out transition-[0.1s]'>
+          <li className='px-4 border-transparent border-b-2'>
             <Link href='/'>Home</Link>
           </li>
-          <li className='px-4 border-transparent border-b-2 hover:border-black hover:border-b-2 ease-out transition-[0.1s]'>
+          <li className='px-4 border-transparent border-b-2'>
             <Link href='/projecten'>Projecten</Link>
           </li>
-          <li className='px-4 border-transparent border-b-2 hover:border-black hover:border-b-2 ease-out transition-[0.1s]'>
+          <li className='px-4 border-transparent border-b-2'>
             <Link href='/over_ons'>Over Ons</Link>
           </li>
-          <li className='px-4 border-transparent border-b-2 hover:border-black hover:border-b-2 ease-out transition-[0.1s]'>
+          <li className='px-4 border-transparent border-b-2'>
             <Link href='/contact'>Contact</Link>
           </li>
-          <li className='px-4 border-transparent border-b-2 hover:border-black hover:border-b-2 ease-out transition-[0.1s]'>
+          <li className='px-4 border-transparent border-b-2'>
             <Link href='/nieuws'>Nieuws</Link>
           </li>
 

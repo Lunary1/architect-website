@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Summary from '../components/Summary';
+import Latest from '../components/Latest'
 
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
         <link rel="icon" href="favicon.io" />
       </Head>
       <Hero heading='Paul Kindt' message='Lorem Ipsum' />
-     
+      <Latest />
       <Summary />
     </div>
   );

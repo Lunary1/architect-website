@@ -14,11 +14,11 @@ export default function Summary() {
             <div className='m-auto text-center'>
           
             </div>
-                <div className="grid lg:grid-cols-2 sm:grid-cols-2 gap-5 text-white">
+                <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 text-white">
                 <Link href="/" passHref>
                     <motion.div className='z-1'
                                 whileHover={{ scale: 1.05 }}
-                                transition={{ duration: 1 }}
+                                transition={{ duration: 0.5 }}
                             >
                                 <Image src={house} alt="projectImg"/>
                     </motion.div>
@@ -26,7 +26,7 @@ export default function Summary() {
                     <Link href="/" passHref>
                     <motion.div
                                 whileHover={{ scale: 1.05 }}
-                                transition={{ duration: 1 }}
+                                transition={{ duration: 0.5 }}
                             >
                                 <Image src={house} alt="projectImg"/>
                     </motion.div>
@@ -34,7 +34,7 @@ export default function Summary() {
                     <Link href="/" passHref>
                     <motion.div
                                 whileHover={{ scale: 1.05 }}
-                                transition={{ duration: 1 }}
+                                transition={{ duration: 0.5 }}
                             >
                                 <Image src={house} alt="projectImg"/>
                     </motion.div>
@@ -42,7 +42,7 @@ export default function Summary() {
                     <Link href="/" passHref>
                     <motion.div
                                 whileHover={{ scale: 1.05 }}
-                                transition={{ duration: 1 }}
+                                transition={{ duration: 0.5 }}
                             >
                                 <Image src={house} alt="projectImg"/>
                     </motion.div>

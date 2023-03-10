@@ -14,7 +14,7 @@ const Home = () => {
         <link rel="icon" href="favicon.io" />
       </Head>
       <Hero heading='Paul Kindt' message='Lorem Ipsum' />
-      <Section />
+     
       <Summary />
     </div>
   );

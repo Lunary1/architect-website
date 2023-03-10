@@ -7,6 +7,7 @@ import house1 from '../public/Maheur/Maheur1.jpeg'
 import house2 from '../public/De_Vuyst/IMG_2562.jpg'
 import house3 from '../public/Van_Overberghe/4Achtergevel.JPG'
 import house4 from '../public/house.webp'
+import CatList from "../components/CatList";
 
 const projects = () => {
 
@@ -16,6 +17,7 @@ const projects = () => {
   return (
     <>
     <Hero heading="Projecten" message="Bekijk hier mijn projecten"/>
+    <CatList />
     <section className='max-w-[99%]  m-auto'>
       <h1 className='font-bold text-center py-8 text-4xl uppercase'>Projecten</h1>
       <div className='md:flex justify-between gap-1'>

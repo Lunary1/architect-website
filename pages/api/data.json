@@ -1,0 +1,20 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "naam": "Residentieel modern"
+        },
+        {
+            "id": 2,
+            "naam": "Residentieel klassiek"
+        },
+        {
+            "id": 3,
+            "naam": "Kantoor- en industriebouw"
+        },
+        {
+            "id": 4,
+            "naam": "Interieur"
+        }
+    ]
+}

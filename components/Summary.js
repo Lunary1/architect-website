@@ -12,7 +12,7 @@ export default function Summary() {
         <section className=''>
             <div className="max-w-[1240px] m-auto">
             <div className='m-auto text-center'>
-                <h1 className='text-3xl font-bold p-4'>BOUWSTIJLEN</h1>
+          
             </div>
                 <div className="grid lg:grid-cols-2 sm:grid-cols-2 gap-5 text-white">
                 <Link href="/" passHref>

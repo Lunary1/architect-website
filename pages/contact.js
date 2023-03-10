@@ -1,12 +1,13 @@
 import React from 'react'
 import Hero from '../components/Hero'
 import ContactForm from '../components/ContactForm'
+import Map from '../components/Map'
 
 const contact = () => {
   return (
     <div>
-      <Hero heading='Contact' message='Submit the form below for more work and quotes.'/>
       <ContactForm />
+      <Map />
     </div>
   )
 }

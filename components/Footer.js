@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import {
   FaDribbbleSquare,
   FaFacebookSquare,
@@ -15,45 +16,28 @@ const Footer = () => {
       <div>
       <Image className='hover:cursor-pointer' src="/logo.jpg" width={120} height={80}/>   
         <p className='py-4'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit ullam iste repellat consequatur libero reiciendis, blanditiis accusantium.</p>
-        <div className='flex justify-between md:w-[75%] my-6'>
-            <FaFacebookSquare size={30} />
-            <FaInstagram size={30} />
-            <FaTwitterSquare size={30} />
-            <FaGithubSquare size={30} />
-            <FaDribbbleSquare size={30} />
+        <h2 className='font-bold uppercase pb-2 text-sm text-black'>Volg ons hier</h2>
+        <div className='flex justify-between md:w-[75%] hover:cursor-pointer text-black'>
+            <Link href=""><FaFacebookSquare size={30} /></Link>
+            <Link href=""><FaInstagram size={30} /></Link>
+            <Link href=""><FaTwitterSquare size={30} /></Link>
+            <Link href=""><FaGithubSquare size={30} /></Link>
+            <Link href=""><FaDribbbleSquare size={30} /></Link>
         </div>
       </div>
-      <div className='lg:col-span-2 flex justify-between mt-6'>
+      <div className='lg:col-span-2 flex justify-around mt-6'>
     <div>
-        <h6 className='font-medium text-black'>Solutions</h6>
+        <h6 className='font-medium text-black uppercase'>sitemap</h6>
         <ul>
-            <li className='py-2 text-sm'>Analytics</li>
-            <li className='py-2 text-sm'>Marketing</li>
-            <li className='py-2 text-sm'>Commerce</li>
-            <li className='py-2 text-sm'>Insights</li>
+            <li className='py-2 text-sm'>Home</li>
+            <li className='py-2 text-sm'>Projecten</li>
+            <li className='py-2 text-sm'>Over Ons</li>
+            <li className='py-2 text-sm'>Contact</li>
+            <li className='py-2 text-sm'>Nieuws</li>
         </ul>
     </div>
     <div>
-        <h6 className='font-medium text-black'>Support</h6>
-        <ul>
-            <li className='py-2 text-sm'>Pricing</li>
-            <li className='py-2 text-sm'>Documentation</li>
-            <li className='py-2 text-sm'>Guides</li>
-            <li className='py-2 text-sm'>API Status</li>
-        </ul>
-    </div>
-    <div>
-        <h6 className='font-medium text-black'>Company</h6>
-        <ul>
-            <li className='py-2 text-sm'>About</li>
-            <li className='py-2 text-sm'>Blog</li>
-            <li className='py-2 text-sm'>Jobs</li>
-            <li className='py-2 text-sm'>Press</li>
-            <li className='py-2 text-sm'>Careers</li>
-        </ul>
-    </div>
-    <div>
-        <h6 className='font-medium text-black'>Legal</h6>
+        <h6 className='font-medium text-black uppercase'>Legal</h6>
         <ul>
             <li className='py-2 text-sm'>Claim</li>
             <li className='py-2 text-sm'>Policy</li>

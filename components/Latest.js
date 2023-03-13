@@ -1,5 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import house from "../public/house.webp";
+
 
 function Latest() {
   return (
@@ -37,9 +41,14 @@ function Latest() {
           </div>
         </div>
       </div>
-      <div></div>
+      <div className="">
+
+      </div>
     </div>
   );
 }
 
+
+
 export default Latest;
+

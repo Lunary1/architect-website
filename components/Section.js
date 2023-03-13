@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 import pic from "../public/paul-about.jpg";
@@ -7,7 +6,7 @@ import pic from "../public/paul-about.jpg";
 export default function Section() {
   return (
     <section className="lg:max-w-[1240px] max-w-[80%] mx-auto py-8 mt-24">
-      <div className="flex flex-col-reverse md:flex-row md:gap-24">
+      <div className="flex flex-col-reverse md:flex-row">
         <div className="grid grid-cols-1 content-between">
           <div className="max-w-[80%]">
             <h1 className="font-bold text-3xl text-black uppercase text-center md:text-left py-4">
@@ -35,8 +34,8 @@ export default function Section() {
             Lees meer
           </motion.button>
         </div>
-        <div className="max-w-[70%] m-auto">
-          <Image src={pic} alt="pic" height={1000} />
+        <div className="m-auto">
+          <Image src={pic} alt="pic"/>
         </div>
       </div>
     </section>

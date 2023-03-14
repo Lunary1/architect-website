@@ -30,8 +30,8 @@ function Projecten() {
         <div className="text-center max-w-[50%] m-auto flex justify-around">
           {dataResponse.map((project) => {
             return (
-              <Link href="">
-                <a>{project.projectName}</a>
+              <Link key={project.projectId} href="">
+                {project.projectName}
               </Link>
             );
           })}

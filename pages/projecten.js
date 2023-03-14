@@ -15,13 +15,13 @@ function Projecten({ data }) {
         <div className="text-center max-w-[50%] m-auto flex justify-around">
           {data.projects.map((project) => {
             return (
-              <Link href="">
+              <Link key={project.projectId} href={"/"}>
                 <div>
                   <motion.div
                     className="z-1"
                     whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.5 }}>
-                  </motion.div>
+                    transition={{ duration: 0.5 }}
+                  ></motion.div>
                   <div className="">
                     <p>{project.projectName}</p>
                     <p>{project.location}</p>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 import {
@@ -12,6 +13,8 @@ import {
 import Image from "next/image";
 
 const Footer = () => {
+
+
   return (
     <footer>
       <div className="max-w-[1240px] m-auto py-16 px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-3 gap-8 text-gray-700">

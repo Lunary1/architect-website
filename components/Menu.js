@@ -4,26 +4,26 @@ import Link from "next/link";
 const Menu = ({ project }) => {
   return (
     <nav>
-      <div id="menu">
-        <div id="menu-items">
+      <div id="menu" className="h-[100vh] overflow-hidden">
+        <div
+          id="menu-items"
+          className="flex justify-items-center flex-col relative z-2"
+        >
           <Link href="/home">
-          <a className="menu-item">
-            Home
-          </a>
+            <a className="menu-item">Home</a>
           </Link>
-          <a className="menu-item">
-            Projecten
-          </a>
-          <a className="menu-item">
-            Over Ons
-          </a>
-          <a className="menu-item">
-            Contact
-          </a>
-          <a className="menu-item">
-            Nieuws
-          </a>
-          <div id="menu-background-pattern"></div>
+          <Link href="/projecten">
+            <a className="menu-item">Projecten</a>
+          </Link>
+          <Link href="/over_ons">
+            <a className="menu-item">Over Ons</a>
+          </Link>
+          <Link href="/contact">
+            <a className="menu-item">Contact</a>
+          </Link>
+          <Link href="/nieuws">
+            <a className="menu-item">Home</a>
+          </Link>
         </div>
       </div>
     </nav>

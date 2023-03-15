@@ -4,8 +4,7 @@ import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css"; //styles of nprogress
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
-
+import Layout from "../components/Layout";
 
 //Binding events.
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -15,9 +14,9 @@ Router.events.on("routeChangeError", () => NProgress.done());
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

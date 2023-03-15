@@ -1,15 +1,16 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import ContactForm from '../components/ContactForm'
-import Map from '../components/Map'
+import React from "react";
+import Hero from "../components/Hero";
+import ContactForm from "../components/ContactForm";
+import Map from "../components/Map";
+import Layout from "../components/nested-layout";
 
 const contact = () => {
   return (
-    <div>
+    <Layout>
       <ContactForm />
-      <Map />
-    </div>
-  )
-}
 
-export default contact
+    </Layout>
+  );
+};
+
+export default contact;

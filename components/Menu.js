@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 
-const Menu = ({ project }) => {
+export default function Menu() {
+  const [hoveredItem, setHoveredItem] = useState(null);
+  console.log(hoveredItem);
+
+  const items = ["home", "projecten", "over ons", "contact", "nieuws"];
+
   return (
     <nav>
       <div id="menu" className="h-[100vh] overflow-hidden">
@@ -9,25 +16,28 @@ const Menu = ({ project }) => {
           id="menu-items"
           className="flex justify-items-center flex-col relative z-2"
         >
-          <Link href="/home">
-            <a className="menu-item">Home</a>
-          </Link>
-          <Link href="/projecten">
-            <a className="menu-item">Projecten</a>
-          </Link>
-          <Link href="/over_ons">
-            <a className="menu-item">Over Ons</a>
-          </Link>
-          <Link href="/contact">
-            <a className="menu-item">Contact</a>
-          </Link>
-          <Link href="/nieuws">
-            <a className="menu-item">Home</a>
-          </Link>
+          {items.map((item, index) => (
+            <div
+              className="menu-item"
+              key={index}
+              onMouseEnter={() => setHoveredItem(item)}
+              onMouseLeave={() => setHoveredItem(item)}
+            >
+              <Link href={`/${item}`}>
+                <a>{item}</a>
+              </Link>
+            </div>
+          ))}
         </div>
+        <motion.div
+          key={items.indexOf(hoveredItem) + 1}
+          animate={{ opacity: [0, 0.3], scale: [1, 1.05] }}
+          transition={{ ease: "easeInOut", duration: 1.5 }}
+          className={
+            hoveredItem ? [`background-${items.indexOf(hoveredItem) + 1}`] : "background"
+          }
+        ></motion.div>
       </div>
     </nav>
   );
-};
-
-export default Menu;
+}

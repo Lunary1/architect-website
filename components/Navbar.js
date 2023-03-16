@@ -5,25 +5,13 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [color, setColor] = useState("transparent");
-  const [textColor, setTextColor] = useState("white");
+  const [color, setColor] = useState("#000000");
+  const [textColor, setTextColor] = useState("#ffffff");
 
   const handleNav = () => {
     setNav(!nav);
   };
 
-  useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor("#ffffff");
-        setTextColor("#000000");
-      } else {
-        setColor("transparent");
-        setTextColor("#ffffff");
-      }
-    };
-    window.addEventListener("scroll", changeColor);
-  }, []);
 
   return (
     <nav>
@@ -44,19 +32,19 @@ const Navbar = () => {
             style={{ color: `${textColor}` }}
             className="hidden sm:flex uppercase text-sm"
           >
-            <li className="px-4 border-transparent border-b-2">
-              <Link href="/">Home</Link>
+            <li className="px-4 hover:text-gray-200">
+              <Link className="" href="/home">Home</Link>
             </li>
-            <li className="px-4 border-transparent border-b-2">
+            <li className="px-4 hover:text-gray-200">
               <Link href="/projecten">Projecten</Link>
             </li>
-            <li className="px-4 border-transparent border-b-2">
+            <li className="px-4 hover:text-gray-200">
               <Link href="/over_ons">Over Ons</Link>
             </li>
-            <li className="px-4 border-transparent border-b-2">
+            <li className="px-4 hover:text-gray-200">
               <Link href="/contact">Contact</Link>
             </li>
-            <li className="px-4 border-transparent border-b-2">
+            <li className="px-4 hover:text-gray-200">
               <Link href="/nieuws">Nieuws</Link>
             </li>
           </ul>

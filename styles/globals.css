@@ -6,6 +6,10 @@
   -ms-overflow-style: none;
 }
 
+body {
+  background: black;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

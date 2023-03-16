@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Summary from "../components/Summary";
 import Latest from "../components/Latest";
-import Menu from "../components/Menu";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 
@@ -17,7 +16,6 @@ const Homepage = () => {
       </Head>
       <Navbar />
       <Hero />
-      <Latest />
       <Summary />
     </Layout>
   );

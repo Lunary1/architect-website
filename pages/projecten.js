@@ -13,10 +13,10 @@ function Projecten({ data }) {
   return (
     <Layout>
       <section className="h-[100vh] m-auto mt-24">
-        <h1 className="font-bold text-center py-8 text-lg uppercase text-white">
+        <h1 className="text-4xl text-left p-8 uppercase text-white border-b-2">
           Projecten
         </h1>
-        <div className="text-center max-w-[100%] grid grid-cols-2 lg:grid-cols-3">
+        <div className="text-center max-w-[100%] p-8 grid grid-cols-2 gap-2 lg:grid-cols-3">
           {data.projects.map((project) => {
             return (
               <Link

@@ -63,7 +63,7 @@ const ContactForm = () => {
             rows="10"
             placeholder="Message"
           ></textarea>
-          <button className="border shadow-lg p-3 w-full mt-2">Submit</button>
+          <button className="border shadow-lg p-3 w-full mt-2 text-white">Submit</button>
         </form>
       </div>
     </div>

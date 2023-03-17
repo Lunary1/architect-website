@@ -29,21 +29,24 @@ const Footer = () => {
             </motion.div>
           </div>
           <div className="flex gap-4 justify-center  text-white">
-            <motion.div whileTap={{ scale: 1.1 }} whileHover={{ scale: 1.1 }}>
+          <motion.div whileTap={{ scale: 1.1 }} whileHover={{ scale: 1.1, rotate: 3 }}>
               <SocialIcon
-                bgColor="white"
+                bgColor="black"
+                fgColor="white"
                 url="https://www.facebook.com/profile.php?id=100047843332654"
               />
             </motion.div>
-            <motion.div whileTap={{ scale: 1.1 }} whileHover={{ scale: 1.1 }}>
+            <motion.div whileTap={{ scale: 1.1 }} whileHover={{ scale: 1.1, rotate: 3 }}>
               <SocialIcon
-                bgColor="white"
+                bgColor="black"
+                fgColor="white"
                 url="https://www.instagram.com/paulkindt/"
               />
             </motion.div>
-            <motion.div whileTap={{ scale: 1.1 }} whileHover={{ scale: 1.1 }}>
+            <motion.div whileTap={{ scale: 1.1 }} whileHover={{ scale: 1.1, rotate: 3 }}>
               <SocialIcon
-                bgColor="white"
+                bgColor="black"
+                fgColor="white"
                 url="https://architect-website-five.vercel.app/"
               />
             </motion.div>

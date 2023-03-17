@@ -31,7 +31,7 @@ export default function Menu() {
         </div>
         <motion.div
           key={items.indexOf(hoveredItem) + 1}
-          animate={{ opacity: [0, 0.3], scale: [1, 1.05] }}
+          animate={{ opacity: [0, null, 0.3], scale: [ 1, 1.05] }}
           transition={{ ease: "easeInOut", duration: 1.5 }}
           className={
             hoveredItem ? [`background-${items.indexOf(hoveredItem) + 1}`] : "background"

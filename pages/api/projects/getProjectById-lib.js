@@ -1,9 +1,6 @@
 import { query } from "../../../lib/db";
-import { useRouter } from "next/router";
 
 export default async function handler(req, res) {
-  const router = useRouter();
-  const { id } = router.query;
   try {
     const querySql =
       "SELECT projectId, projectName, location FROM projects WHERE projectId = ?";

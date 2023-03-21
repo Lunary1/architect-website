@@ -21,7 +21,7 @@ function Projecten({ data }) {
             return (
               <Link
                 key={project.projectId}
-                href={`/projecten/${project.projectId}`}
+                href={`/project/${project.projectId}`}
                 passHref
               >
                 <a>

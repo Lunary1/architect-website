@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocation } from "react-router-dom";
 
-import logo from "../public/logo.jpg"
-
+import logo from "../public/logo.jpg";
 
 import { animate, motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
@@ -28,6 +27,7 @@ const Footer = () => {
                 src={logo}
                 width={120}
                 height={80}
+                alt="Logo Paul Kindt"
               />
             </motion.div>
           </div>

@@ -30,7 +30,7 @@ function Projecten({ data }) {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <Image src={house} />
+                    <Image src={house} alt={`project foto ${project.projectName}`} />
                   </motion.div>
                   <div className="flex justify-between invisible peer-hover:visible text-white relative">
                     <p>{project.projectName}</p>

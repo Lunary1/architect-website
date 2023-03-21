@@ -12,7 +12,6 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-
   return (
     <nav>
       <div
@@ -20,12 +19,13 @@ const Navbar = () => {
         className="fixed left-0 top-0 w-full z-10 ease-in duration-200"
       >
         <div className="max-w-[1240px] m-auto flex justify-between items-center py-4 px-4 text-white">
-          <Link href="/">
+          <Link href="/" passHref>
             <Image
               className="hover:cursor-pointer"
               src="/logo.jpg"
               width={120}
               height={80}
+              alt="Navbar Logo Paul Kindt"
             />
           </Link>
           <ul
@@ -33,7 +33,9 @@ const Navbar = () => {
             className="hidden sm:flex uppercase text-sm"
           >
             <li className="px-4 hover:text-gray-200">
-              <Link className="" href="/home">Home</Link>
+              <Link className="" href="/home">
+                Home
+              </Link>
             </li>
             <li className="px-4 hover:text-gray-200">
               <Link href="/projecten">Projecten</Link>

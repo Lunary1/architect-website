@@ -1,7 +1,12 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import { animate, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { useLocation } from "react-router-dom";
+
+import logo from "../public/logo.jpg"
+
+
+import { animate, motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
 import {
   FaDribbbleSquare,
@@ -10,8 +15,6 @@ import {
   FaInstagram,
   FaTwitterSquare,
 } from "react-icons/fa";
-
-import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -22,7 +25,7 @@ const Footer = () => {
             <motion.div whileHover={{ scale: 1.1 }}>
               <Image
                 className="hover:cursor-pointer"
-                src="/logo.jpg"
+                src={logo}
                 width={120}
                 height={80}
               />

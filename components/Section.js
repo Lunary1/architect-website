@@ -35,7 +35,7 @@ export default function Section() {
           </motion.button>
         </div>
         <div className="m-auto">
-          <Image src={pic} alt="pic"/>
+          <Image src={pic} alt="pic" width={1920} height={1080} layout="responsive"/>
         </div>
       </div>
     </section>

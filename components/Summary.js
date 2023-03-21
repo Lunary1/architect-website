@@ -8,16 +8,41 @@ export default function Summary() {
   return (
     <section id="section-1">
       <div className="w-screen m-auto">
-        <div className="m-auto text-3xl my-8 uppercase text-center text-white">
-          projects
+        <div className="my-8">
+          <h1 className="text-3xl uppercase text-center text-white">Projects</h1>
         </div>
-        <div className="grid lg:grid-cols-3 px-1 grid-cols-2 gap-2 text-white">
-          <SummaryProjectcard name="Maheur" location="Oudenaarde" url="/projecten/1" />
-          <SummaryProjectcard name="De Vuyst" location="Eine" url="/" />
-          <SummaryProjectcard name="Van Caester" location="Gent" url="/" />
-          <SummaryProjectcard name="Van Overberghe" location="Huise" url="/" />
-          <SummaryProjectcard name="Remotec" location="Gent" url="/" />
-          <SummaryProjectcard name="iFire" location="Eke" url="/" />
+        <div className="grid grid-cols-2 lg:grid-cols-3 px-1 gap-1 text-white">
+          <SummaryProjectcard
+            name="Maheur"
+            location="Oudenaarde"
+            url="/projecten/1"
+            img="maheur"
+          />
+          <SummaryProjectcard
+            name="De Vuyst"
+            location="Eine"
+            url="/"
+            img="devuyst"
+          />
+          <SummaryProjectcard
+            name="Van Caester"
+            location="Gent"
+            url="/"
+            img="vancaester"
+          />
+          <SummaryProjectcard
+            name="Van Overberghe"
+            location="Huise"
+            url="/"
+            img="vanoverberghe"
+          />
+          <SummaryProjectcard
+            name="Remotec"
+            location="Gent"
+            url="/"
+            img="remotec"
+          />
+          <SummaryProjectcard name="iFire" location="Eke" url="/" img="ifire" />
         </div>
       </div>
     </section>

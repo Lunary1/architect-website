@@ -15,7 +15,7 @@ const Homepage = () => {
         <link rel="icon" href="favicon.io" />
       </Head>
       <Navbar />
-      <Hero />
+      <Hero heading="Architect Paul Kindt" />
       <Summary />
     </Layout>
   );

@@ -21,6 +21,7 @@ function Projecten({ data }) {
           {data.projects.map((project) => {
             return (
               <SummaryProjectcard
+                id={project.projectId}
                 name={project.projectName}
                 location={project.location}
                 url={`/projecten/${project.projectId}`}

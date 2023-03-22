@@ -11,9 +11,11 @@ const Hero = ({ heading, message }) => {
     <>
       <div className="flex items-center justify-center h-screen bg-fixed bg-center bg-cover custom-img">
         {/* Overlay */}
-        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]" />
+        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]"></div>
         <div className="p-5 text-white z-[2] ml-[-10rem] mt-[-10rem]">
-          <h2 className="text-5xl uppercase font-bold bg-gradient-to-br from-[#d9a7c7]  to-[#fffcdc] bg-clip-text text-transparent ">{heading}</h2>
+          <h2 className="text-lg md:text-5xl uppercase font-bold  ">
+            {heading}
+          </h2>
           <p className="py-5 text-xl">{message}</p>
         </div>
       </div>

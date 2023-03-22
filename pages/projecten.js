@@ -1,12 +1,9 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 import Layout from "../components/nested-layout";
 import SummaryProjectcard from "../components/ProjectCard";
 
-import house from "../public/house.webp";
 
 function Projecten({ data }) {
   console.log(data.projects);

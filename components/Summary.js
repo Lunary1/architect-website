@@ -9,9 +9,11 @@ export default function Summary() {
     <section id="section-1">
       <div className="w-screen m-auto">
         <div className="my-8">
-          <h1 className="text-3xl uppercase text-center text-white">Projects</h1>
+          <h1 className="text-3xl uppercase text-center text-white">
+            Projects
+          </h1>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-3 px-1 gap-1 text-white">
+        <div className="grid grid-cols-2 lg:grid-cols-3 px-1 gap-1">
           <SummaryProjectcard
             name="Maheur"
             location="Oudenaarde"

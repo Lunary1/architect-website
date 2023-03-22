@@ -7,7 +7,7 @@ import house from "../public/house.webp";
 function SummaryProjectcard(props) {
   return (
     <div className="hover:cursor-pointer">
-      <Link href={`${props.url}`} passHref>
+      <Link href={`${props.url}`} passHref key={props.name}>
         <figure className="relative group transition ease-in-out delay-100 grayscale-[100%] hover:grayscale-[0%]">
           <Image
             className={` relative`}
@@ -18,7 +18,7 @@ function SummaryProjectcard(props) {
             layout="responsive"
             loading="lazy"
           />
-          <figcaption className="absolute bottom-0 p-4 sm:p-8 opacity-0 group-hover:opacity-[85] transition ease-in-out delay-150">
+          <figcaption className="absolute bottom-0 p-4 sm:p-8 opacity-0 group-hover:opacity-[85] transition ease-in-out delay-150 text-white">
             <h3 className="text-xs sm:text-sm ">{props.location}</h3>
             <h2 className="text-sm sm:text-lg">{props.name}</h2>
           </figcaption>

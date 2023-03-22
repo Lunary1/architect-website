@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import Layout from "../components/nested-layout";
+import SummaryProjectcard from "../components/SummaryProjectCard";
 
 import house from "../public/house.webp";
 
@@ -13,31 +14,18 @@ function Projecten({ data }) {
   return (
     <Layout>
       <section className="h-[100vh] m-auto mt-24">
-        <h1 className="text-4xl text-left p-8 uppercase text-white border-b-2">
+        <h1 className="text-4xl text-left p-8 uppercase border-b-2">
           Projecten
         </h1>
-        <div className="text-center max-w-[100%] p-8 grid grid-cols-2 gap-2 lg:grid-cols-3">
+        <div className="max-w-[100%] grid grid-cols-2 lg:grid-cols-3 text-white">
           {data.projects.map((project) => {
             return (
-              <Link
-                key={project.projectId}
-                href={`/project/${project.projectId}`}
-                passHref
-              >
-                <a>
-                  <motion.div
-                    className="z-1 peer"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <Image src={house} alt={`project foto ${project.projectName}`} />
-                  </motion.div>
-                  <div className="flex justify-between invisible peer-hover:visible text-white relative">
-                    <p>{project.projectName}</p>
-                    <p>{project.location}</p>
-                  </div>
-                </a>
-              </Link>
+              <SummaryProjectcard
+                name={project.projectName}
+                location={project.location}
+                url={`/projecten/${project.projectId}`}
+                img="maheur"
+              />
             );
           })}
         </div>

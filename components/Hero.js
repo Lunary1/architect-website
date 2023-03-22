@@ -19,6 +19,9 @@ const Hero = ({ heading, message }) => {
       <div className="h-screen bg-fixed bg-center bg-cover custom-img">
         {/* Overlay */}
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]" />
+        <div className="z-0">
+          <h3>Paul Kindt</h3>
+        </div>
       </div>
     </>
   );

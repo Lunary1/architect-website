@@ -12,6 +12,9 @@ const Navbar = () => {
     setNav(!nav);
   };
 
+  const [active, setActive] = useState(false);
+
+
   return (
     <nav>
       <div

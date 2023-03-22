@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import SummaryProjectcard from "./SummaryProjectcard";
+import SummaryProjectcard from "./ProjectCard";
 
 export default function Summary() {
   return (

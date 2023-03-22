@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import Layout from "../components/nested-layout";
-import SummaryProjectcard from "../components/SummaryProjectCard";
+import SummaryProjectcard from "../components/ProjectCard";
 
 import house from "../public/house.webp";
 
@@ -20,13 +20,14 @@ function Projecten({ data }) {
         <div className="max-w-[100%] grid grid-cols-2 lg:grid-cols-3 text-white">
           {data.projects.map((project) => {
             return (
-              <SummaryProjectcard
-                id={project.projectId}
-                name={project.projectName}
-                location={project.location}
-                url={`/projecten/${project.projectId}`}
-                img="maheur"
-              />
+              <div key={project.projectId}>
+                <SummaryProjectcard
+                  name={project.projectName}
+                  location={project.location}
+                  url={`/projecten/${project.projectId}`}
+                  img="maheur"
+                />
+              </div>
             );
           })}
         </div>

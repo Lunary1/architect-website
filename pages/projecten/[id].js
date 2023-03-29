@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export default function projectOverview() {
+export default function ProjectOverview() {
   const router = useRouter();
   const { id } = router.query;
   const [dataResponse, setDataResponse] = useState([]);
@@ -13,7 +13,7 @@ export default function projectOverview() {
         method: "Post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            id: id,
+          id: id,
         }),
       };
 
@@ -24,8 +24,5 @@ export default function projectOverview() {
     getPageData();
   }, [router.query.id, router.isReady]);
 
-  return(
-
-    {id}
-  )
+  return { id };
 }

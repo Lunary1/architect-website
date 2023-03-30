@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import house from "../public/house.webp";
 
 function SummaryProjectcard(props) {
   return (
@@ -12,7 +11,7 @@ function SummaryProjectcard(props) {
           <Image
             className={` relative`}
             src={`/${props.img}.jpg`}
-            alt={`foto ${props.name}`}
+            alt={`${props.name}`}
             width={1920}
             height={1080}
             layout="responsive"

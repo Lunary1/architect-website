@@ -14,7 +14,6 @@ const Navbar = () => {
 
   const [active, setActive] = useState(false);
 
-
   return (
     <nav>
       <div

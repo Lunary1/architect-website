@@ -3,10 +3,28 @@ import Summary from "../components/Summary";
 import Latest from "../components/Latest";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 import Layout from "../components/nested-layout";
 
+import Image from "next/image";
+
+import vanhoorn from "../public/vanhoorn.jpg";
+import devuyst from "../public/devuyst.jpg";
+import goethals from "../public/goethals.jpg";
+import ifire from "../public/ifire.jpg";
+import maheur from "../public/maheur.jpg";
+import vanoverberghe from "../public/vanoverberghe.jpg";
+
+
+
 const Homepage = () => {
+  const [sliderRef] = useKeenSlider({
+    slides: {
+      perView: 2,
+    },
+    loop: true
+  })
   return (
     <Layout>
       <Head>
@@ -16,7 +34,35 @@ const Homepage = () => {
       </Head>
       <Navbar />
       <Hero heading="Architect Paul Kindt" />
-      <Summary />
+      <section id="section-1">
+        <div className="w-screen m-auto">
+          <div className="my-8">
+            <h1 className="text-3xl uppercase text-center text-white">
+              Laatste projecten
+            </h1>
+          </div>
+          <div ref={sliderRef} className="keen-slider hover:cursor-grab">
+            <div className="keen-slider__slide number-slide1">
+              <Image layout="responsive" objectFit="contain" objectPosition="center" src={vanhoorn} />
+            </div>
+            <div className="keen-slider__slide number-slide2">
+              <Image layout="responsive" objectFit="contain" objectPosition="center" src={devuyst} />
+            </div>
+            <div className="keen-slider__slide number-slide3">
+              <Image layout="responsive" objectFit="contain" objectPosition="center" src={goethals} />
+            </div>
+            <div className="keen-slider__slide number-slide4">
+              <Image layout="responsive" objectFit="contain" objectPosition="center" src={ifire} />
+            </div>
+            <div className="keen-slider__slide number-slide5">
+              <Image layout="responsive" objectFit="contain" objectPosition="center" src={maheur} />
+            </div>
+            <div className="keen-slider__slide number-slide6">
+              <Image layout="responsive" objectFit="contain" objectPosition="center" src={vanoverberghe} />
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };

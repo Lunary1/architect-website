@@ -18,7 +18,7 @@ function SummaryProjectcard(props) {
             loading="lazy"
           />
           <figcaption className="absolute bottom-0 p-4 sm:p-8 opacity-0 group-hover:opacity-[85] transition ease-in-out delay-150 text-white">
-            <h3 className="text-xs sm:text-sm ">{props.location}</h3>
+            <h3 className="text-xs sm:text-sm font-sans">{props.location}</h3>
             <h2 className="text-sm sm:text-lg">{props.name}</h2>
           </figcaption>
         </figure>

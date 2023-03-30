@@ -13,7 +13,7 @@ function Projecten({ data, cats }) {
 
   return (
     <Layout>
-      <section className="h-[100vh] m-auto p-24">
+      <section className="m-auto pt-24 px-12">
         <h1 className="text-4xl p-8 uppercase text-center text-white">
           Projecten
         </h1>
@@ -25,7 +25,7 @@ function Projecten({ data, cats }) {
           </ul>
         </div>
 
-        <div className="max-w-[100%] grid grid-cols-2 lg:grid-cols-3 text-white">
+        <div className="max-w-[100%] grid grid-cols-1 gap-1 lg:gap-0 lg:grid-cols-3 text-white">
           {data.projects.map((project) => {
             return (
               <div key={project.projectId}>

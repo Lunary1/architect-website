@@ -20,7 +20,7 @@ function Projecten({ data, cats }) {
         <div>
           <ul className="flex justify-around p-8">
             {cats.categories.map((cat) => {
-              return <li className="text-white" onClick={() => setCategory(`${cat.catName}`)}>{cat.catName}</li>;
+              return <li key={cat.catId} className="text-white" onClick={() => setCategory(`${cat.catName}`)}>{cat.catName}</li>;
             })}
           </ul>
         </div>

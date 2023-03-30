@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import pic from "../public/paul-about.jpg";
+import pic from "../public/logo.jpg";
 
 export default function Section() {
   return (
@@ -35,7 +35,13 @@ export default function Section() {
           </motion.button>
         </div>
         <div className="m-auto">
-          <Image src={pic} alt="pic" width={1920} height={1080} layout="responsive"/>
+          <Image
+            src={pic}
+            alt="pic"
+            width={1920}
+            height={1080}
+            layout="responsive"
+          />
         </div>
       </div>
     </section>

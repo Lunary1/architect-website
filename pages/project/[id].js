@@ -2,38 +2,23 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { mapImageResources, search } from "../../lib/cloudinary";
-import Layout from "../../components/nested-layout";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import FsLightbox from "fslightbox-react";
 
-export default function ProjectOverview({ images }) {
-  const [projectData, setProjectData] = useState([]);
-
-  async function getOverview() {
-    const apiUrlEndpoint = `http://localhost:3000/api/projects/getProjectById-lib`;
-    const postData = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: id,
-      }),
-    };
-    const res = await fetch(apiUrlEndpoint, postData);
-    const response = await res.json();
-    setProjectData(response.project);
-  }
-
-
+export default function ProjectOverview({ images, projectData }) {
   const [toggler, setToggler] = useState(false);
 
+  console.log("Project Data:");
+  console.log(projectData.project[0].projectName);
+
+  const projectInfo = projectData.project[0];
+
   return (
-    <Layout>
-      <div className="pt-20">
-        <div>
-          <h1></h1>
+    <>
+      <div className="pt-24">
+        <div className="text-white">
+          <h1>{projectInfo.projectName}</h1>
         </div>
         <div className="container mx-auto">
           <ResponsiveMasonry
@@ -69,13 +54,18 @@ export default function ProjectOverview({ images }) {
           return image.image;
         })}
       />
-    </Layout>
+    </>
   );
 }
 
 export async function getServerSideProps(context) {
-
   const projectId = context.query.id;
+
+  const project = await fetch(
+    `http://localhost:3000/api/projects?id=${projectId}`
+  );
+
+  const projectData = await project.json();
 
   const results = await search({
     expression: `folder="${projectId}"`,
@@ -83,13 +73,12 @@ export async function getServerSideProps(context) {
 
   const { resources } = results;
 
-  const { pid } = projectId;
-
   const images = mapImageResources(resources);
 
   return {
     props: {
       images,
+      projectData,
     },
   };
 }

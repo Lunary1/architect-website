@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 
-import SummaryProjectcard from "../components/ProjectCard";
+import SummaryProjectcard from "../../components/ProjectCard";
 
 function Projecten({ data, cats }) {
   const [category, setCategory] = useState(null);
 
+  console.log(category);
 
   return (
     <section className="m-auto pt-24 px-12">
@@ -51,7 +52,9 @@ function Projecten({ data, cats }) {
 
 // This gets called on every request
 export async function getServerSideProps(context) {
-  const catId = context.query.catId;
+  const catId = context.query.id;
+
+  console.log(catId);
 
   // Fetch data from external API
   const res = await fetch(

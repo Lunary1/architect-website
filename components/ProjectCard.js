@@ -9,7 +9,7 @@ function SummaryProjectcard(props) {
       <Link href={`${props.url}`} passHref>
         <figure className="relative group transition ease-in-out delay-100 grayscale-[100%] hover:grayscale-[0%]">
           <Image
-            className={` relative`}
+            className={`relative`}
             src={`/${props.img}.jpg`}
             alt={`${props.name}`}
             width={1920}

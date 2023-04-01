@@ -22,20 +22,22 @@ const Navbar = () => {
       >
         <div className="max-w-[1240px] m-auto flex justify-between items-center py-4 px-4 text-white">
           <Link href="/" passHref>
-            <Image
-              className="hover:cursor-pointer"
-              src="/logo.jpg"
-              width={120}
-              height={80}
-              alt="Navbar Logo Paul Kindt"
-            />
+            <div className="max-w-[10%]">
+              <Image
+                className="hover:cursor-pointer"
+                src="/logo.jpg"
+                width={1920}
+                height={1080}
+                alt="Navbar Logo Paul Kindt"
+              />
+            </div>
           </Link>
           <ul
             style={{ color: `${textColor}` }}
             className="hidden sm:flex uppercase text-sm"
           >
             <li className="px-4 hover:text-gray-200">
-              <Link className="" href="/home">
+              <Link className="" href="/">
                 Home
               </Link>
             </li>

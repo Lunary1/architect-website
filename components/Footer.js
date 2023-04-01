@@ -21,15 +21,14 @@ const Footer = () => {
       <div className="max-w-[1240px] m-auto bg-black py-8">
         <div className="footer grid grid-cols-1">
           <div className="m-auto">
-            <motion.div whileHover={{ scale: 1.1 }}>
+            <div className="max-w-[20%] mx-auto">
               <Image
-                className="hover:cursor-pointer"
                 src={logo}
-                width={120}
-                height={80}
+                width={1920}
+                height={1080}
                 alt="Logo Paul Kindt"
               />
-            </motion.div>
+            </div>
           </div>
           <div className="flex gap-4 justify-center  text-white">
             <motion.div

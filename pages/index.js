@@ -45,6 +45,7 @@ const Homepage = () => {
                 objectFit="contain"
                 objectPosition="center"
                 src={vanhoorn}
+                alt="slider Foto"
               />
             </div>
             <div className="keen-slider__slide number-slide2">
@@ -53,6 +54,7 @@ const Homepage = () => {
                 objectFit="contain"
                 objectPosition="center"
                 src={devuyst}
+                alt="slider Foto"
               />
             </div>
             <div className="keen-slider__slide number-slide3">
@@ -61,6 +63,7 @@ const Homepage = () => {
                 objectFit="contain"
                 objectPosition="center"
                 src={goethals}
+                alt="slider Foto"
               />
             </div>
             <div className="keen-slider__slide number-slide4">
@@ -69,6 +72,7 @@ const Homepage = () => {
                 objectFit="contain"
                 objectPosition="center"
                 src={ifire}
+                alt="slider Foto"
               />
             </div>
             <div className="keen-slider__slide number-slide5">
@@ -77,6 +81,7 @@ const Homepage = () => {
                 objectFit="contain"
                 objectPosition="center"
                 src={maheur}
+                alt="slider Foto"
               />
             </div>
             <div className="keen-slider__slide number-slide6">
@@ -85,6 +90,7 @@ const Homepage = () => {
                 objectFit="contain"
                 objectPosition="center"
                 src={vanoverberghe}
+                alt="slider Foto"
               />
             </div>
           </div>

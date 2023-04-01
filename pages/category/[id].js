@@ -58,12 +58,12 @@ export async function getServerSideProps(context) {
 
   // Fetch data from external API
   const res = await fetch(
-    `https://architect-website-five.vercel.app/api/projects/getProjects-lib`
+    `https://${process.env.PRODUCTION_URL}/api/projects/getProjects-lib`
   );
   const data = await res.json();
 
   const categories = await fetch(
-    `https://architect-website-five.vercel.app/api/category/getData-lib`
+    `https://${process.env.PRODUCTION_URL}/api/category/getData-lib`
   );
 
   const cats = await categories.json();

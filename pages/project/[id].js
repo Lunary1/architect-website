@@ -62,7 +62,7 @@ export async function getServerSideProps(context) {
   const projectId = context.query.id;
 
   const project = await fetch(
-    `http://localhost:3000/api/projects?id=${projectId}`
+    `https://${process.env.PRODUCTION_URL}/api/projects?id=${projectId}`
   );
 
   const projectData = await project.json();

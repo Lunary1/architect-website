@@ -1,10 +1,8 @@
-import { Html, Head, Main, NextScript } from "next/document";
-import Meta from "../components/Meta";
+import { Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
     <Html>
-      <Meta />
       <body>
         <Main />
         <NextScript />

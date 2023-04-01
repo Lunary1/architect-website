@@ -13,21 +13,20 @@ function Projecten({ data, cats }) {
       <h1 className="text-4xl p-8 uppercase text-center text-white">
         Projecten
       </h1>
-      <div>
-        <ul className="flex justify-around p-8">
-          {cats.categories.map((cat) => {
-            return (
-              <li
-                key={cat.catId}
-                className="text-white"
-                onClick={() => setCategory(`${cat.catName}`)}
-              >
-                <Link href={`/category/${cat.catId}`}>{cat.catName}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+
+      <ul className="flex justify-around p-8">
+        {cats.categories.map((cat) => {
+          return (
+            <li
+              key={cat.catId}
+              className="text-white"
+              onClick={() => setCategory(`${cat.catName}`)}
+            >
+              <Link href={`/category/${cat.catId}`}>{cat.catName}</Link>
+            </li>
+          );
+        })}
+      </ul>
 
       <div className="max-w-[100%] grid grid-cols-1 gap-1 lg:gap-0 lg:grid-cols-3 text-white">
         {data.projects.map((project) => {
@@ -43,7 +42,6 @@ function Projecten({ data, cats }) {
           );
         })}
       </div>
-      <div></div>
     </section>
   );
 }

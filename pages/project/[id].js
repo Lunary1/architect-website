@@ -16,9 +16,9 @@ export default function ProjectOverview({ images, projectData }) {
 
   return (
     <>
-      <div className="pt-24">
-        <div className="text-white">
-          <h1>{projectInfo.projectName}</h1>
+      <div className="m-auto pt-36">
+        <div className="flex justify-center py-8">
+          <h1 className="text-white text-4xl font-serif">{projectInfo.projectName}</h1>
         </div>
         <div className="container mx-auto">
           <ResponsiveMasonry
@@ -37,7 +37,6 @@ export default function ProjectOverview({ images, projectData }) {
                       height={image.height}
                       src={image.image}
                       alt=""
-                      objectFit="contain"
                       layout="responsive"
                       loading="lazy"
                     />

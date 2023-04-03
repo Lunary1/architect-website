@@ -10,15 +10,17 @@ export default function ProjectOverview({ images, projectData }) {
   const [toggler, setToggler] = useState(false);
 
   console.log("Project Data:");
-  console.log(projectData.project[0].projectName);
+  console.log(projectData);
 
-  const projectInfo = projectData.project[0];
+  const projectInfo = projectData.project;
 
   return (
     <>
       <div className="m-auto pt-36">
         <div className="flex justify-center py-8">
-          <h1 className="text-white text-4xl font-serif">{projectInfo.projectName}</h1>
+          <h1 className="text-white text-4xl font-serif">
+            {projectInfo.project_name}
+          </h1>
         </div>
         <div className="container mx-auto">
           <ResponsiveMasonry
@@ -61,7 +63,7 @@ export async function getServerSideProps(context) {
   const projectId = context.query.id;
 
   const project = await fetch(
-    `https://${process.env.PRODUCTION_URL}/api/projects?id=${projectId}`
+    `${process.env.PRODUCTION_URL}/api/projects/${projectId}`
   );
 
   const projectData = await project.json();

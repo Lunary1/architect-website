@@ -8,7 +8,9 @@ import SummaryProjectcard from "../components/ProjectCard";
 function Projecten({ data, cats }) {
   const [category, setCategory] = useState(null);
 
-  console.log(data)
+  const categoryData = cats.categories;
+
+  console.log(cats);
 
   return (
     <section className="m-auto pt-24 px-12">
@@ -22,9 +24,9 @@ function Projecten({ data, cats }) {
             <li
               key={cat.catId}
               className="text-white"
-              onClick={() => setCategory(`${cat.catName}`)}
+              onClick={() => setCategory(`${cat.cat_id}`)}
             >
-              <Link href={`/category/${cat.catId}`}>{cat.catName}</Link>
+              <Link href={`/category/${cat.cat_id}`}>{cat.name}</Link>
             </li>
           );
         })}
@@ -33,12 +35,12 @@ function Projecten({ data, cats }) {
       <div className="max-w-[100%] grid grid-cols-1 gap-1 lg:gap-0 lg:grid-cols-3 text-white">
         {data.projects.map((project) => {
           return (
-            <div key={project.projectId}>
+            <div key={project.project_id}>
               <SummaryProjectcard
-                name={project.projectName}
-                location={project.location}
-                url={`/project/${project.projectId}`}
-                img={project.thumbnail_url}
+                name={project.project_name}
+                location={project.project_location}
+                url={`/project/${project.project_id}`}
+                img={project.project_thumbnail}
               />
             </div>
           );
@@ -49,17 +51,13 @@ function Projecten({ data, cats }) {
 }
 
 // This gets called on every request
-export async function getServerSideProps(context) {
-  const catId = context.query.catId;
-
+export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(
-    `https://${process.env.PRODUCTION_URL}/api/projects/getProjects-lib`
-  );
+  const res = await fetch(`${process.env.PRODUCTION_URL}/api/projects`);
   const data = await res.json();
 
   const categories = await fetch(
-    `https://${process.env.PRODUCTION_URL}/api/category/getData-lib`
+    `${process.env.PRODUCTION_URL}/api/categories`
   );
 
   const cats = await categories.json();

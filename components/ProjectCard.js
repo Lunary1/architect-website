@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-
 function SummaryProjectcard(props) {
   return (
     <div className="hover:cursor-pointer">
@@ -15,7 +14,6 @@ function SummaryProjectcard(props) {
             width={1920}
             height={1080}
             layout="responsive"
-            loading="lazy"
           />
           <figcaption className="absolute bottom-0 p-4 sm:p-8 opacity-0 group-hover:opacity-[85] transition ease-in-out delay-150 text-white">
             <p className="text-xs sm:text-sm font-sans">{props.location}</p>

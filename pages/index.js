@@ -18,7 +18,7 @@ import vanoverberghe from "../public/vanoverberghe.jpg";
 const Homepage = () => {
   const [sliderRef] = useKeenSlider({
     slides: {
-      perView: 2,
+      perView: 3,
     },
     loop: true,
   });
@@ -37,55 +37,55 @@ const Homepage = () => {
             <div className="keen-slider__slide number-slide1">
               <Image
                 layout="responsive"
-                objectFit="contain"
-                objectPosition="center"
                 src={vanhoorn}
                 alt="slider Foto"
+                width={1920}
+                height={1080}
               />
             </div>
             <div className="keen-slider__slide number-slide2">
               <Image
                 layout="responsive"
-                objectFit="contain"
-                objectPosition="center"
                 src={devuyst}
                 alt="slider Foto"
+                width={1920}
+                height={1080}
               />
             </div>
             <div className="keen-slider__slide number-slide3">
               <Image
                 layout="responsive"
-                objectFit="contain"
-                objectPosition="center"
                 src={goethals}
                 alt="slider Foto"
+                width={1920}
+                height={1080}
               />
             </div>
             <div className="keen-slider__slide number-slide4">
               <Image
                 layout="responsive"
-                objectFit="contain"
-                objectPosition="center"
                 src={ifire}
                 alt="slider Foto"
+                width={1920}
+                height={1080}
               />
             </div>
             <div className="keen-slider__slide number-slide5">
               <Image
                 layout="responsive"
-                objectFit="contain"
-                objectPosition="center"
                 src={maheur}
                 alt="slider Foto"
+                width={1920}
+                height={1080}
               />
             </div>
             <div className="keen-slider__slide number-slide6">
               <Image
                 layout="responsive"
-                objectFit="contain"
-                objectPosition="center"
                 src={vanoverberghe}
                 alt="slider Foto"
+                width={1920}
+                height={1080}
               />
             </div>
           </div>

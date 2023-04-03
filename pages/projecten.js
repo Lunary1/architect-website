@@ -8,6 +8,8 @@ import SummaryProjectcard from "../components/ProjectCard";
 function Projecten({ data, cats }) {
   const [category, setCategory] = useState(null);
 
+  console.log(data)
+
   return (
     <section className="m-auto pt-24 px-12">
       <h1 className="text-4xl p-8 uppercase text-center text-white">
@@ -36,7 +38,7 @@ function Projecten({ data, cats }) {
                 name={project.projectName}
                 location={project.location}
                 url={`/project/${project.projectId}`}
-                img={`${project.projectName.replace(" ", "")}`}
+                img={project.thumbnail_url}
               />
             </div>
           );

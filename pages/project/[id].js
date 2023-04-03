@@ -22,7 +22,7 @@ export default function ProjectOverview({ images, projectData }) {
         </div>
         <div className="container mx-auto">
           <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 2 }}
+            columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 4 }}
           >
             <Masonry gutter="1rem">
               {images.map((image) => {

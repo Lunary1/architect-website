@@ -2,7 +2,8 @@ import { query } from "../../../lib/db";
 
 export default async function handler(req, res) {
   try {
-    const querySql = "SELECT projectId, projectName, location FROM projects";
+    const querySql =
+      "SELECT projectId, projectName, location, thumbnail_url FROM projects";
     const valuesParams = [];
     const data = await query({ query: querySql, values: valuesParams });
 

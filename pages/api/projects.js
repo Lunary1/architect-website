@@ -5,7 +5,7 @@ export default async function product(req, res) {
 
   try {
     const querySql =
-      "SELECT projectId, projectName, location FROM projects WHERE projectId = ?";
+      "SELECT projectId, projectName, location, thumbnail_url FROM projects WHERE projectId = ?";
     const valuesParams = [queryResponse.id];
     const data = await query({ query: querySql, values: valuesParams });
 

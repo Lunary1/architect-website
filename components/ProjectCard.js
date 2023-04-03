@@ -10,7 +10,7 @@ function SummaryProjectcard(props) {
         <figure className="relative group transition ease-in-out delay-100 grayscale-[100%] hover:grayscale-[0%]">
           <Image
             className={`relative`}
-            src={`/${props.img}.jpg`}
+            src={`${props.img}`}
             alt={`${props.name}`}
             width={1920}
             height={1080}

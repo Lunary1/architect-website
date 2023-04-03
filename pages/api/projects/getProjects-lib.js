@@ -3,7 +3,7 @@ import { query } from "../../../lib/db";
 export default async function handler(req, res) {
   try {
     const querySql =
-      "SELECT projectId, projectName, location, thumbnail_url FROM projects";
+      "SELECT project_id, project_name, project_location, project_thumbnail, cat_id FROM projecten";
     const valuesParams = [];
     const data = await query({ query: querySql, values: valuesParams });
 

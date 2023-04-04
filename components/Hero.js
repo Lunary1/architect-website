@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const Hero = ({ heading, message }) => {
   return (
     <>
-      <div className="flex items-center justify-center h-screen bg-fixed bg-center bg-cover custom-img">
+      <div className="flex items-center justify-center h-[100vh] bg-center bg-cover bg-no-repeat custom-img">
         {/* Overlay */}
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]"></div>
         <div className="p-5 text-white z-[2] ml-[-10rem] mt-[-10rem]">

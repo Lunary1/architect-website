@@ -1,7 +1,6 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { mapImageResources, search } from "../../lib/cloudinary";
+import { useState } from "react";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import FsLightbox from "fslightbox-react";
@@ -75,6 +74,8 @@ export async function getServerSideProps(context) {
   const { resources } = results;
 
   const images = mapImageResources(resources);
+
+  console.log(images);
 
   return {
     props: {

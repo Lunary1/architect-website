@@ -20,7 +20,7 @@ function Projecten({ data, cats }) {
         {cats.categories.map((cat) => {
           return (
             <li
-              key={cat.catId}
+              key={cat.cat_id}
               className="text-white"
               onClick={() => setCategory(`${cat.cat_id}`)}
             >

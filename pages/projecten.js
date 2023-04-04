@@ -1,50 +1,66 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useAnimate, stagger } from "framer-motion";
 
 import SummaryProjectcard from "../components/ProjectCard";
 
 function Projecten({ data, cats }) {
-  const [category, setCategory] = useState(null);
+  const [allData, setAllData] = useState(data.projects);
+  const [filterData, setFilteredData] = useState(allData);
 
-  const categoryData = cats.categories;
+  const handleClick = (e) => {
+    let value = e;
+    let result = [];
 
-  console.log(cats);
+    result = allData.filter((project) => {
+      return project.cat_id == value;
+    });
+    setFilteredData(result);
+  };
+
+  const handleClickReset = () => {
+    setFilteredData(allData);
+  };
 
   return (
     <section className="m-auto pt-24 px-12">
       <h1 className="text-4xl p-8 uppercase text-center text-white">
         Projecten
       </h1>
-
       <ul className="flex justify-around p-8">
+        <button className="text-white" onClick={handleClickReset}>
+          Alle projecten
+        </button>
         {cats.categories.map((cat) => {
           return (
-            <li
-              key={cat.catId}
+            <button
+              key={cat.cat_id}
+              id={cat.cat_id}
               className="text-white"
-              onClick={() => setCategory(`${cat.cat_id}`)}
+              onClick={(e) => handleClick(e.currentTarget.id)}
             >
-              <Link href={`/category/${cat.cat_id}`}>{cat.name}</Link>
-            </li>
+              <p>{cat.name}</p>
+            </button>
           );
         })}
       </ul>
-
-      <div className="max-w-[100%] grid grid-cols-1 gap-1 lg:gap-0 lg:grid-cols-3 text-white">
-        {data.projects.map((project) => {
-          return (
-            <div key={project.project_id}>
-              <SummaryProjectcard
-                name={project.project_name}
-                location={project.project_location}
-                url={`/project/${project.project_id}`}
-                img={project.project_thumbnail}
-              />
-            </div>
-          );
-        })}
+      <div className="max-w-[100%] grid grid-cols-2 gap-1 lg:gap-1 lg:grid-cols-3 text-white">
+        {filterData.map((project, i) => (
+          <motion.div
+            initial={{ opacity: 0, translateX: -50 }}
+            animate={{ opacity: 1, translateX: 0 }}
+            transition={{duration: 0.3, delay: i * 0.1}}
+            key={project.project_id}
+          >
+            <SummaryProjectcard
+              name={project.project_name}
+              location={project.project_location}
+              url={`/project/${project.project_id}`}
+              img={project.project_thumbnail}
+            />
+          </motion.div>
+        ))}
       </div>
     </section>
   );

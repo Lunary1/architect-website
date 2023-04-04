@@ -1,9 +1,7 @@
 import React from "react";
 
 import {
-  FaDribbbleSquare,
   FaFacebookSquare,
-  FaGithubSquare,
   FaInstagramSquare,
   FaTwitterSquare,
 } from "react-icons/fa";
@@ -12,58 +10,62 @@ import Link from "next/link";
 
 const ContactForm = () => {
   return (
-    <div className="max-w-[1240px] m-auto p-4 mb-12 mt-36">
-
-      <div className="flex justify-between">
-        <div>
-          <h1 className="font-bold uppercase pb-2 text-sm">Architectenbureau Paul Kindt</h1>
-          <ul className="uppercase text-sm">
-            <li>ADRES: Fremisstraat 1, Maarkedal</li>
-            <li>E-MAIL: INFO@NGARCHITECTS.LT</li>
-            <li>ADDRESS: KONSTITUCIJOS PR. 23c-119, VILNIUS</li>
-            <li> PHONE: +370 601 55332</li>
-            <li>COMPANY CODE: 302567842</li>
-          </ul>
-
-          <h2 className="font-bold uppercase pb-2 text-sm mt-4">Volg ons hier</h2>
-          <div className="max-w-[40%] flex justify-between hover:cursor-pointer">
-            <Link href="">
-              <FaFacebookSquare size={30} />
-            </Link>
-            <Link href="">
-              <FaInstagramSquare size={30} />
-            </Link>
-            <Link href="">
-              <FaTwitterSquare size={30} />
-            </Link>
+    <div className="max-w-[1240px] m-auto p-4 mt-32 text-white">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="flex md:flex-col justify-evenly">
+          <div>
+            <h1 className="font-bold uppercase pb-2 text-lg">
+              Architectenbureau Paul Kindt
+            </h1>
+            <ul className="uppercase text-sm">
+              <li>ADRES: Fremisstraat 1, Maarkedal</li>
+              <li>E-MAIL: info@architect-kindt.be</li>
+              <li> PHONE: +32 495 20 56 77</li>
+              <li>BTW-NUMMER: </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-bold uppercase pb-2 text-sm">
+              Follow us on
+            </h2>
+            <div className="max-w-[40%] flex gap-4 hover:cursor-pointer">
+              <Link href="">
+                <FaFacebookSquare size={25}/>
+              </Link>
+              <Link href="">
+                <FaInstagramSquare size={25} />
+              </Link>
+              <Link href="">
+                <FaTwitterSquare size={25} />
+              </Link>
+            </div>
           </div>
         </div>
-        <form className="max-w-[600px] m-auto">
-          <h1 className="font-bold uppercase pb-2 text-lg">Stel uw vraag</h1>
-          <div className="grid grid-cols-2 gap-2">
+        <form className="mt-8 md:mt-0">
+          <div className="grid grid-cols-2 gap-2 my-2">
             <input
-              className="border shadow-lg p-3"
+              className="p-3 bg-black placeholder:text-white"
               type="text"
-              placeholder="Name"
+              placeholder="Naam"
             />
             <input
-              className="border shadow-lg p-3"
+              className=" p-3 bg-black placeholder:text-white"
               type="email"
               placeholder="Email"
             />
           </div>
           <input
-            className="border shadow-lg p-3 w-full"
+            className=" p-3 bg-black placeholder:text-white  w-full"
             type="text"
             placeholder="Subject"
           />
           <textarea
-            className="border shadow-lg p-3 w-full my-2"
+            className="  p-3 bg-black w-full placeholder:text-white my-2"
             cols="30"
             rows="10"
             placeholder="Message"
           ></textarea>
-          <button className="border shadow-lg p-3 w-full mt-2 text-white">Submit</button>
+          <button className="  p-3 w-full mt-2 text-white">Verzend</button>
         </form>
       </div>
     </div>

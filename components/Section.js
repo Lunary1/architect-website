@@ -8,8 +8,8 @@ export default function Section() {
     <section className="lg:max-w-[1240px] max-w-[80%] mx-auto py-8 mt-24">
       <div className="flex flex-col-reverse md:flex-row">
         <div className="grid grid-cols-1 content-between">
-          <div className="max-w-[80%]">
-            <h1 className="font-bold text-3xl text-black uppercase text-center md:text-left py-4">
+          <div className="max-w-[80%] text-white">
+            <h1 className="font-bold text-3xl  uppercase text-center md:text-left py-4">
               Wie zijn wij?
             </h1>
             <p className="text-sm">

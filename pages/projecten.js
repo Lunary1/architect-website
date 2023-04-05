@@ -54,7 +54,7 @@ function Projecten({ data, cats }) {
   };
 
   return (
-    <section className="max-w-[1240px] m-auto mt-28">
+    <section className="max-w-[85vw] m-auto mt-28">
       <div className="pt-8">
         <h1 className="text-4xl uppercase font-serif">overzicht</h1>
         <div className="mt-8">

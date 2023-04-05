@@ -41,7 +41,7 @@ export default function Slider() {
   });
   return (
     <div id="section-1">
-      <div className="my-24 max-w-[95%] m-auto">
+      <div className="my-24 max-w-[85vw] m-auto">
         <section className="flex flex-col md:flex-row  gap-8 justify-between">
           <h2
             ref={ref}

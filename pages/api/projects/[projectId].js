@@ -3,8 +3,6 @@ import { query } from "../../../lib/db";
 export default async function product(req, res) {
   const queryResponse = req.query;
 
-  console.log(queryResponse.projectId);
-
   try {
     const querySql = "SELECT * FROM projecten WHERE project_id = ?";
     const valuesParams = [queryResponse.projectId];

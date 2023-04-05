@@ -20,9 +20,9 @@ const Navbar = () => {
         style={{ backgroundColor: `${color}` }}
         className="fixed left-0 top-0 w-full z-10 ease-in duration-200"
       >
-        <div className="max-w-[1240px] m-auto flex justify-between items-center py-4 px-4 text-white">
+        <div className="max-w-[95%] m-auto flex justify-between items-center p-2 ">
           <Link href="/" passHref>
-            <div className="max-w-[10%]">
+            <div className="max-w-[8%]">
               <Image
                 className="hover:cursor-pointer"
                 src="/logo.jpg"

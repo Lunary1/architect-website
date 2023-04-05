@@ -1,47 +1,48 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
 
-import pic from "../public/logo.jpg";
+import placeholder from "../public/house.webp";
 
 export default function Section() {
   return (
-    <section className="lg:max-w-[1240px] max-w-[80%] mx-auto py-8 mt-24">
-      <div className="flex flex-col-reverse md:flex-row">
-        <div className="grid grid-cols-1 content-between">
-          <div className="max-w-[80%] text-white">
-            <h1 className="font-bold text-3xl  uppercase text-center md:text-left py-4">
-              Wie zijn wij?
-            </h1>
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium facilis inventore iste quis velit unde labore
-              reiciendis, voluptatum neque nihil laboriosam veritatis debitis.
-              Officiis repudiandae, quaerat ducimus sunt cumque mollitia.
-              <br />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              consequatur ut similique nisi ex iusto ea, fuga a eaque aut? Quo,
-              iusto qui? Laborum minima consectetur fugit qui voluptatum
-              quibusdam?
-            </p>
+    <section>
+      <div className="relative w-[100%] md:h-[75vh] h-[300px] overflow-hidden">
+        <Image src={placeholder} alt="" layout="fill" objectFit="cover" />
+      </div>
+      <div className="max-w-[95%] m-auto pt-24">
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="w-[100%] md:w-1/2">
+            <div className="w-[85%] m-auto md:m-0">
+              <Image src={placeholder} />
+            </div>
           </div>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            onHoverStart={(e) => {}}
-            onHoverEnd={(e) => {}}
-            className="px-10 py-3 bg-black text-white font-bold max-w-[60%] justify-self-center md:justify-self-start my-4"
-          >
-            Lees meer
-          </motion.button>
-        </div>
-        <div className="m-auto">
-          <Image
-            src={pic}
-            alt="pic"
-            width={1920}
-            height={1080}
-            layout="responsive"
-          />
+          <div className="md:w-1/2 m-auto pt-8 md:pt-0">
+            <div className="w-[80%] m-auto md:m-0">
+              <h2 className="uppercase text-3xl md:text-4xl">
+                over ons
+              </h2>
+              <p className="pt-8 md:pt-16 text-sm">
+                Als ervaren architect uit Maarkedal hecht ik veel belang aan
+                kwaliteit, correctheid en creativiteit in mijn werk. <br /> Mijn
+                passie voor architectuur en het creëren van gebouwen en ruimtes
+                die zowel esthetisch mooi als functioneel zijn, zorgt ervoor dat
+                ik me steeds ten volle inzet voor elk project.
+                <br />
+                Ik ga altijd nauwkeurig en
+                precies te werk en houd rekening met hun specifieke wensen en
+                behoeften. Door goed te luisteren naar hun ideeën en behoeften,
+                kan ik een ontwerp op maat maken dat aan hun verwachtingen
+                voldoet.
+                <br />
+                <br />
+                <br />
+                <span className="font-bold">
+                  Door mijn creativiteit kan ik unieke ontwerpen maken die
+                  perfect aansluiten bij de persoonlijkheid en levensstijl van
+                  mijn klanten.
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

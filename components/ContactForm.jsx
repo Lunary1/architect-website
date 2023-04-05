@@ -1,4 +1,9 @@
+// nextjs imports
+
 import React from "react";
+import Link from "next/link";
+
+//icons imports
 
 import {
   FaFacebookSquare,
@@ -6,11 +11,11 @@ import {
   FaTwitterSquare,
 } from "react-icons/fa";
 
-import Link from "next/link";
+
 
 const ContactForm = () => {
   return (
-    <div className="max-w-[1240px] m-auto p-4 mt-32 text-white">
+    <div className="max-w-[1240px] m-auto mt-32 ">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="flex md:flex-col justify-evenly">
           <div>
@@ -65,7 +70,7 @@ const ContactForm = () => {
             rows="10"
             placeholder="Message"
           ></textarea>
-          <button className="  p-3 w-full mt-2 text-white">Verzend</button>
+          <button className="  p-3 w-full mt-2 ">Verzend</button>
         </form>
       </div>
     </div>

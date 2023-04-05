@@ -8,18 +8,13 @@ import FsLightbox from "fslightbox-react";
 export default function ProjectOverview({ images, projectData }) {
   const [toggler, setToggler] = useState(false);
 
-  console.log("Project Data:");
-  console.log(projectData);
-
   const projectInfo = projectData.project;
 
   return (
     <>
-      <div className="m-auto pt-36">
-        <div className="flex justify-center py-8">
-          <h1 className="text-white text-4xl font-serif">
-            {projectInfo.project_name}
-          </h1>
+      <div className="m-auto mt-24">
+        <div className="flex justify-center py-4">
+          <h1 className=" text-4xl font-serif">{projectInfo.project_name}</h1>
         </div>
         <div className="container mx-auto">
           <ResponsiveMasonry

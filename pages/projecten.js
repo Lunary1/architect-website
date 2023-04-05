@@ -1,13 +1,43 @@
 import React from "react";
-import { motion } from "framer-motion";
+
+// import external
+
+import { motion, AnimatePresence, useAnimate, stagger } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useAnimate, stagger } from "framer-motion";
+
+// import components
 
 import SummaryProjectcard from "../components/ProjectCard";
+
+// stagger animation
+
+const staggerMenuItems = stagger(0.1, { startDelay: 0.15 });
+
+function useMenuAnimation(isOpen) {
+  const [scope, animate] = useAnimate();
+
+  useEffect(() => {
+    animate(
+      "li",
+      isOpen ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.3 },
+      {
+        duration: 0.2,
+        delay: isOpen ? staggerMenuItems : 0,
+      }
+    );
+  }, [isOpen]);
+
+  return scope;
+}
+
+// render page function
 
 function Projecten({ data, cats }) {
   const [allData, setAllData] = useState(data.projects);
   const [filterData, setFilteredData] = useState(allData);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const scope = useMenuAnimation(isOpen);
 
   const handleClick = (e) => {
     let value = e;
@@ -24,44 +54,68 @@ function Projecten({ data, cats }) {
   };
 
   return (
-    <section className="m-auto pt-24 px-12">
-      <h1 className="text-4xl p-8 uppercase text-center text-white">
-        Projecten
-      </h1>
-      <ul className="flex justify-around p-8">
-        <button className="text-white" onClick={handleClickReset}>
-          Alle projecten
-        </button>
-        {cats.categories.map((cat) => {
-          return (
-            <button
-              key={cat.cat_id}
-              id={cat.cat_id}
-              className="text-white"
-              onClick={(e) => handleClick(e.currentTarget.id)}
-            >
-              <p>{cat.name}</p>
-            </button>
-          );
-        })}
-      </ul>
-      <div className="max-w-[100%] grid grid-cols-2 gap-1 lg:gap-1 lg:grid-cols-3 text-white">
-        {filterData.map((project, i) => (
-          <motion.div
-            initial={{ opacity: 0, translateX: -50 }}
-            animate={{ opacity: 1, translateX: 0 }}
-            transition={{duration: 0.3, delay: i * 0.1}}
-            key={project.project_id}
+    <section className="max-w-[1240px] m-auto mt-28">
+      <div className="pt-8">
+        <h1 className="text-4xl uppercase font-serif">overzicht</h1>
+        <div className="mt-8">
+          <motion.button
+            whileTap={{ scale: 0.97 }}
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-sm hover:border-b-[1px]"
           >
-            <SummaryProjectcard
-              name={project.project_name}
-              location={project.project_location}
-              url={`/project/${project.project_id}`}
-              img={project.project_thumbnail}
-            />
-          </motion.div>
-        ))}
+            <h2 className="text-lg">Categorie</h2>
+          </motion.button>
+        </div>
       </div>
+
+      <nav ref={scope}>
+        <ul className="flex justify-start gap-6 py-8 max-w-[1240px] group ">
+          <li
+            whileTap={{ scale: 0.9 }}
+            className="text-sm group-hover:cursor-pointer opacity-0"
+            onClick={handleClickReset}
+          >
+            All
+          </li>
+          {cats.categories.map((cat) => {
+            return (
+              <li
+                key={cat.cat_id}
+                id={cat.cat_id}
+                className="text-sm group-hover:cursor-pointer opacity-0"
+                onClick={(e) => handleClick(e.currentTarget.id)}
+              >
+                <p>{cat.name}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+
+      <motion.div
+        layout
+        className="max-w-[100%] grid grid-cols-2 gap-1 lg:gap-1 lg:grid-cols-3 "
+      >
+        <AnimatePresence>
+          {filterData.map((project, i) => (
+            <motion.div
+              layout
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              key={project.project_id}
+            >
+              <SummaryProjectcard
+                name={project.project_name}
+                location={project.project_location}
+                url={`/project/${project.project_id}`}
+                img={project.project_thumbnail}
+              />
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 }

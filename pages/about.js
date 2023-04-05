@@ -18,7 +18,7 @@ function About() {
   return (
     <div className="container mx-auto">
       <div className="grid py-36 gap-4 md:grid-cols-2 sm:grid-cols-1">
-        <div className="left py-20 text-white">
+        <div className="left py-20 ">
           <div className="header-title mb-24">
             <progress
               className="progress progress-info w-56"

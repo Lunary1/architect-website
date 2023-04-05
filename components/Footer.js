@@ -18,7 +18,7 @@ import {
 const Footer = () => {
   return (
     <footer>
-      <div className="max-w-[1240px] m-auto bg-black mt-8">
+      <div className="max-w-[1240px] m-auto bg-black my-12">
         <div className="footer grid grid-cols-1">
           <div className="m-auto">
             <div className="max-w-[10%] mx-auto">
@@ -30,8 +30,8 @@ const Footer = () => {
               />
             </div>
           </div>
-          <div className="flex gap-4 justify-center  text-white">
-            <motion.div
+          <ul className="flex gap-4 justify-center  text-white">
+            <motion.li
               whileTap={{ scale: 1.1 }}
               whileHover={{ scale: 1.1, rotate: 3 }}
             >
@@ -40,8 +40,8 @@ const Footer = () => {
                 fgColor="white"
                 url="https://www.facebook.com/profile.php?id=100047843332654"
               />
-            </motion.div>
-            <motion.div
+            </motion.li>
+            <motion.li
               whileTap={{ scale: 1.1 }}
               whileHover={{ scale: 1.1, rotate: 3 }}
             >
@@ -50,8 +50,8 @@ const Footer = () => {
                 fgColor="white"
                 url="https://www.instagram.com/paulkindt/"
               />
-            </motion.div>
-            <motion.div
+            </motion.li>
+            <motion.li
               whileTap={{ scale: 1.1 }}
               whileHover={{ scale: 1.1, rotate: 3 }}
             >
@@ -60,8 +60,8 @@ const Footer = () => {
                 fgColor="white"
                 url="https://architect-website-five.vercel.app/"
               />
-            </motion.div>
-          </div>
+            </motion.li>
+          </ul>
         </div>
       </div>
     </footer>

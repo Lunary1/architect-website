@@ -12,11 +12,11 @@ export default function ProjectOverview({ images, projectData }) {
 
   return (
     <>
-      <div className="m-auto mt-24">
-        <div className="flex justify-center py-4">
+      <div className="max-w-[85vw] m-auto mt-28">
+        <div className="flex justify-center">
           <h1 className=" text-4xl font-serif">{projectInfo.project_name}</h1>
         </div>
-        <div className="container mx-auto">
+        <div className="mx-auto">
           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 4 }}
           >

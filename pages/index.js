@@ -10,7 +10,6 @@ const Homepage = () => {
 
   return (
     <>
-      <Navbar />
       <Hero heading="Architect Paul Kindt" />
       <Slider />
     </>

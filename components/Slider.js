@@ -37,11 +37,11 @@ export default function Slider() {
       s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
     slides: { size: 0.5 },
-    slides: { perView: 2}
+    slides: { perView: 2 },
   });
   return (
-    <div id="section-1">
-      <div className="my-24 max-w-[85vw] m-auto">
+    <div id="section-1" className="my-24 py-8">
+      <div className="max-w-[85vw] m-auto pb-12">
         <section className="flex flex-col md:flex-row  gap-8 justify-between">
           <h2
             ref={ref}

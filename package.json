@@ -29,6 +29,7 @@
     "react-icons": "^4.8.0",
     "react-responsive-masonry": "^2.1.7",
     "react-router-dom": "^6.9.0",
+    "react-scroll": "^1.8.9",
     "react-social-icons": "^5.15.0",
     "serverless-mysql": "^1.5.4"
   },

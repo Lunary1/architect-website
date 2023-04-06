@@ -12,7 +12,7 @@ export default function Section() {
         <div className="flex flex-col md:flex-row gap-8">
           <div className="w-[100%] md:w-1/2">
             <div className="w-[85%] m-auto md:m-0">
-              <Image src={placeholder} />
+              <Image src={placeholder} alt="" />
             </div>
           </div>
           <div className="md:w-1/2 m-auto pt-8 md:pt-0">

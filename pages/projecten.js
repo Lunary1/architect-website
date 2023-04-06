@@ -2,7 +2,13 @@ import React from "react";
 
 // import external
 
-import { motion, AnimatePresence, useAnimate, stagger } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useAnimate,
+  stagger,
+  animate,
+} from "framer-motion";
 import { useState, useEffect } from "react";
 
 // import components

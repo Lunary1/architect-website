@@ -89,45 +89,49 @@ const Hero = ({ heading, message }) => {
     <>
       <div>
         <div ref={sliderRef} className="keen-slider">
-            {schetsArr.map((schets) => {
-              console.log(schets);
-              return (
-                <div className="keen-slider__slide number-slide2 max-h-[80vh]">
-                  <Image
-                    layout="responsive"
-                    src={schets.src}
-                    height={1080}
-                    width={1920}
-                  />
-                </div>
-              );
-            })}
-          </div>
+          {schetsArr.map((schets, i) => {
+            console.log(schets);
+            return (
+              <div
+                key={i}
+                className="keen-slider__slide number-slide2 max-h-[80vh]"
+              >
+                <Image
+                  layout="responsive"
+                  src={schets.src}
+                  height={1080}
+                  width={1920}
+                  alt={schets}
+                />
+              </div>
+            );
+          })}
         </div>
-        <motion.a
-          className="flex justify-center max-w-[20vw] m-auto py-12 hover:cursor-pointer"
-          animate={{
-            y: [0, -20, 0],
-          }}
-          transition={{
-            duration: 1.25,
-            ease: "easeInOut",
-            repeat: Infinity,
-          }}
+      </div>
+      <motion.a
+        className="flex justify-center max-w-[20vw] m-auto py-12 hover:cursor-pointer"
+        animate={{
+          y: [0, -20, 0],
+        }}
+        transition={{
+          duration: 1.25,
+          ease: "easeInOut",
+          repeat: Infinity,
+        }}
+      >
+        <Link
+          activeClass="active"
+          to="section-1"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={1000}
         >
-          <Link
-            activeClass="active"
-            to="section-1"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={1000}
-          >
-            <span className="text-4xl">
-              <BsChevronCompactDown />
-            </span>
-          </Link>
-        </motion.a>
+          <span className="text-4xl">
+            <BsChevronCompactDown />
+          </span>
+        </Link>
+      </motion.a>
     </>
   );
 };

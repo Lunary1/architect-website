@@ -40,7 +40,7 @@ export default function Slider() {
     slides: { perView: 2 },
   });
   return (
-    <div id="section-1" className="my-24 py-8">
+    <div id="section-1" className="md:my-24 py-8">
       <div className="max-w-[85vw] m-auto pb-12">
         <section className="flex flex-col md:flex-row  gap-8 justify-between">
           <h2

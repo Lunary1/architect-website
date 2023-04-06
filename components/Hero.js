@@ -44,7 +44,7 @@ const schetsArr = [
   schets12,
 ];
 
-const Hero = ({ heading, message }) => {
+const Hero = () => {
   const [sliderRef] = useKeenSlider(
     {
       drag: false,
@@ -67,17 +67,7 @@ const Hero = ({ heading, message }) => {
             slider.next();
           }, 2000);
         }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false;
-            nextTimeout();
-          });
-          nextTimeout();
-        });
+        nextTimeout();
         slider.on("dragStarted", clearNextTimeout);
         slider.on("animationEnded", nextTimeout);
         slider.on("updated", nextTimeout);
@@ -92,15 +82,12 @@ const Hero = ({ heading, message }) => {
           {schetsArr.map((schets, i) => {
             console.log(schets);
             return (
-              <div
-                key={i}
-                className="keen-slider__slide number-slide2 max-h-[80vh]"
-              >
+              <div key={i} className="keen-slider__slide max-h-[80vh]">
                 <Image
-                  layout="responsive"
+                  objectFit="contain"
                   src={schets.src}
-                  height={1080}
-                  width={1920}
+                  height={schets.height}
+                  width={schets.width}
                   alt={schets}
                 />
               </div>
@@ -108,8 +95,8 @@ const Hero = ({ heading, message }) => {
           })}
         </div>
       </div>
-      <motion.a
-        className="flex justify-center max-w-[20vw] m-auto py-12 hover:cursor-pointer"
+      <motion.div
+        className="flex justify-center max-w-[20vw] m-auto py-12 hover:cursor-pointer opacity-0 md:opacity-100"
         animate={{
           y: [0, -20, 0],
         }}
@@ -131,7 +118,7 @@ const Hero = ({ heading, message }) => {
             <BsChevronCompactDown />
           </span>
         </Link>
-      </motion.a>
+      </motion.div>
     </>
   );
 };

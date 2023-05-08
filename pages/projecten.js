@@ -25,7 +25,7 @@ function useMenuAnimation(isOpen) {
   useEffect(() => {
     animate(
       "li",
-      isOpen ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.3 },
+      isOpen ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 },
       {
         duration: 0.2,
         delay: isOpen ? staggerMenuItems : 0,
@@ -60,39 +60,27 @@ function Projecten({ data, cats }) {
   };
 
   return (
-    <section className="max-w-[85vw] m-auto mt-28">
-      <div className="pt-8">
-        <h1 className="text-4xl uppercase font-serif">overzicht</h1>
-        <div className="mt-8">
-          <motion.button
-            whileTap={{ scale: 0.97 }}
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-sm hover:border-b-[1px]"
-          >
-            <h2 className="text-lg">Categorie</h2>
-          </motion.button>
-        </div>
-      </div>
-
+    <section className="max-w-[85vw] m-auto mt-14">
       <nav ref={scope}>
         <ul className="flex justify-start gap-6 py-8 max-w-[1240px] group ">
-          <li
+          <motion.li
             whileTap={{ scale: 0.9 }}
-            className="text-sm group-hover:cursor-pointer opacity-0"
+            className="text-sm group-hover:cursor-pointer opacity-0 border-black border-b-[1px] hover:border-b-[1px] hover:border-white"
             onClick={handleClickReset}
           >
             All
-          </li>
+          </motion.li>
           {cats.categories.map((cat) => {
             return (
-              <li
+              <motion.li
+                whileTap={{ scale: 0.97 }}
                 key={cat.cat_id}
                 id={cat.cat_id}
-                className="text-sm group-hover:cursor-pointer opacity-0"
+                className="text-sm group-hover:cursor-pointer border-black border-b-[1px] hover:border-b-[1px] hover:border-white"
                 onClick={(e) => handleClick(e.currentTarget.id)}
               >
                 <p>{cat.name}</p>
-              </li>
+              </motion.li>
             );
           })}
         </ul>

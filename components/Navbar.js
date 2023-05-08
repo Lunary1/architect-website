@@ -22,7 +22,7 @@ const Navbar = () => {
       >
         <div className="max-w-[90vw] m-auto flex justify-between py-2 items-center">
           <Link href="/" passHref>
-            <div className="max-w-[8%]">
+            <div className="max-w-[12%]">
               <Image
                 className="hover:cursor-pointer"
                 src="/logo.jpg"

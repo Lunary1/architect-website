@@ -98,31 +98,9 @@ const Hero = () => {
             );
           })}
         </div>
+
       </div>
-      <motion.div
-        className="flex justify-center max-w-[20vw] m-auto py-12 hover:cursor-pointer opacity-0 md:opacity-100"
-        animate={{
-          y: [0, -20, 0],
-        }}
-        transition={{
-          duration: 1.25,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-      >
-        <Link
-          activeClass="active"
-          to="section-1"
-          spy={true}
-          smooth={true}
-          offset={50}
-          duration={1000}
-        >
-          <span className="text-4xl">
-            <BsChevronCompactDown />
-          </span>
-        </Link>
-      </motion.div>
+
     </>
   );
 };

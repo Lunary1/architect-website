@@ -31,7 +31,7 @@ const ContactForm = () => {
           </div>
           <div>
             <h2 className="font-bold uppercase pb-2 text-sm">
-              Follow us on
+              SOCIAL MEDIA
             </h2>
             <div className="max-w-[40%] flex gap-4 hover:cursor-pointer">
               <Link href="">

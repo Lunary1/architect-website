@@ -40,9 +40,9 @@ export default function Slider() {
     slides: { perView: 2 },
   });
   return (
-    <div id="section-1" className="md:my-24 py-8">
-      <div className="max-w-[85vw] m-auto pb-12">
-        <section className="flex flex-col md:flex-row  gap-8 justify-between">
+    <div id="section-1" className=" py-8">
+      <div className="max-w-[85vw] m-auto">
+        {/* <section className="flex flex-col md:flex-row  gap-8 justify-between">
           <h2
             ref={ref}
             className="uppercase text-5xl max-w-[30%]"
@@ -67,7 +67,7 @@ export default function Slider() {
             van prachtige en functionele gebouwen en ruimtes die het dagelijks
             leven van mensen verbeteren.
           </p>
-        </section>
+        </section> */}
       </div>
       <div className="w-screen m-auto">
         <div ref={sliderRef} className="keen-slider hover:cursor-grab ">

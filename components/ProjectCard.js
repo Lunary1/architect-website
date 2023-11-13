@@ -15,6 +15,7 @@ function SummaryProjectcard(props) {
             height={1080}
             layout="responsive"
             loading="lazy"
+            quality={80}
           />
           <figcaption className="absolute bottom-0 p-4 sm:p-8 opacity-0 group-hover:opacity-[85] transition ease-in-out delay-150 text-white">
             {/* <p className="text-xs sm:text-sm font-sans">{props.location}</p> */}

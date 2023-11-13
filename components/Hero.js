@@ -82,17 +82,15 @@ const Hero = () => {
           {schetsArr.map((schets, i) => {
             console.log(schets);
             return (
-              <div key={i} className="keen-slider__slide h-[80vh]">
+              <div key={i} className="keen-slider__slide sm:h-[40rem]">
                 <Image
                   objectFit="contain"
-                  className="object-center"
+                  className="object-center  -translate-y-28 transition"
                   src={schets.src}
                   height={schets.height}
                   width={schets.width}
                   alt={schets}
-                  sizes="(max-width: 1920px) 100vw"
                   layout="responsive"
-                  
                 />
               </div>
             );
@@ -100,7 +98,6 @@ const Hero = () => {
         </div>
 
       </div>
-
     </>
   );
 };

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import placeholder from "../public/house.webp";
 
-export default function Section() {
+export default function About() {
   return (
     <section>
       <div className="relative w-[100%] md:h-[75vh] h-[300px] overflow-hidden">
@@ -17,9 +17,7 @@ export default function Section() {
           </div>
           <div className="md:w-1/2 m-auto pt-8 md:pt-0">
             <div className="w-[80%] m-auto md:m-0">
-              <h2 className="uppercase text-3xl md:text-4xl">
-                over ons
-              </h2>
+              <h2 className="uppercase text-3xl md:text-4xl">over ons</h2>
               <p className="pt-8 md:pt-16 text-sm">
                 Als ervaren architect uit Maarkedal hecht ik veel belang aan
                 kwaliteit, correctheid en creativiteit in mijn werk. <br /> Mijn
@@ -27,11 +25,10 @@ export default function Section() {
                 die zowel esthetisch mooi als functioneel zijn, zorgt ervoor dat
                 ik me steeds ten volle inzet voor elk project.
                 <br />
-                Ik ga altijd nauwkeurig en
-                precies te werk en houd rekening met hun specifieke wensen en
-                behoeften. Door goed te luisteren naar hun ideeën en behoeften,
-                kan ik een ontwerp op maat maken dat aan hun verwachtingen
-                voldoet.
+                Ik ga altijd nauwkeurig en precies te werk en houd rekening met
+                hun specifieke wensen en behoeften. Door goed te luisteren naar
+                hun ideeën en behoeften, kan ik een ontwerp op maat maken dat
+                aan hun verwachtingen voldoet.
                 <br />
                 <br />
                 <br />

@@ -1,8 +1,8 @@
 import React from "react";
-import Section from "../components/Section";
+import About from "../components/About";
 
 function over_ons() {
-  return <Section />;
+  return <About />
 }
 
 export default over_ons;

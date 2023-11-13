@@ -88,7 +88,7 @@ function Projecten({ data, cats }) {
 
       <motion.div
         layout
-        className="max-w-[100%] grid grid-cols-2 gap-1 lg:gap-1 lg:grid-cols-3 "
+        className="max-w-[100%] grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-1 lg:grid-cols-3 "
       >
         <AnimatePresence>
           {filterData.map((project, i) => (

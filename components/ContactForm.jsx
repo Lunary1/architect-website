@@ -27,7 +27,7 @@ const ContactForm = () => {
               <li>BTW-NUMMER: </li>
             </ul>
           </div>
-          <div className="hidden md:flex">
+          <div>
             <h2 className=" font-bold uppercase pb-2 text-sm">SOCIAL MEDIA</h2>
             <div className="max-w-[40%] flex gap-4 hover:cursor-pointer">
               <Link href="">

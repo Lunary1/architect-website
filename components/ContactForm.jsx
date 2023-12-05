@@ -11,8 +11,6 @@ import {
   FaTwitterSquare,
 } from "react-icons/fa";
 
-
-
 const ContactForm = () => {
   return (
     <div className="max-w-[1240px] m-auto mt-32 ">
@@ -29,13 +27,11 @@ const ContactForm = () => {
               <li>BTW-NUMMER: </li>
             </ul>
           </div>
-          <div>
-            <h2 className="font-bold uppercase pb-2 text-sm">
-              SOCIAL MEDIA
-            </h2>
+          <div className="hidden md:flex">
+            <h2 className=" font-bold uppercase pb-2 text-sm">SOCIAL MEDIA</h2>
             <div className="max-w-[40%] flex gap-4 hover:cursor-pointer">
               <Link href="">
-                <FaFacebookSquare size={25}/>
+                <FaFacebookSquare size={25} />
               </Link>
               <Link href="">
                 <FaInstagramSquare size={25} />
@@ -62,13 +58,13 @@ const ContactForm = () => {
           <input
             className=" p-3 bg-black placeholder:text-white  w-full"
             type="text"
-            placeholder="Subject"
+            placeholder="Onderwerp"
           />
           <textarea
             className="  p-3 bg-black w-full placeholder:text-white my-2"
             cols="30"
             rows="10"
-            placeholder="Message"
+            placeholder="Bericht"
           ></textarea>
           <button className="  p-3 w-full mt-2 ">Verzend</button>
         </form>

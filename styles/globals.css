@@ -17,34 +17,3 @@ body {
 html {
   font-family: "Raleway", sans-serif;
 }
-
-.custom-img {
-  background-image: url("../public/bgvid.gif");
-}
-
-#menu {
-  display: flex;
-  align-items: center;
-  background-color: rgb(20, 20, 20);
-}
-
-.menu-item {
-  color: white;
-  font-size: clamp(2rem, 6vw, 6rem);
-  font-family: "Ibarra Real Nova", serif;
-
-  transition: opacity 400ms ease;
-}
-
-#menu-items {
-  margin-left: clamp(4rem, 20vw, 48rem);
-  z-index: 2;
-}
-
-#menu-items:hover > .menu-item {
-  opacity: 0.3;
-}
-
-#menu-items:hover > .menu-item:hover {
-  opacity: 1;
-}

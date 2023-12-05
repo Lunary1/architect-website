@@ -77,12 +77,15 @@ const Hero = () => {
 
   return (
     <>
-      <div>
-        <div ref={sliderRef} className="keen-slider">
+      <div className="hidden md:flex">
+        <div ref={sliderRef} className="keen-slider ">
           {schetsArr.map((schets, i) => {
             console.log(schets);
             return (
-              <div key={i} className="keen-slider__slide sm:h-[55rem]">
+              <div
+                key={i}
+                className="keen-slider__slide h-auto py-12 z-0 sm:h-[55rem]"
+              >
                 <Image
                   objectFit="contain"
                   className="object-center  -translate-y-28 transition"
@@ -96,7 +99,6 @@ const Hero = () => {
             );
           })}
         </div>
-
       </div>
     </>
   );

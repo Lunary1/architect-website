@@ -82,7 +82,7 @@ const Hero = () => {
           {schetsArr.map((schets, i) => {
             console.log(schets);
             return (
-              <div key={i} className="keen-slider__slide sm:h-[40rem]">
+              <div key={i} className="keen-slider__slide sm:h-[55rem]">
                 <Image
                   objectFit="contain"
                   className="object-center  -translate-y-28 transition"

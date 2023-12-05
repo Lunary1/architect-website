@@ -62,7 +62,7 @@ function Projecten({ data, cats }) {
   return (
     <section className="max-w-[85vw] m-auto mt-14">
       <nav ref={scope}>
-        <ul className="flex justify-start gap-6 py-8 max-w-[1240px] group ">
+        <ul className="flex justify-start gap-6 py-8 max-w-[1240px] group flex-wrap">
           <motion.li
             whileTap={{ scale: 0.9 }}
             className="text-sm group-hover:cursor-pointer opacity-0 border-black border-b-[1px] hover:border-b-[1px] hover:border-white"

@@ -6,13 +6,17 @@ import Slider from "../components/Slider";
 import Banner from "../components/Banner";
 import SectionHeader from "../components/SectionHeader";
 import Section from "../components/About";
+import Image from "next/image";
+
+import logo from "../public/logo_tekst.jpg";
 
 const Homepage = () => {
   return (
     <>
       <Hero heading="Architect Paul Kindt" />
-      <SectionHeader />
-      <Slider />
+      <div className="max-w-[35%] m-auto">
+        <Image src={logo} />
+      </div>
     </>
   );
 };

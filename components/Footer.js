@@ -20,16 +20,6 @@ const Footer = () => {
     <footer>
       <div className="max-w-[1240px] m-auto bg-black my-12">
         <div className="footer grid grid-cols-1">
-          <div className="m-auto">
-            <div className="max-w-[10%] mx-auto">
-              <Image
-                src={logo}
-                width={1920}
-                height={1080}
-                alt="Logo Paul Kindt"
-              />
-            </div>
-          </div>
           <ul className="flex gap-4 justify-center  text-white">
             <motion.li
               whileTap={{ scale: 1.1 }}

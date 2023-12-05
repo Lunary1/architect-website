@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const secondaryNav = () => {
   return (
-    <div className="flex justify-between p-2 font-bold text-sm">
+    <div className="flex justify-between p-2 font-bold text-sm z-99">
       <div>HOUSING PROJECTS</div>
       <div className="">
         <div>GRID VIEW</div>

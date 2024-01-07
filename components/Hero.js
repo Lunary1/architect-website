@@ -30,7 +30,7 @@ const Hero = () => {
           >
             {images.map((image) => {
               return (
-                <motion.div className="item min-w-[40rem]">
+                <motion.div key={image} className="item min-w-[40rem]">
                   <Image
                     className=" min-w-[1920px] pointer-events-none"
                     src={image}

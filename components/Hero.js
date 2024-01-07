@@ -23,16 +23,15 @@ const Hero = () => {
       <div className="md:flex justify-center gap:0 my-[2rem] ">
         <motion.div className="carousel cursor-grab overflow-hidden">
           <motion.div
-            drag="x"
             animate={{ x: "-23040px" }}
-            transition={{ repeat: Infinity, duration: 200 }}
+            transition={{ repeat: Infinity, duration: 160 }}
             className="inner-carousel flex"
           >
             {images.map((image) => {
               return (
                 <motion.div key={image} className="item min-w-[40rem]">
                   <Image
-                    className=" min-w-[1920px] pointer-events-none"
+                    className="h-[100%] w-[100%] pointer-events-none"
                     src={image}
                   />
                 </motion.div>

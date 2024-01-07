@@ -16,7 +16,9 @@ const Navbar = () => {
     <div className="flex justify-between items-center h-[8rem] w-screen mx-auto p-8 text-white ">
       <div className="flex items-center">
         <Link href="/" passHref>
-          <div className="text-4xl pr-24">PK.</div>
+          <div className="pr-24 max-w-[15rem] cursor-pointer">
+            <Image src={logo} />
+          </div>
         </Link>
         <ul className="hidden md:flex gap-4">
           <li className="p-4">
@@ -50,19 +52,21 @@ const Navbar = () => {
             : "ease-in-out duration-500 fixed left-[-100%]    z-9999"
         }
       >
-        <h1 className="w-full text-3xl font-bold text-white m-4">PK.</h1>
-        <li className="p-4">
+        <div className="pr-24 max-w-[15rem]">
+          <Image src={logo} />
+        </div>
+        <li onClick={handleNav} className="p-4">
           <Link href="/">
             <p className="cursor-pointer transition">Home</p>
           </Link>
         </li>
-        <li className="p-4">
+        <li onClick={handleNav} className="p-4">
           <Link href="/projecten">Projecten</Link>
         </li>
-        <li className="p-4">
+        <li onClick={handleNav} className="p-4">
           <Link href="/over_ons">Over ons</Link>
         </li>
-        <li className="p-4">
+        <li onClick={handleNav} className="p-4">
           <Link href="/contact">Contact</Link>
         </li>
       </ul>

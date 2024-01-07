@@ -15,87 +15,31 @@ import { Link } from "react-scroll";
 
 import { BsChevronCompactDown } from "react-icons/bs";
 import logo from "./../public/logo.jpg";
-
-import schets1 from "../public/schetsen/schets1.jpg";
-import schets2 from "../public/schetsen/schets2.jpg";
-import schets3 from "../public/schetsen/schets3.jpg";
-import schets4 from "../public/schetsen/schets4.jpg";
-import schets5 from "../public/schetsen/schets5.jpg";
-import schets6 from "../public/schetsen/schets6.jpg";
-import schets7 from "../public/schetsen/schets7.jpg";
-import schets8 from "../public/schetsen/schets8.jpg";
-import schets9 from "../public/schetsen/schets9.jpg";
-import schets10 from "../public/schetsen/schets10.jpg";
-import schets11 from "../public/schetsen/schets11.jpg";
-import schets12 from "../public/schetsen/schets12.jpg";
-
-const schetsArr = [
-  schets1,
-  schets2,
-  schets3,
-  schets4,
-  schets5,
-  schets6,
-  schets7,
-  schets8,
-  schets9,
-  schets10,
-  schets11,
-  schets12,
-];
+import images from "../images";
 
 const Hero = () => {
-  const [sliderRef] = useKeenSlider(
-    {
-      drag: false,
-      loop: true,
-      slides: {
-        origin: "center",
-      },
-    },
-    [
-      (slider) => {
-        let timeout;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
-        }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, 2000);
-        }
-        nextTimeout();
-        slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
-        slider.on("updated", nextTimeout);
-      },
-    ]
-  );
-
   return (
     <>
-      <div className="md:flex my-[2rem] max-h-[12rem]">
-        <div ref={sliderRef} className="keen-slider">
-          {schetsArr.map((schets, i) => {
-            console.log(schets);
-            return (
-              <div key={i} className="keen-slider__slide">
-                <Image
-                  objectFit="cover"
-                  className="object-center transition"
-                  src={schets.src}
-                  height="1080"
-                  width="1920"
-                  alt={schets}
-                  layout="responsive"
-                />
-              </div>
-            );
-          })}
-        </div>
+      <div className="md:flex justify-center gap:0 my-[2rem] ">
+        <motion.div className="carousel cursor-grab overflow-hidden">
+          <motion.div
+            drag="x"
+            animate={{ x: "-23040px" }}
+            transition={{ repeat: Infinity, duration: 200 }}
+            className="inner-carousel flex"
+          >
+            {images.map((image) => {
+              return (
+                <motion.div className="item min-w-[40rem]">
+                  <Image
+                    className=" min-w-[1920px] pointer-events-none"
+                    src={image}
+                  />
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </motion.div>
       </div>
     </>
   );

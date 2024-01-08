@@ -5,7 +5,7 @@ import placeholder from "../public/house.webp";
 export default function About() {
   return (
     <section className=" h-screen">
-      <div className="max-w-[85%] m-auto pt-24">
+      <div className="max-w-[85vw] m-auto pt-24">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="w-[100%] md:w-1/2">
             <div className="w-[85%] m-auto md:m-0">

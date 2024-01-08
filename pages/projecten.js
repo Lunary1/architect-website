@@ -68,7 +68,7 @@ function Projecten({ data, cats }) {
             className="text-sm group-hover:cursor-pointer opacity-0 border-black border-b-[1px] hover:border-b-[1px] hover:border-white"
             onClick={handleClickReset}
           >
-            All
+            Alles
           </motion.li>
           {cats.categories.map((cat) => {
             return (

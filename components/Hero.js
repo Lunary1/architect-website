@@ -18,30 +18,40 @@ import logo from "./../public/logo.jpg";
 import images from "../images";
 
 const Hero = () => {
+  const [sliderRef] = useKeenSlider({
+    slides: {
+      origin: "center",
+      perView: 2,
+      spacing: 15,
+    },
+    loop: true,
+    renderMode: "performance",
+    created(s) {
+      s.moveToIdx(5, true, animation);
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+  });
+
   return (
     <>
       <div className="md:flex justify-center gap:0 my-[2rem] ">
-        <motion.div className="carousel cursor-grab overflow-hidden">
-          <motion.div
-            animate={{ x: "-23040px" }}
-            transition={{ repeat: Infinity, duration: 160 }}
-            className="inner-carousel flex"
-          >
-            {images.map((image) => {
-              return (
-                <motion.div key={image} className="item min-w-[40rem]">
-                  <Image
-                    className="h-[100%] w-[100%] pointer-events-none"
-                    src={image}
-                  />
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </motion.div>
+        <div ref={sliderRef} className="keen-slider">
+          {images.map((image) => {
+            return (
+              <div className={`keen-slider__slide`}>
+                <Image src={image} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
-};
+}; 
 
 export default Hero;

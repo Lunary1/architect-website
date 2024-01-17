@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center h-[8rem] w-screen mx-auto p-8 text-white ">
-      <div className="flex items-center">
+      <div className="flex items-center uppercase">
         <Link href="/" passHref>
           <div className="pr-24 max-w-[15rem] cursor-pointer">
             <Image src={logo} />
@@ -38,10 +38,6 @@ const Navbar = () => {
           <li className="p-4"></li>
         </ul>
       </div>
-      <button className="hidden md:flex bg-transparent border border-white text-white hover:bg-white hover:text-black font-bold py-2 px-8 rounded transition">
-        <Link href="/nieuws">Nieuws</Link>
-      </button>
-
       <div onClick={handleNav} className="block md:hidden">
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>

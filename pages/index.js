@@ -15,7 +15,7 @@ const Homepage = () => {
     <>
       <Hero heading="Architect Paul Kindt" />
       <div className="max-w-[35%] m-auto">
-        <Image src={logo} />
+        <Image src={logo} alt={logo} />
       </div>
     </>
   );

@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="flex items-center uppercase">
         <Link href="/" passHref>
           <div className="pr-24 max-w-[15rem] cursor-pointer">
-            <Image src={logo} />
+            <Image src={logo} alt={logo} />
           </div>
         </Link>
         <ul className="hidden md:flex gap-4">
@@ -49,7 +49,7 @@ const Navbar = () => {
         }
       >
         <div className="pr-24 max-w-[15rem]">
-          <Image src={logo} />
+          <Image src={logo} alt={logo} />
         </div>
         <li onClick={handleNav} className="p-4">
           <Link href="/">

@@ -43,7 +43,7 @@ const Hero = () => {
         <div ref={sliderRef} className="keen-slider">
           {images.map((image) => {
             return (
-              <div className={`keen-slider__slide`}>
+              <div key={image} className={`keen-slider__slide`}>
                 <Image src={image} />
               </div>
             );

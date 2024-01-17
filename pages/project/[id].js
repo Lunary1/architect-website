@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { mapImageResources, search } from "../../lib/cloudinary";
 import { useState } from "react";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";

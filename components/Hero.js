@@ -44,7 +44,7 @@ const Hero = () => {
           {images.map((image) => {
             return (
               <div key={image} className={`keen-slider__slide`}>
-                <Image src={image} />
+                <Image src={image} alt={image} />
               </div>
             );
           })}
@@ -52,6 +52,6 @@ const Hero = () => {
       </div>
     </>
   );
-}; 
+};
 
 export default Hero;

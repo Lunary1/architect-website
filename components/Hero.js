@@ -13,8 +13,6 @@ import { Link } from "react-scroll";
 
 // image imports
 
-import { BsChevronCompactDown } from "react-icons/bs";
-import logo from "./../public/logo.jpg";
 import images from "../images";
 
 const Hero = () => {
@@ -26,15 +24,6 @@ const Hero = () => {
     },
     loop: true,
     renderMode: "performance",
-    created(s) {
-      s.moveToIdx(5, true, animation);
-    },
-    updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation);
-    },
-    animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation);
-    },
   });
 
   return (

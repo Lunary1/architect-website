@@ -1,11 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Image from "next/image";
 
 import logo from "../public/logo.jpg";
 
-const Navbar = () => {
+import { onAuthStateChanged, signIn, signOutWithEmail } from "../firebase/auth";
+
+function useUserSession(initialUser) {
+  // The initialUser comes from the server via a server component
+  const [user, setUser] = useState(initialUser);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged((authUser) => {
+      setUser(authUser);
+    });
+
+    return () => unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    onAuthStateChanged((authUser) => {
+      if (user === undefined) return;
+
+      // refresh when user changed to ease testing
+      if (user?.email !== authUser?.email) {
+        router.refresh();
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+  return user;
+}
+
+export default function Navbar({ initialUser }) {
+  const user = useUserSession(initialUser);
+
+  const handleSignOut = (event) => {
+    event.preventDefault();
+    signOutWithEmail();
+  };
+
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {
@@ -66,8 +103,33 @@ const Navbar = () => {
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
+      {user ? (
+        <>
+          <div className="profile">
+            <div className="menu">
+              <ul className="flex justify-between gap-1">
+                <li>
+                  <Link href={"/admin/Upload"}>
+                    <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase">
+                      Nieuw project
+                    </button>
+                  </Link>
+                </li>
+                <li>{user.displayName}</li>
+                <li>
+                  <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase">
+                    <a href="#" onClick={handleSignOut}>
+                      Sign Out
+                    </a>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
-};
-
-export default Navbar;
+}

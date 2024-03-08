@@ -1,24 +1,24 @@
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useState } from "react";
-import { storage } from "../firebase/config";
+import { db, storage } from "../firebase/config";
 import { v4 as uuidv4 } from "uuid";
+import { addDoc, collection } from "firebase/firestore";
 
 const useStorage = () => {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(null);
   const [error, setError] = useState(null);
-  const [url, setUrl] = useState(null);
 
-  const startUpload = (file) => {
-    if (!file) {
+  const startUpload = (files, projectName) => {
+    if (!files) {
       return;
     }
 
     const fileId = uuidv4();
-    const formatFile = file.type.split("/")[1];
+    const formatFile = files.type.split("/")[0];
     console.log(formatFile);
     const storageRef = ref(storage, `images/${fileId}.${formatFile}`);
 
-    const uploadTask = uploadBytesResumable(storageRef, file);
+    const uploadTask = uploadBytesResumable(storageRef, files);
 
     uploadTask.on(
       "state_changed",
@@ -31,17 +31,21 @@ const useStorage = () => {
       (error) => {
         setError(error);
       },
-      () => {
-        // Handle successful uploads on complete
-        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          setUrl(downloadURL);
+      async () => {
+        const downloadUrl = await getDownloadURL(uploadTask.snapshot.ref);
+        setProgress(progress);
+        // store data into firestore
+        await addDoc(collection(db, "images"), {
+          projectName: projectName,
+          thumbnailUrl: { downloadUrl },
+          createdAt: new Date(),
+          imageUrlArray: [downloadUrl],
         });
       }
     );
   };
 
-  return { progress, error, url, startUpload };
+  return { progress, error, startUpload };
 };
 
 export default useStorage;

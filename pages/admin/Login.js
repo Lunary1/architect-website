@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 
 import { auth } from "../../firebase/config";
+import { signIn } from "../../firebase/auth";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -14,11 +15,7 @@ function Login() {
 
     console.log("trying to login user");
     try {
-      await signInWithEmailAndPassword(auth, email, password).then(
-        (userCredential) => {
-          const user = userCredential.user;
-        }
-      );
+      await signIn(auth, email, password);
     } catch (error) {
       setError(error.message);
       console.log(error);
@@ -28,11 +25,11 @@ function Login() {
   return (
     <>
       <div className="w-full max-w-xs m-auto">
-        <h1 className="text-center">Login</h1>
         <form
           onSubmit={handleSubmit}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
+          <h1 className="text-black text-center uppercase">Admin login</h1>
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -57,16 +54,13 @@ function Login() {
               Password
             </label>
             <input
-              className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="******************"
             />
-            <p className="text-red-500 text-xs italic">
-              Please choose a password.
-            </p>
           </div>
           <div className="flex items-center justify-between">
             <button

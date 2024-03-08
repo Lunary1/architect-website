@@ -13,7 +13,7 @@ function SummaryProjectcard(props) {
             alt={`${props.name}`}
             width={1920}
             height={1080}
-            layout="responsive"
+            objectFit="contain"
             loading="lazy"
             quality={80}
           />

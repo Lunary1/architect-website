@@ -2,29 +2,40 @@ import React, { useState } from "react";
 import useStorage from "../hooks/useStorage";
 
 function UploadForm() {
-  const [selectedFiles, setSelectedFiles] = useState(null);
+  const [files, setFiles] = useState(null);
   const { startUpload } = useStorage();
   const [projectName, setProjectName] = useState("");
+  const [thumbnail, setThumbnail] = useState(null);
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
-      setSelectedFiles(e.target.files[0]);
+      setFiles(e.target.files[0]);
     }
   };
 
   const handleProjectChange = (e) => {
     if (e.target.value) {
       setProjectName(e.target.value);
-      console.log(projectName);
+    }
+  };
+
+  const handleThumbnailChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setThumbnail(e.target.files[0]);
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedFiles) {
-      startUpload(selectedFiles, projectName);
+    const fileInput = document.getElementById("file-upload");
+    const selectedFiles = fileInput.files;
+    if (selectedFiles.length === 0) {
+      alert("Please select at least one file to upload.");
+      setFiles(null);
+      return;
+    } else {
+      startUpload(files, projectName, thumbnail);
     }
-    setSelectedFiles(null);
   };
 
   return (
@@ -51,7 +62,7 @@ function UploadForm() {
             />
             <label
               htmlFor="file-upload"
-              className="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer"
+              className="z-20 flex flex-col-reverse items-center justify-center w-full h-[8rem] cursor-pointer"
             >
               <p className="z-10 text-xs font-light text-center text-gray-500">
                 Drag & Drop your files here
@@ -65,16 +76,17 @@ function UploadForm() {
                 <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
               </svg>
             </label>
+            <div>
+              <label className="text-xs text-gray-500" htmlFor="projectName">
+                Project:
+              </label>
+              <input
+                onChange={handleProjectChange}
+                className="mt-2 rounded-lg border-none bg-gray-100 w-full"
+                type="text"
+              />
+            </div>
 
-            <label className="text-xs text-gray-500" htmlFor="projectName">
-              Project:
-            </label>
-            <input
-              value={projectName}
-              onInput={(e) => setProjectName(e.target.value)}
-              className="mt-2 rounded-lg border-none bg-gray-100 w-full"
-              type="text"
-            />
             <button
               type="submit"
               id="submit"

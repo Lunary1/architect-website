@@ -4,6 +4,10 @@
 module.exports = {
   reactStrictMode: false,
   images: {
-    domains: ["res.cloudinary.com", "images.unsplash.com"],
+    domains: [
+      "res.cloudinary.com",
+      "images.unsplash.com",
+      "firebasestorage.googleapis.com",
+    ],
   },
 };

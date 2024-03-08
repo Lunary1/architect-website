@@ -1,6 +1,6 @@
 // nextjs imports
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useRef, useEffect } from "react";
 
 // external imports

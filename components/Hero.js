@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 //external imports
 
@@ -30,9 +30,9 @@ const Hero = () => {
     <>
       <div className="md:flex justify-center gap:0 my-[2rem] ">
         <div ref={sliderRef} className="keen-slider">
-          {images.map((image) => {
+          {images.map((image, i) => {
             return (
-              <div key={image} className={`keen-slider__slide`}>
+              <div key={i} className={`keen-slider__slide`}>
                 <Image src={image} alt={image} />
               </div>
             );

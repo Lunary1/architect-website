@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import logo from "../public/logo.jpg";
 

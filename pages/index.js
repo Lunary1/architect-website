@@ -6,7 +6,7 @@ import Slider from "../components/Slider";
 import Banner from "../components/Banner";
 import SectionHeader from "../components/SectionHeader";
 import Section from "../components/About";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import logo from "../public/logo_tekst.jpg";
 

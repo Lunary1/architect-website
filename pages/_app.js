@@ -3,7 +3,7 @@ import Router from "next/router";
 import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css"; //styles of nprogress
 import Layout from "../components/Layout";
-import { Archivo } from "@next/font/google";
+import { Archivo } from "next/font/google";
 
 const archivo = Archivo({
   subsets: ["latin"],

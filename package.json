@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
-    "@next/font": "^14.0.4",
     "firebase": "^10.7.1",
     "framer-motion": "^10.1.0",
     "fslightbox-react": "^1.6.2-2",

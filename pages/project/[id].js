@@ -1,13 +1,9 @@
 import Image from "next/legacy/image";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-
+import { useState } from "react";
+import { db } from "../../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import FsLightbox from "fslightbox-react";
-
-import { db } from "../../firebase/config";
-
-import { doc, getDoc } from "firebase/firestore";
 
 export default function ProjectOverview({ data, error }) {
   const [toggler, setToggler] = useState(false);
@@ -49,7 +45,7 @@ export default function ProjectOverview({ data, error }) {
           </ResponsiveMasonry>
         </div>
       </div>
-      <FsLightbox toggler={toggler} />
+      <FsLightbox toggler={toggler} sources={data.images} />
     </>
   );
 }

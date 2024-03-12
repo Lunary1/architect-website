@@ -8,32 +8,47 @@ import Image from "next/legacy/image";
 
 import { motion } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
+
 import { Link } from "react-scroll";
 
 // image imports
 
 import images from "../images";
 
+const animation = { duration: 75000, easing: (t) => t };
+
 const Hero = () => {
   const [sliderRef] = useKeenSlider({
-    slides: {
-      origin: "center",
-      perView: 2,
-      spacing: 15,
-    },
     loop: true,
     renderMode: "performance",
+    drag: false,
+    created(s) {
+      s.moveToIdx(5, true, animation);
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
   });
 
   return (
     <>
-      <div className="md:flex justify-center gap:0 my-[2rem] ">
+      <div className="md:flex justify-center gap:0 my-[2rem]">
         <div ref={sliderRef} className="keen-slider">
           {images.map((image, i) => {
             return (
-              <div key={i} className={`keen-slider__slide`}>
-                <Image src={image} alt={image} />
+              <div
+                key={i}
+                className={`keen-slider__slide number-slide${i} h-[90vh]`}
+              >
+                <Image
+                  src={image}
+                  alt={image}
+                  objectFit="cover"
+                  layout="fill"
+                />
               </div>
             );
           })}

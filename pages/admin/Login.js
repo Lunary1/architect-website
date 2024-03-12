@@ -4,11 +4,14 @@ import { useNavigate, Navigate } from "react-router-dom";
 
 import { auth } from "../../firebase/config";
 import { signIn } from "../../firebase/auth";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,6 +19,7 @@ function Login() {
     console.log("trying to login user");
     try {
       await signIn(auth, email, password);
+      router.push("/");
     } catch (error) {
       setError(error.message);
       console.log(error);

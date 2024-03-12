@@ -1,37 +1,44 @@
 import Image from "next/legacy/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import FsLightbox from "fslightbox-react";
 
-export default function ProjectOverview({ images, projectData }) {
+import { db } from "../../firebase/config";
+
+import { doc, getDoc } from "firebase/firestore";
+
+export default function ProjectOverview({ data, error }) {
   const [toggler, setToggler] = useState(false);
 
-  const projectInfo = projectData.project;
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <>
-      <div className="max-w-[85vw] m-auto mt-28">
+      <div className="max-w-[85vw] m-auto mt-8">
         <div className="flex justify-center">
-          <h1 className=" text-4xl font-serif">{projectInfo.project_name}</h1>
+          <h1 className="mb-6 text-4xl font-serif ">{data.projectName}</h1>
         </div>
         <div className="mx-auto">
           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 3 }}
           >
             <Masonry gutter="0.2rem">
-              {images.map((image) => {
+              {data.images.map((image) => {
                 return (
                   <div
                     className="w-auto hover:cursor-pointer"
-                    key={image.id}
+                    key={image}
                     onClick={() => setToggler(!toggler)}
                   >
                     <Image
-                      width={image.width}
-                      height={image.height}
-                      src={image.image}
-                      alt=""
+                      src={image}
+                      height={500}
+                      width={700}
+                      alt={image}
                       layout="responsive"
                       loading="lazy"
                     />
@@ -42,12 +49,7 @@ export default function ProjectOverview({ images, projectData }) {
           </ResponsiveMasonry>
         </div>
       </div>
-      <FsLightbox
-        toggler={toggler}
-        sources={images.map((image) => {
-          return image.image;
-        })}
-      />
+      <FsLightbox toggler={toggler} />
     </>
   );
 }
@@ -55,26 +57,19 @@ export default function ProjectOverview({ images, projectData }) {
 export async function getServerSideProps(context) {
   const projectId = context.query.id;
 
-  const project = await fetch(
-    `${process.env.PRODUCTION_URL}/api/projects/${projectId}`
-  );
+  try {
+    const docRef = doc(db, `images/${projectId}`);
+    const docSnapshot = await getDoc(docRef);
 
-  const projectData = await project.json();
+    if (docSnapshot.exists) {
+      const data = JSON.parse(JSON.stringify(docSnapshot.data()));
 
-  const results = await search({
-    expression: `folder="${projectId}"`,
-  });
-
-  const { resources } = results;
-
-  const images = mapImageResources(resources);
-
-  console.log(images);
-
-  return {
-    props: {
-      images,
-      projectData,
-    },
-  };
+      return { props: { data } };
+    } else {
+      return { notFound: true };
+    }
+  } catch (error) {
+    console.error("Error fetching document:", error.message);
+    return { props: { error: "Error fetching document" } };
+  }
 }

@@ -6,6 +6,8 @@ import Image from "next/legacy/image";
 import logo from "../public/logo.jpg";
 
 import { onAuthStateChanged, signIn, signOutWithEmail } from "../firebase/auth";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
 
 function useUserSession(initialUser) {
   // The initialUser comes from the server via a server component
@@ -37,10 +39,12 @@ function useUserSession(initialUser) {
 
 export default function Navbar({ initialUser }) {
   const user = useUserSession(initialUser);
+  const router = useRouter();
 
   const handleSignOut = (event) => {
     event.preventDefault();
     signOutWithEmail();
+    router.push("/");
   };
 
   const [nav, setNav] = useState(false);
@@ -50,8 +54,8 @@ export default function Navbar({ initialUser }) {
   };
 
   return (
-    <div className="flex justify-between items-center h-[8rem] w-screen mx-auto p-8 text-white ">
-      <div className="flex items-center uppercase">
+    <div className="h-[8rem] w-screen mx-auto p-8 text-white ">
+      <nav className="flex items-center justify-between uppercase">
         <Link href="/" passHref>
           <div className="pr-24 max-w-[15rem] cursor-pointer">
             <Image src={logo} alt={logo} />
@@ -72,9 +76,28 @@ export default function Navbar({ initialUser }) {
           <li className="p-4">
             <Link href="/contact">Contact</Link>
           </li>
-          <li className="p-4"></li>
         </ul>
-      </div>
+        <ul className="flex">
+          {user ? (
+            <>
+              <li className="p-4">
+                <Link href={"/admin"}>
+                  <button className="uppercase">Admin</button>
+                </Link>
+              </li>
+              <li className="p-4">
+                <button className="uppercase">
+                  <a href="#" onClick={handleSignOut}>
+                    Sign Out
+                  </a>
+                </button>
+              </li>
+            </>
+          ) : (
+            <></>
+          )}
+        </ul>
+      </nav>
       <div onClick={handleNav} className="block md:hidden">
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
@@ -102,34 +125,27 @@ export default function Navbar({ initialUser }) {
         <li onClick={handleNav} className="p-4">
           <Link href="/contact">Contact</Link>
         </li>
+        {user ? (
+          <>
+            <li onClick={handleNav} className="p-4">
+              <Link href={"/admin"}>
+                <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase">
+                  Nieuw project
+                </button>
+              </Link>
+            </li>
+            <li onClick={handleNav} className="p-4">
+              <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase">
+                <a href="#" onClick={handleSignOut}>
+                  Sign Out
+                </a>
+              </button>
+            </li>
+          </>
+        ) : (
+          <></>
+        )}
       </ul>
-      {user ? (
-        <>
-          <div className="profile">
-            <div className="menu">
-              <ul className="flex justify-between gap-1">
-                <li>
-                  <Link href={"/admin/Upload"}>
-                    <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase">
-                      Nieuw project
-                    </button>
-                  </Link>
-                </li>
-                <li>{user.displayName}</li>
-                <li>
-                  <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase">
-                    <a href="#" onClick={handleSignOut}>
-                      Sign Out
-                    </a>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </>
-      ) : (
-        <></>
-      )}
     </div>
   );
 }

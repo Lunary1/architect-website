@@ -1,0 +1,4 @@
+/* HorizontalScrollBanner.module.css */
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}

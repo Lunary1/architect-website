@@ -10,15 +10,14 @@ import { getPerformance } from "firebase/performance";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC3mveUV-gZDqmZEFQ2V0YJyup-m5_V98Y",
-  authDomain: "arch-d0f17.firebaseapp.com",
-  databaseURL:
-    "https://arch-d0f17-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "arch-d0f17",
-  storageBucket: "arch-d0f17.appspot.com",
-  messagingSenderId: "498963241705",
-  appId: "1:498963241705:web:c64e66ef838756dbe66e78",
-  measurementId: "G-YR8SQ6X9L4",
+  apiKey: `${process.env.FIREBASE_API}`,
+  authDomain: `${process.env.FIREBASE_AUTHDOMAIN}`,
+  databaseURL: `${process.env.FIREBASE_DBURL}`,
+  projectId: `${process.env.FIREBASE_PROJECTID}`,
+  storageBucket: `${process.env.FIREBASE_STORAGEBUCKET}`,
+  messagingSenderId: `${process.env.FIREBASE_MSGSENDERID}`,
+  appId: `${process.env.FIREBASE_APPID}`,
+  measurementId: `${process.env.FIREBASE_MEASUREMENTID}`,
 };
 
 // Initialize Firebase

@@ -13,7 +13,7 @@ import {
 
 const ContactForm = () => {
   return (
-    <div className="max-w-[1240px] m-auto mt-32 ">
+    <div className="max-w-[90%] m-auto mt-[2rem]">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="flex md:flex-col justify-evenly">
           <div>
@@ -61,12 +61,14 @@ const ContactForm = () => {
             placeholder="Onderwerp"
           />
           <textarea
-            className="  p-3 bg-black w-full placeholder:text-white my-2"
+            className="  p-3 bg-black w-full placeholder:text-white my-2 resize-none"
             cols="30"
             rows="10"
             placeholder="Bericht"
           ></textarea>
-          <button className="  p-3 w-full mt-2 ">Verzend</button>
+          <button className="text-center w-full border rounded-sm p-3 mt-2 hover:bg-white hover:text-black ease-in transition">
+            Verzend
+          </button>
         </form>
       </div>
     </div>

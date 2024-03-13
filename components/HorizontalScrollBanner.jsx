@@ -38,7 +38,7 @@ const HorizontalScrollBanner = ({ images }) => {
   return (
     <div
       ref={scrollContainerRef}
-      className="flex overflow-x-auto w-full md:w-full lg:w-full xl:w-full mx-auto md:h-64 lg:h-80 xl:h-96"
+      className="flex overflow-x-auto w-full mx-auto md:w-full lg:w-full xl:w-full md:h-64 lg:h-80 xl:h-96"
       style={{
         "-ms-overflow-style": "none",
         "scrollbar-width": "none",
@@ -46,7 +46,7 @@ const HorizontalScrollBanner = ({ images }) => {
       }}
     >
       {images.map((image, index) => (
-        <div key={index} className="flex-none w-96 md:w-96">
+        <div key={index} className="flex-none w-4/5 md:w-96 lg:w-96 xl:w-96">
           <img
             src={image.src}
             alt={`Image ${index}`}

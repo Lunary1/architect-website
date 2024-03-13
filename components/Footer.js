@@ -18,7 +18,7 @@ import {
 const Footer = () => {
   return (
     <footer>
-      <div className="max-w-[1240px] m-auto bg-black my-12">
+      <div className="max-w-[1240px] m-auto bg-black my-[2rem]">
         <div className="footer grid grid-cols-1">
           <ul className="flex gap-4 justify-center  text-white">
             <motion.li

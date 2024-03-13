@@ -116,17 +116,23 @@ export default function Navbar({ initialUser }) {
           </div>
           <li onClick={handleNav} className="p-4">
             <Link href="/">
-              <p className="cursor-pointer transition">Home</p>
+              <p className="cursor-pointer transition text-2xl">Home</p>
             </Link>
           </li>
           <li onClick={handleNav} className="p-4">
-            <Link href="/projecten">Projecten</Link>
+            <Link href="/projecten">
+              <p className="cursor-pointer transition text-2xl">Projecten</p>
+            </Link>
           </li>
           <li onClick={handleNav} className="p-4">
-            <Link href="/over_ons">Over ons</Link>
+            <Link href="/over_ons">
+              <p className="cursor-pointer transition text-2xl">Over ons</p>
+            </Link>
           </li>
           <li onClick={handleNav} className="p-4">
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">
+              <p className="cursor-pointer transition text-2xl">Contact</p>
+            </Link>
           </li>
           {user ? (
             <>

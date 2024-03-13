@@ -4,17 +4,17 @@ import placeholder from "../public/house.webp";
 
 export default function About() {
   return (
-    <section className="max-w-[85vw] m-auto pt-24">
-      <div className="flex flex-col md:flex-row gap-8">
+    <section className="max-w-[85vw] m-auto mt-[2rem]">
+      <h1 className="uppercase text-4xl md:text-4xl text-center">over ons</h1>
+      <div className="flex flex-col md:flex-row gap-8 mt-[2rem] w-[90%] mx-auto">
         <div className="w-[100%] md:w-1/2">
-          <div className="w-[85%] m-auto md:m-0">
+          <div className="m-auto md:m-0">
             <Image src={placeholder} alt="" />
           </div>
         </div>
-        <div className="md:w-1/2 m-auto pt-8 md:pt-0">
-          <div className="w-[80%] m-auto md:m-0">
-            <h2 className="uppercase text-3xl md:text-4xl">over ons</h2>
-            <p className="pt-8 md:pt-16 text-sm">
+        <div className="md:w-1/2 mx-auto">
+          <div className="m-auto md:m-0">
+            <p className="text-sm">
               Als ervaren architect uit Maarkedal hecht ik veel belang aan
               kwaliteit, correctheid en creativiteit in mijn werk. <br /> Mijn
               passie voor architectuur en het creëren van gebouwen en ruimtes

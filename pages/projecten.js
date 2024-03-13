@@ -40,10 +40,11 @@ function Projecten2() {
     });
   });
   return (
-    <section className="max-w-[85vw] m-auto mt-14">
+    <section className="max-w-[85vw] m-auto mt-[2rem]">
+      <h1 className="text-4xl text-center uppercase">Projecten</h1>
       <motion.div
         layout
-        className="max-w-[100%] grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-1 lg:grid-cols-3 "
+        className="max-w-[100%] grid grid-cols-1 md:grid-cols-2 gap-1 lg:gap-1 lg:grid-cols-3 mt-[2rem]"
       >
         <AnimatePresence>
           {userDataArray.map((userData) => (

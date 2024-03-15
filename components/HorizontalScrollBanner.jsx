@@ -1,8 +1,9 @@
-import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 
 const HorizontalScrollBanner = ({ images }) => {
   const scrollContainerRef = useRef(null);
+  let touchStartX = 0;
+  let touchEndX = 0;
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -36,10 +37,37 @@ const HorizontalScrollBanner = ({ images }) => {
     };
   }, []);
 
+  const handleTouchStart = (event) => {
+    touchStartX = event.touches[0].clientX;
+  };
+
+  const handleTouchMove = (event) => {
+    touchEndX = event.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX - touchEndX > 20) {
+      // Swipe left detected, scroll to the right
+      scrollContainerRef.current.scrollBy({
+        left: 100, // Adjust scroll distance as needed
+        behavior: "smooth",
+      });
+    } else if (touchEndX - touchStartX > 20) {
+      // Swipe right detected, scroll to the left
+      scrollContainerRef.current.scrollBy({
+        left: -100, // Adjust scroll distance as needed
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div
       ref={scrollContainerRef}
       className="flex overflow-x-auto w-full mx-auto md:w-full lg:w-full xl:w-full md:h-64 lg:h-80 xl:h-96"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
       style={{
         "-ms-overflow-style": "none",
         "scrollbar-width": "none",
@@ -48,7 +76,7 @@ const HorizontalScrollBanner = ({ images }) => {
     >
       {images.map((image, index) => (
         <div key={index} className="flex-none w-4/5 md:w-96 lg:w-96 xl:w-96">
-          <Image
+          <img
             src={image.src}
             alt={`Image ${index}`}
             className="w-full h-full object-cover"

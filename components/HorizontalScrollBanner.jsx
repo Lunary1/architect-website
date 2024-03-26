@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import Image from "next/image";
 
 const HorizontalScrollBanner = ({ images }) => {
   const scrollContainerRef = useRef(null);
@@ -76,7 +77,9 @@ const HorizontalScrollBanner = ({ images }) => {
     >
       {images.map((image, index) => (
         <div key={index} className="flex-none w-4/5 md:w-96 lg:w-96 xl:w-96">
-          <img
+          <Image
+            width={1920}
+            height={1080}
             src={image.src}
             alt={`Image ${index}`}
             className="w-full h-full object-cover"

@@ -57,7 +57,7 @@ export default function Navbar({ initialUser }) {
     <header className="h-[8rem] w-screen mx-auto p-8 text-white">
       <nav className="flex items-center justify-between uppercase">
         <Link href="/" passHref>
-          <div className="max-w-[15rem] pr-24 cursor-pointer">
+          <div className="w-[10rem] md:w-[15rem] cursor-pointer">
             <Image src={logo} alt={logo} />
           </div>
         </Link>
@@ -75,6 +75,11 @@ export default function Navbar({ initialUser }) {
           </li>
           <li className="p-4">
             <Link href="/contact">Contact</Link>
+          </li>
+          <li className="p-4">
+            <Link href="/nieuws">
+              <p>Nieuws</p>
+            </Link>
           </li>
         </ul>
 
@@ -111,7 +116,7 @@ export default function Navbar({ initialUser }) {
               : "ease-in-out duration-500 fixed left-[-100%] z-50"
           }
         >
-          <div className="pr-24 max-w-[15rem]">
+          <div className="w-[10rem] md:w-[15rem] cursor-pointer">
             <Image src={logo} alt={logo} />
           </div>
           <li onClick={handleNav} className="p-4">
@@ -132,6 +137,11 @@ export default function Navbar({ initialUser }) {
           <li onClick={handleNav} className="p-4">
             <Link href="/contact">
               <p className="cursor-pointer transition text-2xl">Contact</p>
+            </Link>
+          </li>
+          <li onClick={handleNav} className="p-4">
+            <Link href="/nieuws">
+              <p className="cursor-pointer transition text-2xl">Nieuws</p>
             </Link>
           </li>
           {user ? (

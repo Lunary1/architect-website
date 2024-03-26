@@ -15,11 +15,11 @@ const ContactForm = () => {
   return (
     <div className="max-w-[90%] m-auto mt-[2rem]">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="flex md:flex-col justify-evenly">
+        <div className="flex md:flex-col">
           <div>
-            <h1 className="font-bold uppercase pb-2 text-lg">
+            <h3 className="font-bold uppercase pb-2 text-lg">
               Architectenbureau Paul Kindt
-            </h1>
+            </h3>
             <ul className="uppercase text-sm">
               <li>ADRES: Fremisstraat 1, Maarkedal</li>
               <li>E-MAIL: info@architect-kindt.be</li>
@@ -27,8 +27,10 @@ const ContactForm = () => {
               <li>BTW-NUMMER: </li>
             </ul>
           </div>
-          <div>
-            <h2 className=" font-bold uppercase pb-2 text-sm">SOCIAL MEDIA</h2>
+          <div className="invisible md:visible ">
+            <h4 className="font-bold uppercase pb-2 text-sm mt-[2rem]">
+              SOCIAL MEDIA
+            </h4>
             <div className="max-w-[40%] flex gap-4 hover:cursor-pointer">
               <Link href="">
                 <FaFacebookSquare size={25} />

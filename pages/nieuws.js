@@ -12,8 +12,8 @@ export default function Nieuws() {
             News Section Coming Soon!
           </h2>
           <p className="text-lg md:text-xl text-gray-700 mb-8">
-            We're busy preparing exciting news content for you. Stay tuned for
-            updates!
+            We&apos;re busy preparing exciting news content for you. Stay tuned
+            for updates!
           </p>
           <Link href="/">
             <p className="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out">

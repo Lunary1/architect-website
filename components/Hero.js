@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link"; // Import Link from next/link
 import logo from "../public/logo_tekst.jpg";
 
 export default function Hero() {
@@ -21,19 +22,19 @@ export default function Hero() {
           <p className="text-gray-300 mt-4 max-w-[70%] mx-auto text-[clamp(1rem,2.5vw,1.5rem)]">
             Elke ruimte vertelt een verhaal – ontdek onze creaties
           </p>
-          <a href="/projecten">
+          <Link href="/projecten">
             <button className="mt-6 px-6 py-3 bg-gray-900 hover:bg-black text-white font-semibold rounded-lg transition duration-300">
               Bekijk meer
             </button>
-          </a>
+          </Link>
         </div>
 
         {/* Optional: Scroll down indicator */}
-        {/*
-  <div className="absolute bottom-6 animate-bounce text-white z-10">
-    ↓
-  </div>
-  */}
+        {/* 
+        <div className="absolute bottom-6 animate-bounce text-white z-10">
+          ↓
+        </div>
+        */}
       </div>
       {/* Services Section */}
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 px-6 sm:px-12">

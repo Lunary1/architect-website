@@ -19,6 +19,10 @@ export default function ProjectOverview({ data, error }) {
     500: 1,
   };
 
+  const proxiedImages = data.images.map(
+    (image) => `/api/proxy?url=${encodeURIComponent(image)}`
+  );
+
   return (
     <>
       <div className="max-w-[85vw] m-auto mt-8">
@@ -57,7 +61,7 @@ export default function ProjectOverview({ data, error }) {
       </div>
       <FsLightbox
         toggler={toggler}
-        sources={data.images}
+        sources={proxiedImages}
         slide={activeImageIndex + 1}
       />
     </>
@@ -77,6 +81,7 @@ export async function getServerSideProps(context) {
 
     if (docSnapshot.exists) {
       const data = JSON.parse(JSON.stringify(docSnapshot.data()));
+      console.log("Fetched data:", data);
       return { props: { data } };
     } else {
       return { notFound: true };

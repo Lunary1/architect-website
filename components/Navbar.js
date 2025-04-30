@@ -2,37 +2,19 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Image from "next/legacy/image";
-
-import logo from "../public/logo.jpg";
-
-import { onAuthStateChanged, signIn, signOutWithEmail } from "../firebase/auth";
-import { redirect } from "next/dist/server/api-utils";
+import { onAuthStateChanged, signOutWithEmail } from "../firebase/auth";
 import { useRouter } from "next/router";
+import logo from "../public/logo_tekst.jpg";
 
 function useUserSession(initialUser) {
-  // The initialUser comes from the server via a server component
   const [user, setUser] = useState(initialUser);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged((authUser) => {
       setUser(authUser);
     });
-
     return () => unsubscribe();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    onAuthStateChanged((authUser) => {
-      if (user === undefined) return;
-
-      // refresh when user changed to ease testing
-      if (user?.email !== authUser?.email) {
-        router.refresh();
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
 
   return user;
 }
@@ -40,129 +22,139 @@ function useUserSession(initialUser) {
 export default function Navbar({ initialUser }) {
   const user = useUserSession(initialUser);
   const router = useRouter();
+  const [nav, setNav] = useState(false);
 
-  const handleSignOut = (event) => {
-    event.preventDefault();
-    signOutWithEmail();
+  const handleNavToggle = () => setNav(!nav);
+
+  const handleSignOut = async () => {
+    await signOutWithEmail();
     router.push("/");
   };
 
-  const [nav, setNav] = useState(false);
-
-  const handleNav = () => {
-    setNav(!nav);
-  };
-
   return (
-    <header className="h-[8rem] w-screen mx-auto p-8 text-white">
-      <nav className="flex items-center justify-between uppercase">
-        <Link href="/" passHref>
-          <div className="w-[10rem] md:w-[15rem] cursor-pointer">
-            <Image src={logo} alt={logo} />
-          </div>
-        </Link>
-        <ul className="hidden md:flex gap-4 text-xl">
-          <li className="p-4">
-            <Link href="/">
-              <p className="cursor-pointer transition">Home</p>
-            </Link>
-          </li>
-          <li className="p-4">
-            <Link href="/projecten">Projecten</Link>
-          </li>
-          <li className="p-4">
-            <Link href="/over_ons">Over ons</Link>
-          </li>
-          <li className="p-4">
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li className="p-4">
-            <Link href="/nieuws">
-              <p>Nieuws</p>
-            </Link>
-          </li>
-        </ul>
+    <header className="top-0 left-0 w-full bg-black text-white shadow-md z-50">
+      <nav className="flex items-center justify-between px-6 py-4 mb-2">
+        {/* Logo */}
+        <div className="flex items-center">
+          <Link href="/" passHref>
+            <div className="w-[8rem] md:w-[10rem] cursor-pointer">
+              <Image src={logo} alt="Logo" priority />
+            </div>
+          </Link>
+        </div>
 
-        {user ? (
-          <ul className="flex">
-            <li className="p-4">
-              <Link href={"/admin"}>
-                <button className="uppercase">Admin</button>
+        {/* Center Navigation */}
+        <ul className="hidden md:flex gap-6 text-lg uppercase">
+          {[
+            { name: "Home", path: "/" },
+            { name: "Projecten", path: "/projecten" },
+            { name: "Over Ons", path: "/over_ons" },
+            { name: "Contact", path: "/contact" },
+            { name: "Nieuws", path: "/nieuws" },
+          ].map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.path}
+                className={`transition-colors duration-300 ${
+                  router.pathname === item.path
+                    ? "text-blue-400" // Active link styling
+                    : "hover:text-gray-400"
+                }`}
+              >
+                {item.name}
               </Link>
             </li>
-            <li className="p-4">
-              <button className="uppercase">
-                <a href="#" onClick={handleSignOut}>
-                  Sign Out
-                </a>
-              </button>
-            </li>
-          </ul>
-        ) : (
-          <></>
-        )}
+          ))}
+        </ul>
 
-        <div onClick={handleNav} className="z-10 block md:hidden">
-          {nav ? (
-            <AiOutlineClose className="z-0" size={20} />
+        {/* Right Login Functionality */}
+        <div className="hidden md:flex items-center gap-4">
+          {user ? (
+            <>
+              <Link
+                href="/admin"
+                className={`hover:text-gray-400 uppercase ${
+                  router.pathname === "/admin" ? "text-blue-400" : ""
+                }`}
+              >
+                Admin
+              </Link>
+              <button
+                onClick={handleSignOut}
+                className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase"
+              >
+                Sign Out
+              </button>
+            </>
           ) : (
-            <AiOutlineMenu size={20} />
+            <button
+              onClick={() => router.push("/admin/login")}
+              className="invisible bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase"
+            >
+              Login
+            </button>
           )}
         </div>
-        <ul
-          className={
-            nav
-              ? "fixed left-0 top-0 w-[100%] h-full border-r border-r-gray-900 bg-black ease-in-out duration-500 z-20"
-              : "ease-in-out duration-500 fixed left-[-100%] z-50"
-          }
+
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={handleNavToggle}
+          className="md:hidden text-xl focus:outline-none"
+          aria-label={nav ? "Close Menu" : "Open Menu"}
         >
-          <div className="w-[10rem] md:w-[15rem] cursor-pointer">
-            <Image src={logo} alt={logo} />
-          </div>
-          <li onClick={handleNav} className="p-4">
-            <Link href="/">
-              <p className="cursor-pointer transition text-2xl">Home</p>
-            </Link>
+          {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+        </button>
+
+        {/* Mobile Menu */}
+        <ul
+          className={`fixed top-0 left-0 w-full h-full bg-black text-white flex flex-col items-center justify-center transform transition-transform duration-500 ${
+            nav ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <li className="mb-6 text-2xl uppercase" onClick={handleNavToggle}>
+            <Link href="/">Home</Link>
           </li>
-          <li onClick={handleNav} className="p-4">
-            <Link href="/projecten">
-              <p className="cursor-pointer transition text-2xl">Projecten</p>
-            </Link>
+          <li className="mb-6 text-2xl uppercase" onClick={handleNavToggle}>
+            <Link href="/projecten">Projecten</Link>
           </li>
-          <li onClick={handleNav} className="p-4">
-            <Link href="/over_ons">
-              <p className="cursor-pointer transition text-2xl">Over ons</p>
-            </Link>
+          <li className="mb-6 text-2xl uppercase" onClick={handleNavToggle}>
+            <Link href="/over_ons">Over Ons</Link>
           </li>
-          <li onClick={handleNav} className="p-4">
-            <Link href="/contact">
-              <p className="cursor-pointer transition text-2xl">Contact</p>
-            </Link>
+          <li className="mb-6 text-2xl uppercase" onClick={handleNavToggle}>
+            <Link href="/contact">Contact</Link>
           </li>
-          <li onClick={handleNav} className="p-4">
-            <Link href="/nieuws">
-              <p className="cursor-pointer transition text-2xl">Nieuws</p>
-            </Link>
+          <li className="mb-6 text-2xl uppercase" onClick={handleNavToggle}>
+            <Link href="/nieuws">Nieuws</Link>
           </li>
           {user ? (
             <>
-              <li onClick={handleNav} className="p-4">
-                <Link href={"/admin"}>
-                  <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase">
-                    Nieuw project
-                  </button>
-                </Link>
+              <li className="mb-6 text-2xl uppercase" onClick={handleNavToggle}>
+                <Link href="/admin">Admin</Link>
               </li>
-              <li onClick={handleNav} className="p-4">
-                <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase">
-                  <a href="#" onClick={handleSignOut}>
-                    Sign Out
-                  </a>
+              <li className="mb-6">
+                <button
+                  onClick={() => {
+                    handleSignOut();
+                    handleNavToggle();
+                  }}
+                  className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase"
+                >
+                  Sign Out
                 </button>
               </li>
             </>
           ) : (
-            <></>
+            <li className="mb-6">
+              <button
+                onClick={() => {
+                  router.push("/login");
+                  handleNavToggle();
+                }}
+                className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-bold py-1 px-3 rounded uppercase"
+              >
+                Login
+              </button>
+            </li>
           )}
         </ul>
       </nav>

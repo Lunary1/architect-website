@@ -70,9 +70,9 @@ const HorizontalScrollBanner = ({ images }) => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       style={{
-        "-ms-overflow-style": "none",
-        "scrollbar-width": "none",
-        "overflow-y": "hidden",
+        msOverflowStyle: "none", // Correct format for -ms-overflow-style
+        scrollbarWidth: "none", // Correct format for scrollbar-width
+        overflowY: "hidden", // Correct format for overflow-y
       }}
     >
       {images.map((image, index) => (

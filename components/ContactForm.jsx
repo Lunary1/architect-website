@@ -11,7 +11,7 @@ import {
 
 const ContactForm = () => {
   return (
-    <div className="max-w-[1200px] mx-auto mt-8 px-4">
+    <div className="w-full max-w-screen-xl mx-auto mt-8 px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Info Section */}
         <div className="flex flex-col order-2 md:order-1">
@@ -25,31 +25,6 @@ const ContactForm = () => {
               <li>PHONE: +32 495 20 56 77</li>
               <li>BTW-NUMMER: BE0123456789</li>
             </ul>
-          </div>
-          <div className="mt-8 hidden">
-            <h4 className="font-bold uppercase pb-2 text-sm text-center md:text-left">
-              Social Media
-            </h4>
-            <div className="flex justify-center md:justify-start gap-4">
-              <Link href="https://facebook.com" target="_blank">
-                <FaFacebookSquare
-                  size={30}
-                  className="hover:text-blue-600 transition"
-                />
-              </Link>
-              <Link href="https://instagram.com" target="_blank">
-                <FaInstagramSquare
-                  size={30}
-                  className="hover:text-pink-500 transition"
-                />
-              </Link>
-              <Link href="https://twitter.com" target="_blank">
-                <FaTwitterSquare
-                  size={30}
-                  className="hover:text-blue-400 transition"
-                />
-              </Link>
-            </div>
           </div>
         </div>
 

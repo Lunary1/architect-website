@@ -22,7 +22,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           {/* About Section */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Socials</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              Sociale Media
+            </h3>
             <div className="text-sm">
               {/* Existing Footer Section */}
               <div className="max-w-[1240px] bg-black flex flex-col md:items-start items-center">

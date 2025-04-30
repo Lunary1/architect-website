@@ -83,7 +83,10 @@ const HorizontalScrollBanner = ({ images }) => {
             src={image.src}
             alt={`Image ${index}`}
             className="w-full h-full object-cover"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
       ))}
     </div>

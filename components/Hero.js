@@ -7,20 +7,34 @@ export default function Hero() {
     <section className="mt-[2rem] bg-black text-white">
       {/* Hero Section */}
       <div
-        className="relative h-[70vh] flex flex-col justify-center items-center bg-cover bg-center"
+        className="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center"
         style={{ backgroundImage: "url('/bouw_gif.gif')" }}
       >
-        <h1 className="text-4xl font-bold text-center px-4 sm:text-5xl text-white">
-          Van concept tot werkelijkheid: onze projecten in beeld
-        </h1>
-        <p className="text-lg mt-4 text-center max-w-[70%] mx-auto sm:text-xl text-gray-300">
-          Elke ruimte vertelt een verhaal – ontdek onze creaties
-        </p>
-        <button className="mt-6 px-6 py-3 bg-gray-900 hover:bg-black text-white font-semibold rounded-lg">
-          <a href="/projecten">Bekijk meer</a>
-        </button>
-      </div>
+        {/* Overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
 
+        {/* Content container */}
+        <div className="relative z-10 px-4">
+          <h1 className="text-white font-bold text-[clamp(2rem,5vw,3.5rem)] leading-tight">
+            Van concept tot werkelijkheid: onze projecten in beeld
+          </h1>
+          <p className="text-gray-300 mt-4 max-w-[70%] mx-auto text-[clamp(1rem,2.5vw,1.5rem)]">
+            Elke ruimte vertelt een verhaal – ontdek onze creaties
+          </p>
+          <a href="/projecten">
+            <button className="mt-6 px-6 py-3 bg-gray-900 hover:bg-black text-white font-semibold rounded-lg transition duration-300">
+              Bekijk meer
+            </button>
+          </a>
+        </div>
+
+        {/* Optional: Scroll down indicator */}
+        {/*
+  <div className="absolute bottom-6 animate-bounce text-white z-10">
+    ↓
+  </div>
+  */}
+      </div>
       {/* Services Section */}
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 px-6 sm:px-12">
         <div className="flex flex-col items-center bg-gray-900 p-6 rounded-lg shadow-md">
@@ -46,11 +60,10 @@ export default function Hero() {
           </p>
         </div>
       </div>
-
       {/* Featured Projects Section */}
       <div className="mt-12 px-6 sm:px-12">
-        <h2 className="text-3xl font-bold text-center text-white">
-          Featured Projects
+        <h2 className="text-2xl font-thin tracking-tight font-stretch-ultra-condensed uppercase text-center text-white">
+          Projecten in de kijker:
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {/* Project 1 */}
@@ -59,9 +72,12 @@ export default function Hero() {
               <Image
                 src="/goethals.jpg"
                 alt="The Nest"
-                layout="fill"
-                objectFit="cover"
                 className="rounded-t-lg"
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "cover",
+                }}
               />
             </div>
             <div className="p-4">
@@ -76,9 +92,12 @@ export default function Hero() {
               <Image
                 src="/vanhoorn.jpg"
                 alt="Futurist"
-                layout="fill"
-                objectFit="cover"
                 className="rounded-t-lg"
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "cover",
+                }}
               />
             </div>
             <div className="p-4">
@@ -93,9 +112,12 @@ export default function Hero() {
               <Image
                 src="/vancaester.jpg"
                 alt="Futurist"
-                layout="fill"
-                objectFit="cover"
                 className="rounded-t-lg"
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "cover",
+                }}
               />
             </div>
             <div className="p-4">
@@ -104,15 +126,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* About Section */}
-      <div className="mt-12 px-6 sm:px-12 text-center">
-        <h2 className="text-3xl font-bold text-white">About Us</h2>
-        <p className="text-gray-300 mt-4 max-w-[60%] mx-auto">
-          We are a global design firm with a diverse portfolio. We focus on
-          urban, industrial, and office projects.
-        </p>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 function SummaryProjectcard(props) {
   return (
@@ -13,10 +13,13 @@ function SummaryProjectcard(props) {
             alt={`${props.name}`}
             width={1920}
             height={1080}
-            objectFit="cover"
             loading="lazy"
             quality={80}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              objectFit: "cover"
+            }} />
           <figcaption className="absolute bottom-0 p-4 sm:p-8 opacity-0 group-hover:opacity-[85] transition ease-in-out delay-150 text-white">
             {/* <p className="text-xs sm:text-sm font-sans">{props.location}</p> */}
             {/* <h2 className="text-sm sm:text-lg">{props.name}</h2> */}

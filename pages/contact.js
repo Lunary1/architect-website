@@ -6,9 +6,8 @@ import Map from "../components/Map";
 const contact = () => {
   return (
     <section className="mt-[2rem]">
-      <h1 className="text-4xl text-center uppercase">Contact</h1>
+      <h1 className="text-4xl text-center uppercase"></h1>
       <ContactForm />
-      <Map />
     </section>
   );
 };

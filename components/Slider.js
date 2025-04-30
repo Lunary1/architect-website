@@ -1,6 +1,6 @@
 // nextjs imports
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useRef, useEffect } from "react";
 
 // external imports
@@ -73,57 +73,75 @@ export default function Slider() {
         <div ref={sliderRef} className="keen-slider hover:cursor-grab ">
           <div className="keen-slider__slide number-slide1">
             <Image
-              layout="responsive"
               src={vanhoorn}
               alt="slider Foto"
               width={1920}
               height={1080}
-            />
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto"
+              }} />
           </div>
           <div className="keen-slider__slide number-slide2">
             <Image
-              layout="responsive"
               src={devuyst}
               alt="slider Foto"
               width={1920}
               height={1080}
-            />
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto"
+              }} />
           </div>
           <div className="keen-slider__slide number-slide3">
             <Image
-              layout="responsive"
               src={goethals}
               alt="slider Foto"
               width={1920}
               height={1080}
-            />
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto"
+              }} />
           </div>
           <div className="keen-slider__slide number-slide4">
             <Image
-              layout="responsive"
               src={ifire}
               alt="slider Foto"
               width={1920}
               height={1080}
-            />
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto"
+              }} />
           </div>
           <div className="keen-slider__slide number-slide5">
             <Image
-              layout="responsive"
               src={maheur}
               alt="slider Foto"
               width={1920}
               height={1080}
-            />
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto"
+              }} />
           </div>
           <div className="keen-slider__slide number-slide6">
             <Image
-              layout="responsive"
               src={vanoverberghe}
               alt="slider Foto"
               width={1920}
               height={1080}
-            />
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto"
+              }} />
           </div>
         </div>
       </div>

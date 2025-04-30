@@ -6,7 +6,6 @@ function over_ons() {
   return (
     <>
       <About />
-      <Team />
     </>
   );
 }

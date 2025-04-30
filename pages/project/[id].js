@@ -2,17 +2,22 @@ import Image from "next/image";
 import { useState } from "react";
 import { db } from "../../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Masonry from "react-masonry-css";
 import FsLightbox from "fslightbox-react";
 
 export default function ProjectOverview({ data, error }) {
   const [toggler, setToggler] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
 
   if (error) {
     return <div>Error: {error}</div>;
   }
+
+  const breakpointColumnsObj = {
+    default: 3,
+    900: 2,
+    500: 1,
+  };
 
   return (
     <>
@@ -20,35 +25,35 @@ export default function ProjectOverview({ data, error }) {
         <div className="flex justify-center">
           <h1 className="mb-6 text-4xl font-serif">{data.projectName}</h1>
         </div>
-        <div className="mx-auto">
-          <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 3 }}
-          >
-            <Masonry gutter="1rem">
-              {data.images.map((image, index) => (
-                <div
-                  className="w-auto hover:cursor-pointer"
-                  key={index}
-                  onClick={() => {
-                    setActiveImageIndex(index);
-                    setToggler(!toggler);
-                  }}
-                >
-                  <Image
-                    src={image}
-                    height={500}
-                    width={700}
-                    alt={`Image ${index + 1} of ${data.projectName}`}
-                    layout="responsive"
-                    loading="lazy"
-                    onLoad={() => setLoading(false)}
-                    onError={(e) => (e.target.src = "/fallback-image.jpg")}
-                  />
-                </div>
-              ))}
-            </Masonry>
-          </ResponsiveMasonry>
-        </div>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {data.images.map((image, index) => (
+            <div
+              className="w-auto hover:cursor-pointer"
+              key={index}
+              onClick={() => {
+                setActiveImageIndex(index);
+                setToggler(!toggler);
+              }}
+            >
+              <Image
+                src={image}
+                height={500}
+                width={700}
+                alt={`Image ${index + 1} of ${data.projectName}`}
+                loading="lazy"
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
+              />
+            </div>
+          ))}
+        </Masonry>
       </div>
       <FsLightbox
         toggler={toggler}

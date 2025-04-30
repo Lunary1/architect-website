@@ -42,9 +42,7 @@ function ProjectsList() {
 
   return (
     <section className="max-w-[85vw] m-auto mt-8">
-      <h1 className="text-4xl text-center uppercase font-bold tracking-wide">
-        Projecten
-      </h1>
+      <h1 className="text-4xl text-center uppercase font-bold tracking-wide"></h1>
       {userDataArray.length === 0 ? (
         <p className="text-center mt-4">No projects available at the moment.</p>
       ) : (

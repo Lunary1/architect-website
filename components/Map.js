@@ -1,5 +1,5 @@
 import React from "react";
-import GoogleMapReact from "google-map-react";
+
 import { BsFillHousesFill } from "react-icons/bs";
 
 export default function SimpleMap() {
